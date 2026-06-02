@@ -69,7 +69,10 @@
 </section>
 <section class="section">
   <div class="container contact-grid">
-    <form class="inquiry-form" action="mailto:selina@olaybag.com" method="post" enctype="text/plain">
+    <form class="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="19f70a68-87f7-4b57-9cff-387a6bb0fdf1">
+      <input type="hidden" name="subject" value="New Inquiry From Olaytech Website">
+      <input type="hidden" name="from_name" value="Olaytech Website">
       <div class="form-row">
         <label>Name<input type="text" name="Name" required placeholder="Your name"></label>
         <label>Company<input type="text" name="Company" placeholder="Company name"></label>
