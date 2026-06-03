@@ -1,9 +1,17 @@
+const navToggle = document.querySelector('.nav-toggle');
+const mainNav = document.querySelector('.main-nav');
 
-document.addEventListener('DOMContentLoaded', function(){
-  const navToggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
-  if(navToggle && nav){ navToggle.addEventListener('click', ()=>nav.classList.toggle('open')); }
-  document.querySelectorAll('.nav-dropdown > a').forEach(a=>{
-    a.addEventListener('click', function(e){ if(window.innerWidth <= 980){ e.preventDefault(); this.parentElement.classList.toggle('open'); }});
+if (navToggle && mainNav) {
+  navToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+  });
+}
+
+document.querySelectorAll('.nav-dropdown > a').forEach((trigger) => {
+  trigger.addEventListener('click', (event) => {
+    if (window.innerWidth <= 1024) {
+      event.preventDefault();
+      trigger.parentElement.classList.toggle('open');
+    }
   });
 });
