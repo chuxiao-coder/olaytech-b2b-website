@@ -1,0 +1,176 @@
+/* Olaytech 4.9 Header Exact Match Patch
+   This file is loaded LAST on Support and By Application pages.
+   Goal: make the header logo, navigation, spacing, and quote button match the current homepage exactly.
+*/
+
+/* Keep topbar identical */
+.initi-topbar,
+.topbar.initi-topbar,
+.topbar.support-topbar {
+  height: 34px !important;
+  min-height: 34px !important;
+  max-height: 34px !important;
+  overflow: hidden !important;
+  background: #0d2f4d !important;
+}
+.initi-topbar .topbar-inner,
+.topbar.initi-topbar .topbar-inner,
+.topbar.support-topbar .topbar-inner {
+  height: 34px !important;
+  min-height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  font-size: 13px !important;
+  line-height: 1 !important;
+}
+.initi-topbar a,
+.topbar.support-topbar a { color: #fff !important; font-weight: 800 !important; }
+
+/* Exact homepage header lock */
+.site-header.initi-header,
+.site-header.initi-header.support-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255,255,255,.94) !important;
+  backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(229,237,245,.9) !important;
+  box-shadow: none !important;
+}
+.site-header.initi-header .container.header-inner,
+.site-header.initi-header .header-inner {
+  width: min(1180px, calc(100% - 40px)) !important;
+  margin: 0 auto !important;
+  min-height: 86px !important;
+  height: 86px !important;
+  max-height: 86px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 18px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+.site-header.initi-header .logo.logo-image {
+  flex: 0 0 160px !important;
+  width: 160px !important;
+  min-width: 160px !important;
+  max-width: 160px !important;
+  height: 70px !important;
+  min-height: 70px !important;
+  max-height: 70px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  overflow: hidden !important;
+  gap: 0 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.site-header.initi-header .logo.logo-image img,
+.site-header.initi-header .logo-image img,
+.site-header.initi-header img[src*="olay-logo-black"] {
+  width: 150px !important;
+  min-width: 0 !important;
+  max-width: 150px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: 58px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+.site-header.initi-header .nav-toggle { display: none !important; }
+.site-header.initi-header .main-nav {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: clamp(14px, 1.8vw, 28px) !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .13em !important;
+  line-height: 1.1 !important;
+  color: var(--muted) !important;
+  white-space: nowrap !important;
+  position: static !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+.site-header.initi-header .main-nav > a,
+.site-header.initi-header .nav-dropdown > a {
+  padding: 31px 0 !important;
+  display: inline-block !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  line-height: inherit !important;
+  white-space: nowrap !important;
+  color: var(--muted) !important;
+}
+.site-header.initi-header .main-nav a:hover,
+.site-header.initi-header .main-nav a.active,
+.site-header.initi-header .nav-dropdown > a.active {
+  color: var(--brand) !important;
+}
+.site-header.initi-header .header-cta {
+  flex: 0 0 auto !important;
+  margin-left: 18px !important;
+  min-width: 160px !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  padding: 18px 26px !important;
+  background: var(--brand) !important;
+  color: var(--white) !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .12em !important;
+  line-height: 1.1 !important;
+  box-shadow: 0 12px 28px rgba(18,58,90,.18) !important;
+  white-space: nowrap !important;
+}
+.site-header.initi-header .dropdown-panel {
+  top: 78px !important;
+  min-width: 230px !important;
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  letter-spacing: .06em !important;
+  text-transform: uppercase !important;
+  line-height: 1.2 !important;
+}
+.site-header.initi-header .support-dropdown .dropdown-panel { right: 0 !important; left: auto !important; }
+
+@media (max-width: 1180px) {
+  .site-header.initi-header .main-nav { gap: 14px !important; letter-spacing: .08em !important; font-size: 13px !important; }
+  .site-header.initi-header .header-cta { min-width: 130px !important; padding: 15px 18px !important; }
+  .site-header.initi-header .logo.logo-image { flex-basis: 130px !important; width: 130px !important; min-width: 130px !important; max-width:130px !important; }
+  .site-header.initi-header .logo.logo-image img,
+  .site-header.initi-header img[src*="olay-logo-black"] { width: 120px !important; max-width: 120px !important; max-height: 52px !important; }
+}
+@media (max-width: 920px) {
+  .site-header.initi-header .header-inner,
+  .site-header.initi-header .container.header-inner { height: 78px !important; min-height: 78px !important; max-height: none !important; }
+  .site-header.initi-header .main-nav { position: absolute !important; left: 20px !important; right: 20px !important; top: 82px !important; background: #fff !important; border: 1px solid var(--line) !important; border-radius: 22px !important; padding: 18px !important; display: none !important; flex-direction: column !important; align-items: stretch !important; gap: 8px !important; box-shadow: var(--shadow) !important; font-size:15px !important; text-transform:none !important; letter-spacing:0 !important; }
+  .site-header.initi-header .main-nav.open,
+  .site-header.initi-header .main-nav.is-open { display:flex !important; }
+  .site-header.initi-header .main-nav > a,
+  .site-header.initi-header .nav-dropdown > a { padding: 10px 0 !important; }
+  .site-header.initi-header .nav-toggle { display: inline-grid !important; place-items:center !important; }
+  .site-header.initi-header .header-cta { display: none !important; }
+  .site-header.initi-header .dropdown-panel { position: static !important; opacity: 1 !important; visibility: visible !important; transform:none !important; box-shadow:none !important; border-radius:16px !important; margin-top:6px !important; display:none !important; }
+  .site-header.initi-header .nav-dropdown.open .dropdown-panel { display:grid !important; }
+}
