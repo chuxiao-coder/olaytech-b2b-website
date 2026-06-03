@@ -1,0 +1,183 @@
+/* Olaytech 4.7 Header Lock Patch
+   Makes Support, Buyer Guide and By Application pages use the same header scale as the homepage.
+   Load this file AFTER style.css and AFTER page-specific css files. */
+
+body.support-v45 .site-header.initi-header,
+body.buyer-guide-body .site-header.initi-header,
+body.application-catalog-body .site-header.initi-header {
+  background: rgba(255,255,255,.96) !important;
+  border-bottom: 1px solid rgba(229,237,245,.92) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+body.support-v45 .site-header.initi-header .header-inner,
+body.buyer-guide-body .site-header.initi-header .header-inner,
+body.application-catalog-body .site-header.initi-header .header-inner {
+  height: 112px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+body.support-v45 .site-header.initi-header .logo-image,
+body.buyer-guide-body .site-header.initi-header .logo-image,
+body.application-catalog-body .site-header.initi-header .logo-image {
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+  flex: 0 0 220px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+body.support-v45 .site-header.initi-header .logo-image img,
+body.buyer-guide-body .site-header.initi-header .logo-image img,
+body.application-catalog-body .site-header.initi-header .logo-image img,
+body.application-catalog-body img[src*="olay-logo"],
+body.support-v45 img[src*="olay-logo"],
+body.buyer-guide-body img[src*="olay-logo"] {
+  width: 210px !important;
+  height: auto !important;
+  max-width: 210px !important;
+  max-height: 82px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+body.support-v45 .site-header.initi-header .main-nav,
+body.buyer-guide-body .site-header.initi-header .main-nav,
+body.application-catalog-body .site-header.initi-header .main-nav {
+  margin-left: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .115em !important;
+  line-height: 1.1 !important;
+  color: var(--muted) !important;
+}
+
+body.support-v45 .site-header.initi-header .main-nav > a,
+body.support-v45 .site-header.initi-header .nav-dropdown > a,
+body.buyer-guide-body .site-header.initi-header .main-nav > a,
+body.buyer-guide-body .site-header.initi-header .nav-dropdown > a,
+body.application-catalog-body .site-header.initi-header .main-nav > a,
+body.application-catalog-body .site-header.initi-header .nav-dropdown > a {
+  padding: 43px 0 !important;
+  display: inline-block !important;
+  font: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+}
+
+body.support-v45 .site-header.initi-header .main-nav a:hover,
+body.support-v45 .site-header.initi-header .main-nav a.active,
+body.buyer-guide-body .site-header.initi-header .main-nav a:hover,
+body.buyer-guide-body .site-header.initi-header .main-nav a.active,
+body.application-catalog-body .site-header.initi-header .main-nav a:hover,
+body.application-catalog-body .site-header.initi-header .main-nav a.active {
+  color: var(--brand) !important;
+}
+
+body.support-v45 .site-header.initi-header .header-cta,
+body.buyer-guide-body .site-header.initi-header .header-cta,
+body.application-catalog-body .site-header.initi-header .header-cta {
+  min-width: 230px !important;
+  height: 76px !important;
+  padding: 0 32px !important;
+  border-radius: 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 20px !important;
+  font-weight: 900 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .10em !important;
+  line-height: 1 !important;
+  background: var(--brand) !important;
+  color: #fff !important;
+  box-shadow: 0 18px 45px rgba(18,58,90,.18) !important;
+}
+
+body.support-v45 .site-header.initi-header .dropdown-panel,
+body.buyer-guide-body .site-header.initi-header .dropdown-panel,
+body.application-catalog-body .site-header.initi-header .dropdown-panel {
+  top: 96px !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  letter-spacing: .04em !important;
+  text-transform: none !important;
+  line-height: 1.25 !important;
+}
+
+body.support-v45 .site-header.initi-header .dropdown-panel a,
+body.buyer-guide-body .site-header.initi-header .dropdown-panel a,
+body.application-catalog-body .site-header.initi-header .dropdown-panel a {
+  padding: 10px 12px !important;
+  letter-spacing: .02em !important;
+  text-transform: none !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+@media (max-width: 1180px) {
+  body.support-v45 .site-header.initi-header .main-nav,
+  body.buyer-guide-body .site-header.initi-header .main-nav,
+  body.application-catalog-body .site-header.initi-header .main-nav {
+    gap: 16px !important;
+    font-size: 15px !important;
+    letter-spacing: .075em !important;
+  }
+  body.support-v45 .site-header.initi-header .header-cta,
+  body.buyer-guide-body .site-header.initi-header .header-cta,
+  body.application-catalog-body .site-header.initi-header .header-cta {
+    min-width: 190px !important;
+    height: 66px !important;
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  body.support-v45 .site-header.initi-header .header-inner,
+  body.buyer-guide-body .site-header.initi-header .header-inner,
+  body.application-catalog-body .site-header.initi-header .header-inner {
+    height: 82px !important;
+  }
+  body.support-v45 .site-header.initi-header .logo-image,
+  body.buyer-guide-body .site-header.initi-header .logo-image,
+  body.application-catalog-body .site-header.initi-header .logo-image {
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 150px !important;
+    flex-basis: 150px !important;
+  }
+  body.support-v45 .site-header.initi-header .logo-image img,
+  body.buyer-guide-body .site-header.initi-header .logo-image img,
+  body.application-catalog-body .site-header.initi-header .logo-image img,
+  body.application-catalog-body img[src*="olay-logo"],
+  body.support-v45 img[src*="olay-logo"],
+  body.buyer-guide-body img[src*="olay-logo"] {
+    width: 145px !important;
+    max-width: 145px !important;
+    max-height: 58px !important;
+  }
+  body.support-v45 .site-header.initi-header .main-nav,
+  body.buyer-guide-body .site-header.initi-header .main-nav,
+  body.application-catalog-body .site-header.initi-header .main-nav {
+    font-size: 15px !important;
+    letter-spacing: .05em !important;
+  }
+  body.support-v45 .site-header.initi-header .main-nav > a,
+  body.support-v45 .site-header.initi-header .nav-dropdown > a,
+  body.buyer-guide-body .site-header.initi-header .main-nav > a,
+  body.buyer-guide-body .site-header.initi-header .nav-dropdown > a,
+  body.application-catalog-body .site-header.initi-header .main-nav > a,
+  body.application-catalog-body .site-header.initi-header .nav-dropdown > a {
+    padding: 10px 0 !important;
+  }
+}
