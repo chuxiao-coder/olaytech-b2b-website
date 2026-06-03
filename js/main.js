@@ -7,12 +7,11 @@ if (navToggle && mainNav) {
   });
 }
 
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', event => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (target) {
+document.querySelectorAll('.nav-dropdown > a').forEach((trigger) => {
+  trigger.addEventListener('click', (event) => {
+    if (window.innerWidth <= 1024) {
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth' });
+      trigger.parentElement.classList.toggle('open');
     }
   });
 });
