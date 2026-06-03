@@ -1,6 +1,5 @@
 
 /* Olaytech Application Catalog Patch
-   Purpose: By Application pages use three-level navigation without duplicate product detail pages.
    This file is scoped to application pages and does not change the homepage or contact form logic. */
 .application-catalog-body { background:#fff; color:#071225; }
 .application-catalog-body .site-header .logo-image,
