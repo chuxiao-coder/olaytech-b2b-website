@@ -1,63 +1,69 @@
 
-/* Olaytech By Application three-level catalog pages. Safe add-on stylesheet. */
-.logo-image img { max-height: 58px; width: auto; object-fit: contain; }
-.initi-header .header-inner { min-height: 86px; }
-.application-hero { position: relative; overflow: hidden; padding: 74px 0 54px; background: radial-gradient(circle at 12% 10%, rgba(244,184,76,.16), transparent 34%), linear-gradient(135deg,#f8fbff 0%,#eef6fb 52%,#fff 100%); border-bottom: 1px solid var(--line, #e5edf5); }
-.application-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; }
-.application-hero h1 { max-width: 880px; }
-.application-hero p { color: var(--muted, #617086); font-size: 18px; max-width: 720px; }
-.application-map-card { background: #fff; border: 1px solid var(--line, #e5edf5); border-radius: 30px; box-shadow: var(--shadow-soft, 0 14px 38px rgba(18,58,90,.08)); padding: 28px; }
-.application-map-card h3 { margin-bottom: 18px; }
-.app-map-list { display: grid; gap: 12px; }
-.app-map-list a { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-radius: 16px; background: var(--soft,#f5f8fc); color: var(--brand,#123a5a); font-weight: 850; }
-.application-category-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-.application-card { position: relative; display: grid; gap: 16px; padding: 26px; border-radius: 28px; background: #fff; border: 1px solid var(--line,#e5edf5); box-shadow: var(--shadow-soft,0 14px 38px rgba(18,58,90,.08)); overflow: hidden; min-height: 280px; transition: transform .22s ease, box-shadow .22s ease; }
-.application-card:hover { transform: translateY(-5px); box-shadow: var(--shadow,0 22px 60px rgba(18,58,90,.13)); }
-.application-card::before { content:""; position:absolute; right:-40px; top:-48px; width:150px; height:150px; border-radius:999px; background: rgba(36,108,142,.10); }
-.app-index { width: 50px; height: 50px; border-radius: 18px; display:grid; place-items:center; background: var(--brand,#123a5a); color:#fff; font-weight:950; letter-spacing:.08em; }
-.application-card h3 { margin-bottom: 8px; font-size: 24px; }
-.application-card p { color: var(--muted,#617086); margin-bottom: 12px; }
-.app-tags { display:flex; flex-wrap: wrap; gap:8px; margin-top:auto; }
-.app-tags span { font-size: 12px; font-weight:850; color: var(--brand-2,#246c8e); background: rgba(36,108,142,.10); border-radius:999px; padding: 7px 10px; }
-.application-browse-hero { padding: 58px 0; background: linear-gradient(135deg,#f8fbff,#eef6fb); border-bottom: 1px solid var(--line,#e5edf5); }
-.breadcrumb { display:flex; flex-wrap: wrap; gap:8px; align-items:center; color: var(--muted,#617086); margin-bottom: 18px; font-weight:800; }
-.breadcrumb a { color: var(--brand-2,#246c8e); }
-.app-browse-intro { display:grid; grid-template-columns: 1fr 350px; gap: 26px; align-items: end; }
-.app-summary-box { background: #fff; border:1px solid var(--line,#e5edf5); border-radius: 26px; padding: 24px; box-shadow: var(--shadow-soft,0 14px 38px rgba(18,58,90,.08)); }
-.app-summary-box strong { display:block; font-size: 28px; color: var(--brand,#123a5a); line-height:1; }
-.app-summary-box span { color: var(--muted,#617086); font-weight:800; }
-.product-catalog-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:24px; }
-.product-catalog-card { overflow:hidden; border-radius: 28px; background:#fff; border:1px solid var(--line,#e5edf5); box-shadow: var(--shadow-soft,0 14px 38px rgba(18,58,90,.08)); transition: transform .22s ease, box-shadow .22s ease; }
-.product-catalog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow,0 22px 60px rgba(18,58,90,.13)); }
-.product-image-slot { aspect-ratio: 4 / 3; background: #edf4fa; display:block; overflow:hidden; }
-.product-image-slot img { width:100%; height:100%; object-fit:cover; }
-.product-card-copy { padding: 20px; }
-.product-card-copy .eyebrow { margin-bottom: 8px; }
-.product-card-copy h3 { font-size: 22px; margin-bottom: 8px; }
-.product-card-copy p { color: var(--muted,#617086); margin-bottom: 14px; }
-.detail-hero-app { background: linear-gradient(135deg,#f8fbff,#eef6fb); padding: 34px 0; border-bottom:1px solid var(--line,#e5edf5); }
-.application-detail-grid { display:grid; grid-template-columns: minmax(0, .95fr) minmax(420px, .85fr); gap: 44px; align-items:start; }
-.app-detail-gallery { background:#fff; border:1px solid var(--line,#e5edf5); border-radius: 34px; padding: 18px; box-shadow: var(--shadow-soft,0 14px 38px rgba(18,58,90,.08)); }
-.app-main-product-image { border-radius: 26px; overflow:hidden; background:#edf4fa; aspect-ratio: 4 / 3; display:grid; place-items:center; }
-.app-main-product-image img { width:100%; height:100%; object-fit:cover; }
-.thumbnail-row { display:flex; gap: 10px; margin-top: 14px; flex-wrap:wrap; }
-.thumb-btn { border:2px solid transparent; padding:0; border-radius:14px; overflow:hidden; cursor:pointer; background:#fff; width:82px; height:70px; }
-.thumb-btn.active { border-color: var(--brand-2,#246c8e); }
-.thumb-btn img { width:100%; height:100%; object-fit:cover; }
-.app-detail-info h1 { margin-bottom: 14px; }
-.detail-lead { color: var(--muted,#617086); font-size: 18px; }
-.spec-table { width:100%; border-collapse: collapse; margin: 24px 0; overflow:hidden; border-radius:20px; box-shadow: 0 0 0 1px var(--line,#e5edf5); }
-.spec-table th, .spec-table td { padding: 14px 16px; text-align:left; border-bottom:1px solid var(--line,#e5edf5); }
-.spec-table th { width:34%; background: var(--soft,#f5f8fc); color: var(--ink,#142033); }
-.spec-table td { color: var(--muted,#617086); }
-.spec-table tr:last-child th, .spec-table tr:last-child td { border-bottom:0; }
-.detail-actions { display:flex; gap:12px; flex-wrap:wrap; }
-.dark-btn { background: var(--brand-3,#0c263c); color:#fff; }
-.product-info-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.product-info-grid article { background:#fff; border:1px solid var(--line,#e5edf5); border-radius: 28px; padding:28px; box-shadow: var(--shadow-soft,0 14px 38px rgba(18,58,90,.08)); }
-.check-list { display:grid; gap:10px; padding-left:20px; color: var(--muted,#617086); }
-.related-products { display:grid; gap:12px; }
-.related-product { display:grid; grid-template-columns: 80px 1fr; align-items:center; gap:14px; padding:10px; border-radius: 18px; background: var(--soft,#f5f8fc); font-weight:850; color: var(--brand,#123a5a); }
-.related-product img { width:80px; height:64px; object-fit:cover; border-radius:12px; }
-@media (max-width: 1024px) { .application-hero-grid, .app-browse-intro, .application-detail-grid, .product-info-grid { grid-template-columns: 1fr; } .application-category-grid, .product-catalog-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
-@media (max-width: 680px) { .application-category-grid, .product-catalog-grid { grid-template-columns: 1fr; } .application-hero { padding: 46px 0; } .logo-image img { max-height: 44px; } }
+/* Olaytech Application Catalog Patch
+   Purpose: By Application pages use three-level navigation without duplicate product detail pages.
+   This file is scoped to application pages and does not change the homepage or contact form logic. */
+.application-catalog-body { background:#fff; color:#071225; }
+.application-catalog-body .site-header .logo-image,
+.application-catalog-body .initi-header .logo.logo-image { width:140px !important; min-width:140px !important; max-width:140px !important; flex:0 0 140px !important; overflow:hidden; display:flex; align-items:center; }
+.application-catalog-body .site-header .logo-image img,
+.application-catalog-body .initi-header .logo.logo-image img,
+.application-catalog-body img[src*="olay-logo"] { width:126px !important; max-width:126px !important; max-height:48px !important; object-fit:contain !important; display:block; }
+.application-catalog-body .main-nav a.active { color:#0b3a5b; }
+.app-hero { padding: 82px 0 56px; background: linear-gradient(135deg,#f8fbfd 0%,#eef7fb 100%); border-bottom:1px solid rgba(8,31,53,.08); }
+.app-sub-hero { padding-top:70px; }
+.app-hero-grid { display:grid; grid-template-columns:minmax(0,1.35fr) minmax(320px,.65fr); gap:34px; align-items:center; }
+.app-hero h1 { font-size:clamp(44px,6.5vw,92px); line-height:.96; letter-spacing:-.06em; margin:16px 0 20px; color:#081225; max-width:1050px; }
+.app-hero p { max-width:850px; color:#5d6b7e; font-size:18px; line-height:1.7; }
+.app-logic-panel { background:#fff; border:1px solid rgba(8,31,53,.10); border-radius:30px; padding:28px; box-shadow:0 24px 70px rgba(8,31,53,.10); }
+.app-logic-panel strong { display:block; font-size:24px; color:#0b3a5b; margin-bottom:12px; }
+.app-logic-panel ul { margin:0; padding-left:18px; color:#5d6b7e; line-height:1.9; }
+.app-logic-panel p { font-size:16px; line-height:1.7; margin:0 0 18px; }
+.app-section-soft { background:#f6fafc; }
+.section-heading.compact { max-width:760px; margin-bottom:32px; }
+.section-heading.compact h2 { font-size:clamp(34px,4vw,58px); line-height:1; letter-spacing:-.04em; margin:8px 0 12px; }
+.section-heading.compact p { color:#5d6b7e; }
+.app-entry-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.app-entry-card, .app-product-card, .app-related-card, .app-cross-card { background:#fff; border:1px solid rgba(8,31,53,.10); border-radius:28px; overflow:hidden; box-shadow:0 18px 50px rgba(8,31,53,.08); transition:transform .2s ease, box-shadow .2s ease; }
+.app-entry-card:hover, .app-product-card:hover, .app-cross-card:hover { transform:translateY(-5px); box-shadow:0 28px 72px rgba(8,31,53,.12); }
+.app-entry-image { height:230px; background:#f8fafc; display:block; border-bottom:1px solid rgba(8,31,53,.08); }
+.app-entry-image img { width:100%; height:100%; object-fit:contain; padding:20px; display:block; }
+.app-entry-body { padding:24px; }
+.app-count { color:#20708d; font-weight:950; letter-spacing:.12em; font-size:13px; }
+.app-entry-body h3 { font-size:25px; line-height:1.12; margin:10px 0; }
+.app-entry-body h3 a { color:#081225; }
+.app-entry-body p { color:#5d6b7e; min-height:78px; }
+.app-link { color:#0b3a5b; font-weight:950; }
+.app-product-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px; }
+.app-product-card { display:flex; flex-direction:column; }
+.app-product-media { height:310px; display:block; background:#fff; border-bottom:1px solid rgba(8,31,53,.08); }
+.app-product-media img { width:100%; height:100%; object-fit:contain; padding:20px; display:block; }
+.app-product-body { padding:22px; display:flex; flex-direction:column; gap:12px; flex:1; }
+.app-product-meta { display:flex; justify-content:space-between; gap:10px; color:#20708d; font-size:12px; font-weight:950; text-transform:uppercase; letter-spacing:.08em; }
+.app-product-body h3 { font-size:24px; line-height:1.12; margin:0; }
+.app-product-body h3 a { color:#081225; }
+.app-product-body p { color:#5d6b7e; margin:0; flex:1; }
+.app-product-actions { display:flex; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(8,31,53,.08); padding-top:16px; }
+.app-product-actions a:first-child { color:#0b3a5b; font-weight:950; }
+.app-product-actions a:last-child { color:#fff; background:#0b3a5b; border-radius:999px; padding:9px 14px; font-weight:950; }
+.app-cross-grid, .app-related-layout { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.app-cross-card, .app-related-card { padding:28px; }
+.app-cross-card h3, .app-related-card h3 { font-size:26px; line-height:1.1; margin-bottom:12px; }
+.app-cross-card p, .app-related-card p { color:#5d6b7e; }
+.app-cross-card a, .app-related-card a:not(.btn) { color:#0b3a5b; font-weight:950; }
+.app-related-card.dark { background:#0b3a5b; color:#fff; }
+.app-related-card.dark p { color:rgba(255,255,255,.78); }
+.app-link-list { display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.app-link-list a, .app-chip-group span { border:1px solid rgba(8,31,53,.12); background:#f6fafc; border-radius:999px; padding:9px 13px; color:#0b3a5b; font-weight:900; font-size:14px; }
+.app-chip-group { display:flex; flex-wrap:wrap; gap:10px; }
+.app-chip-group span { background:#eaf4f8; }
+@media (max-width: 1120px) {
+  .app-hero-grid, .app-entry-grid, .app-product-grid, .app-cross-grid, .app-related-layout { grid-template-columns:1fr 1fr; }
+  .app-logic-panel { order:2; }
+}
+@media (max-width: 760px) {
+  .app-hero-grid, .app-entry-grid, .app-product-grid, .app-cross-grid, .app-related-layout { grid-template-columns:1fr; }
+  .app-hero { padding:54px 0 40px; }
+  .app-hero h1 { font-size:42px; }
+  .app-product-media { height:260px; }
+  .app-entry-image { height:210px; }
+}
