@@ -842,3 +842,154 @@ h3 { line-height: 1.15; letter-spacing: -0.025em; }
 .split-card-image img { width: 100%; height: 240px; object-fit: contain; display:block; background:#f8fafc; padding:18px; }
 @media (max-width: 1120px) { .catalog-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } .detail-grid, .catalog-hero-grid { grid-template-columns: 1fr; } .detail-gallery { position: static; } .material-page-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 720px) { .catalog-grid, .material-page-grid, .product-info-grid { grid-template-columns: 1fr; } .catalog-image { height: 260px; } .main-product-image { height: 380px; } .thumbnail-row { grid-template-columns: repeat(4, 1fr); } .thumb-btn { height: 78px; } .catalog-hero h1, .detail-info h1 { font-size: 42px; } }
+
+/* Olaytech 5.4 Visual Polish
+   Designed to reduce template feeling while keeping pages ready for real product photos. */
+body {
+  background: #fbfdff;
+}
+.site-header {
+  box-shadow: 0 10px 28px rgba(18, 58, 90, 0.035);
+}
+.logo-image img,
+.footer-logo img {
+  object-fit: contain;
+}
+.catalog-hero,
+.page-hero,
+.compact-hero {
+  padding: 58px 0 42px !important;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(42,111,151,.10), transparent 30%),
+    linear-gradient(135deg, #f8fbff 0%, #eef5fa 100%);
+  border-bottom: 1px solid rgba(229,237,245,.85);
+}
+.catalog-hero h1,
+.page-hero h1,
+.compact-hero h1 {
+  max-width: 980px;
+  font-size: clamp(34px, 4.6vw, 58px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.045em !important;
+  margin-bottom: 18px;
+}
+.catalog-hero p,
+.page-hero p,
+.compact-hero p {
+  max-width: 840px;
+  font-size: 17px;
+}
+.catalog-hero-grid {
+  gap: 36px !important;
+  align-items: center;
+}
+.catalog-side-note {
+  background: rgba(255,255,255,.84) !important;
+  border: 1px solid rgba(214,226,238,.92) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 18px 48px rgba(18,58,90,.08) !important;
+  padding: 28px !important;
+}
+.catalog-side-note strong {
+  color: var(--brand);
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+.catalog-side-note p {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+.category-quick-tags span,
+.option-chip-list span,
+.tag-grid a {
+  background: #eef5fa;
+  border: 1px solid rgba(18,58,90,.08);
+  color: #123a5a;
+}
+.split-card,
+.catalog-card,
+.option-panel,
+.panel-block {
+  border-color: rgba(214,226,238,.96) !important;
+  box-shadow: 0 14px 34px rgba(18,58,90,.065) !important;
+}
+.split-card:hover,
+.catalog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 60px rgba(18,58,90,.12) !important;
+}
+.split-card-image,
+.catalog-image,
+.app-product-media,
+.detail-main-image,
+.thumb {
+  background: #f3f7fb;
+  overflow: hidden;
+}
+.split-card-image img,
+.catalog-image img,
+.app-product-media img,
+.detail-main-image img,
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .28s ease;
+}
+.split-card:hover img,
+.catalog-card:hover img,
+.app-product-card:hover img {
+  transform: scale(1.035);
+}
+.catalog-grid {
+  gap: 24px !important;
+}
+.catalog-card {
+  border-radius: 24px !important;
+  background: #fff;
+}
+.catalog-image {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px 20px 0 0;
+}
+.catalog-card-body {
+  padding: 22px !important;
+}
+.catalog-meta {
+  color: #246c8e !important;
+  font-size: 11px !important;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.catalog-card h3 {
+  font-size: 22px !important;
+  margin: 10px 0 8px !important;
+}
+.catalog-card p {
+  color: #617086;
+  font-size: 15px;
+}
+.mini-specs span {
+  border-radius: 999px;
+  background: #f2f6fa !important;
+  border: 1px solid rgba(18,58,90,.08);
+}
+.product-browser-head {
+  margin-bottom: 28px !important;
+}
+.product-browser-head h2 {
+  font-size: clamp(28px, 3vw, 42px) !important;
+}
+.cta-section .cta-box,
+.cta-box {
+  border-radius: 30px !important;
+  box-shadow: 0 24px 60px rgba(18,58,90,.14);
+}
+.whatsapp-float {
+  box-shadow: 0 18px 40px rgba(34, 197, 94, .24) !important;
+}
+@media (max-width: 920px) {
+  .catalog-hero-grid { grid-template-columns: 1fr !important; }
+  .catalog-hero h1, .page-hero h1, .compact-hero h1 { font-size: clamp(32px, 10vw, 46px) !important; }
+}

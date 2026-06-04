@@ -66,3 +66,11 @@
   .app-product-media { height:260px; }
   .app-entry-image { height:210px; }
 }
+
+/* 5.4 application page polish */
+.app-product-card, .application-card, .guide-card {
+  box-shadow: 0 14px 34px rgba(18,58,90,.065) !important;
+  border-color: rgba(214,226,238,.96) !important;
+}
+.app-product-media { aspect-ratio: 4 / 3; background:#f3f7fb; }
+.app-hero h1 { font-size: clamp(34px, 4.6vw, 58px) !important; line-height:1.04 !important; }
