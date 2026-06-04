@@ -98,3 +98,42 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}p,h1,h2,h3
 @media(max-width:1180px){.category-tile{flex-basis:278px}.hero-image-card{min-height:auto}.product-preview-card{grid-template-columns:1fr}.preview-gallery img{height:auto;max-height:360px}.process-steps{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:760px){.process-steps{grid-template-columns:1fr 1fr}.category-tile{flex-basis:248px;grid-template-columns:90px 1fr;min-height:116px}.category-tile img{width:90px;height:88px}.category-tile strong{font-size:18px}.category-tile span{font-size:13px}.hero h1{font-size:37px}.hero-text{font-size:15.5px}.product-preview-card{padding:16px}.preview-specs div{grid-template-columns:1fr}.preview-specs dt,.preview-specs dd{padding:9px 12px}}
 @media(max-width:520px){.process-steps{grid-template-columns:1fr}.process-steps article{min-height:auto}.category-tile{flex-basis:222px}.category-tile img{width:82px;height:82px}.category-tile strong{font-size:17px}.hero h1{font-size:34px}}
+
+/* Olaytech 5.9 - homepage hero image adaptive fit */
+.hero-grid{
+  grid-template-columns:.86fr 1.14fr;
+  align-items:center;
+  gap:34px;
+}
+.hero-image-card{
+  align-self:center;
+  min-height:0 !important;
+  height:auto !important;
+  aspect-ratio:16/9;
+  border-radius:28px;
+  overflow:hidden;
+  background:#f6f8f9;
+  box-shadow:0 24px 70px rgba(8,38,64,.10);
+}
+.hero-image-card::before{display:none;}
+.hero-image-card img{
+  width:100%;
+  height:100% !important;
+  max-height:none !important;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  object-position:center center;
+  border-radius:28px;
+  filter:saturate(1.01) contrast(1.03);
+}
+@media(max-width:1180px){
+  .hero-grid{grid-template-columns:1fr;gap:22px;}
+  .hero-image-card{width:100%;max-width:980px;margin:0 auto 28px;border-radius:24px;}
+  .hero-image-card img{border-radius:24px;}
+}
+@media(max-width:680px){
+  .hero-image-card{aspect-ratio:4/3;border-radius:20px;}
+  .hero-image-card img{border-radius:20px;object-position:center center;}
+}
+.hero-image-card picture{display:block;width:100%;height:100%;}
+.hero-image-card picture img{display:block;}
