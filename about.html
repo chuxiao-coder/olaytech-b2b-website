@@ -1,233 +1,259 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About O'Lay | Custom Bag Manufacturer</title>
-  <meta name="description" content="Learn about O'Lay, a professional OEM and ODM bag manufacturer in China with reliable sample development, production capacity and export support." />
-  <link rel="stylesheet" href="css/homepage-57.css" />
-  <style>
-    .about62-page{background:linear-gradient(180deg,#f7fbfd 0%,#ffffff 44%,#f9fbfd 100%)}
-    .about62-hero{padding:26px 0 18px;border-bottom:1px solid var(--line);background:#fff}
-    .about62-hero-grid{display:grid;grid-template-columns:.9fr 1.35fr;gap:34px;align-items:stretch}
-    .about62-copy{padding:18px 0 10px}
-    .about62-copy h1{font-family:Georgia,'Times New Roman',serif;color:#081a37;font-size:clamp(52px,5.2vw,76px);line-height:.94;letter-spacing:-.04em;margin:0 0 16px}
-    .about62-copy p{max-width:560px;color:#49586b;font-size:17px;line-height:1.68;margin:0 0 20px}
-    .about62-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;margin:20px 0 26px;padding:0;list-style:none}
-    .about62-points li{display:flex;align-items:center;gap:10px;font-weight:700;color:#122945;font-size:14px}
-    .about62-points li::before{content:'✓';display:grid;place-items:center;flex:0 0 18px;width:18px;height:18px;border-radius:50%;background:#eef4f8;color:var(--navy);font-size:12px;font-weight:900}
-    .about62-hero-image{height:100%;min-height:330px;border-radius:0 0 0 0;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-soft);border-radius:20px}
-    .about62-hero-image img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .about62-stats-wrap{margin-top:-2px;padding-bottom:18px;background:#fff}
-    .about62-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-soft);overflow:hidden}
-    .about62-stat{padding:18px 20px;display:flex;gap:14px;align-items:flex-start;min-height:94px}
-    .about62-stat + .about62-stat{border-left:1px solid var(--line)}
-    .about62-icon{width:42px;height:42px;border-radius:14px;border:1px solid #d5e4ee;display:grid;place-items:center;color:var(--navy);font-weight:900;background:#fbfdff;flex:0 0 42px}
-    .about62-stat strong{display:block;font-size:30px;line-height:1;color:#0b2140;margin-bottom:4px}
-    .about62-stat em{display:block;font-style:normal;font-size:14px;font-weight:800;color:#0f2744;margin-bottom:3px}
-    .about62-stat span{display:block;color:var(--muted);font-size:12px;line-height:1.45}
-    .about62-section{padding:18px 0}
-    .about62-overview{display:grid;grid-template-columns:.95fr 1.25fr;gap:22px;align-items:start}
-    .about62-textcard{padding:6px 0}
-    .about62-textcard h2,.about62-strength-copy h2{font-family:Georgia,'Times New Roman',serif;color:#102444;font-size:46px;line-height:1.02;letter-spacing:-.04em;margin:0 0 14px}
-    .about62-textcard p,.about62-strength-copy p{margin:0 0 12px;color:#4f5e71;font-size:16px;line-height:1.72}
-    .about62-capability-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-    .about62-capability{display:grid;grid-template-columns:66px 1fr 140px;align-items:center;min-height:104px;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(8,38,64,.05)}
-    .about62-capability .about62-icon{margin-left:18px}
-    .about62-capability div{padding:18px 8px 18px 0}
-    .about62-capability strong{display:block;color:#0e2541;font-size:18px;line-height:1.15;margin-bottom:4px}
-    .about62-capability p{margin:0;color:var(--muted);font-size:13px;line-height:1.46}
-    .about62-capability img{width:100%;height:100%;object-fit:cover}
-    .about62-strength{display:grid;grid-template-columns:1fr .92fr;gap:26px;align-items:center;margin-top:10px}
-    .about62-strength-visual{border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow-soft);height:316px;background:#fff}
-    .about62-strength-visual img{width:100%;height:100%;object-fit:cover;object-position:center}
-    .about62-mini-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
-    .about62-mini{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 10px 26px rgba(8,38,64,.05)}
-    .about62-mini strong{display:block;color:#102544;font-size:15px;line-height:1.2;margin:10px 0 6px}
-    .about62-mini p{margin:0;color:var(--muted);font-size:13px;line-height:1.46}
-    .about62-bottom{padding:8px 0 26px}
-    .about62-bottom-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-    .about62-bottom-card{display:grid;grid-template-columns:72px 1fr;gap:14px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 10px 24px rgba(8,38,64,.045)}
-    .about62-bottom-card .about62-icon{width:54px;height:54px;border-radius:50%;font-size:18px;background:var(--navy);color:#fff;border:0}
-    .about62-bottom-card strong{display:block;color:#102544;font-size:18px;line-height:1.2;margin-top:4px;margin-bottom:6px}
-    .about62-bottom-card p{margin:0 0 8px;color:var(--muted);font-size:13px;line-height:1.5}
-    .about62-bottom-card a{font-weight:900;color:var(--navy);font-size:13px}
-    .about62-cta{padding-bottom:58px}
-    .about62-cta-card{display:flex;justify-content:space-between;align-items:center;gap:26px;background:linear-gradient(135deg,#082544 0%,#10365d 100%);color:#fff;border-radius:24px;padding:26px 30px;box-shadow:0 24px 54px rgba(8,38,64,.16)}
-    .about62-cta-card h3{margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:1.06}
-    .about62-cta-card p{margin:0;color:rgba(255,255,255,.78);max-width:600px}
-    .about62-cta-card .btn-secondary{background:#fff;color:var(--navy)!important;border-color:#fff}
-    @media(max-width:1180px){
-      .about62-hero-grid,.about62-overview,.about62-strength{grid-template-columns:1fr}
-      .about62-stats{grid-template-columns:repeat(2,1fr)}
-      .about62-stat:nth-child(odd){border-left:0}
-      .about62-capability-grid,.about62-bottom-grid{grid-template-columns:1fr 1fr}
-      .about62-hero-image{min-height:300px}
-    }
-    @media(max-width:780px){
-      .about62-copy h1{font-size:42px}.about62-textcard h2,.about62-strength-copy h2{font-size:34px}
-      .about62-points,.about62-mini-grid,.about62-stats,.about62-capability-grid,.about62-bottom-grid{grid-template-columns:1fr}
-      .about62-stat + .about62-stat{border-left:0;border-top:1px solid var(--line)}
-      .about62-capability{grid-template-columns:56px 1fr}.about62-capability img{display:none}
-      .about62-cta-card{display:grid}.about62-strength-visual{height:260px}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About O'Lay | Trusted Custom Bag Manufacturing Partner</title>
+  <meta name="description" content="O'Lay is a professional OEM and ODM custom bag manufacturer in China, supporting cosmetic bags, toiletry bags, shopping bags, cooler bags, sports bags and travel organizers for global B2B buyers.">
+  <link rel="canonical" href="https://www.olaytech.com/about.html">
+  <meta property="og:title" content="About O'Lay | Custom Bag Manufacturer">
+  <meta property="og:description" content="20+ years of OEM/ODM custom bag manufacturing experience, skilled workers, quality control and export-ready delivery support.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.olaytech.com/about.html">
+  <link rel="stylesheet" href="assets/css/about-us-optimized.css">
 </head>
-<body class="about62-page">
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>Custom Bag Manufacturer For Global B2B Buyers</span>
-      <span class="topbar-cats">Cosmetic Bags · Toiletry Bags · Shopping Bags · Cooler Bags · Sports Bags · Travel Organizers · Custom OEM</span>
-      <span>Factory Audit Support · Global Shipping</span>
-    </div>
-  </div>
+<body>
+  <header class="site-header" aria-label="Main navigation">
+    <div class="header-inner">
+      <a class="logo-link" href="index.html" aria-label="O'Lay home">
+        <img src="assets/brand/olay-logo-black.png" alt="O'Lay custom bag manufacturer logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span class="logo-fallback">O'Lay</span>
+      </a>
 
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="index.html" aria-label="O'Lay home"><img src="assets/brand/olay-logo-black.png" alt="O'Lay custom bag manufacturer logo" /></a>
-      <button class="nav-toggle" aria-label="Open navigation" type="button">☰</button>
-      <nav class="main-nav" aria-label="Main navigation">
-        <a href="index.html">Home</a>
-        <a class="active" href="about.html">About Us</a>
-        <div class="nav-dropdown"><a href="products.html">Products</a><div class="dropdown-panel"><a href="products.html">All Products</a><a href="cosmetic-bags.html">Cosmetic Bags</a><a href="toiletry-bags.html">Toiletry Bags</a><a href="shopping-bags.html">Shopping Bags</a><a href="cooler-bags.html">Cooler Bags</a><a href="sports-bags.html">Sports Bags</a><a href="drawstring-bags.html">Drawstring Bags</a><a href="travel-organizers.html">Travel Organizers</a><a href="card-binder.html">Card Binder Cases</a><a href="custom-oem-bags.html">Custom OEM Bags</a></div></div>
-        <div class="nav-dropdown"><a href="product-types.html">By Type</a><div class="dropdown-panel"><a href="cosmetic-bags.html">Cosmetic Bags</a><a href="toiletry-bags.html">Toiletry Bags</a><a href="shopping-bags.html">Shopping Bags</a><a href="cooler-bags.html">Cooler Bags</a><a href="sports-bags.html">Sports Bags</a><a href="drawstring-bags.html">Drawstring Bags</a><a href="travel-organizers.html">Travel Organizers</a><a href="card-binder.html">Card Binder Cases</a><a href="custom-oem-bags.html">Custom OEM Bags</a></div></div>
-        <div class="nav-dropdown"><a href="materials.html">By Material</a><div class="dropdown-panel"><a href="canvas-bags.html">Canvas Bags</a><a href="nylon-bags.html">Nylon Bags</a><a href="oxford-bags.html">Oxford Bags</a><a href="pvc-eva-bags.html">PVC EVA Bags</a><a href="neoprene-bags.html">Neoprene Bags</a><a href="rpet-bags.html">RPET Bags</a><a href="pu-leather-bags.html">PU Leather Bags</a><a href="felt-bags.html">Felt Bags</a><a href="non-woven-bags.html">Non Woven Bags</a></div></div>
-        <div class="nav-dropdown"><a href="applications.html">By Application</a><div class="dropdown-panel"><a href="application-beauty-cosmetic.html">Beauty &amp; Cosmetic</a><a href="application-travel-toiletry.html">Travel &amp; Toiletry</a><a href="application-retail-promotion.html">Retail &amp; Promotion</a><a href="application-food-cooler.html">Food &amp; Cooler</a><a href="application-outdoor-sports.html">Outdoor &amp; Sports</a><a href="application-card-storage.html">Card Storage</a><a href="application-corporate-gifts.html">Corporate Gifts</a></div></div>
-        <div class="nav-dropdown"><a href="support.html">Support</a><div class="dropdown-panel support-menu"><a href="support.html">Support Center</a><a href="blog.html">Buyer Guide</a><a href="oem-bag-manufacturing-process.html">OEM Process</a><a href="logo-methods-for-custom-bags.html">Logo Options</a><a href="material-guide.html">Material Guide</a><a href="quality-control.html">Quality Control</a><a href="download-catalog.html">Download Catalog</a><a href="faq.html">FAQ</a></div></div>
-        <a href="contact.html">Contact</a>
+      <label for="nav-toggle" class="mobile-toggle" aria-label="Open navigation">
+        <span></span><span></span><span></span>
+      </label>
+      <input class="nav-toggle" id="nav-toggle" type="checkbox" aria-hidden="true">
+
+      <nav class="primary-nav">
+        <div class="nav-item"><a class="nav-link" href="index.html">Home</a></div>
+        <div class="nav-item"><a class="nav-link active" href="about.html">About Us</a></div>
+        <div class="nav-item">
+          <a class="nav-link" href="products.html">Products</a>
+          <div class="dropdown">
+            <a href="products.html">All Products</a>
+            <a href="cosmetic-bags.html">Cosmetic Bags</a>
+            <a href="toiletry-bags.html">Toiletry Bags</a>
+            <a href="shopping-bags.html">Shopping Bags</a>
+            <a href="cooler-bags.html">Cooler Bags</a>
+            <a href="sports-bags.html">Sports Bags</a>
+            <a href="drawstring-bags.html">Drawstring Bags</a>
+            <a href="travel-organizers.html">Travel Organizers</a>
+            <a href="card-binder-cases.html">Card Binder Cases</a>
+            <a href="custom-oem-bags.html">Custom OEM Bags</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="product-types.html">By Type</a>
+          <div class="dropdown">
+            <a href="cosmetic-bags.html">Cosmetic Bags</a>
+            <a href="toiletry-bags.html">Toiletry Bags</a>
+            <a href="shopping-bags.html">Shopping Bags</a>
+            <a href="cooler-bags.html">Cooler Bags</a>
+            <a href="sports-bags.html">Sports Bags</a>
+            <a href="drawstring-bags.html">Drawstring Bags</a>
+            <a href="travel-organizers.html">Travel Organizers</a>
+            <a href="custom-oem-bags.html">Custom OEM Bags</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="materials.html">By Material</a>
+          <div class="dropdown">
+            <a href="canvas-bags.html">Canvas Bags</a>
+            <a href="nylon-bags.html">Nylon Bags</a>
+            <a href="oxford-bags.html">Oxford Bags</a>
+            <a href="pvc-eva-bags.html">PVC EVA Bags</a>
+            <a href="neoprene-bags.html">Neoprene Bags</a>
+            <a href="rpet-bags.html">RPET Bags</a>
+            <a href="pu-leather-bags.html">PU Leather Bags</a>
+            <a href="felt-bags.html">Felt Bags</a>
+            <a href="non-woven-bags.html">Non Woven Bags</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a class="nav-link" href="applications.html">By Application</a>
+          <div class="dropdown">
+            <a href="beauty-cosmetic.html">Beauty & Cosmetic</a>
+            <a href="travel-toiletry.html">Travel & Toiletry</a>
+            <a href="retail-promotion.html">Retail & Promotion</a>
+            <a href="food-cooler.html">Food & Cooler</a>
+            <a href="outdoor-sports.html">Outdoor & Sports</a>
+            <a href="card-storage.html">Card Storage</a>
+          </div>
+        </div>
+        <div class="nav-item"><a class="nav-link" href="support.html">Support</a></div>
+        <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
       </nav>
-      <a class="header-cta" href="contact.html">Get Quote <span>›</span></a>
+
+      <a class="header-cta" href="contact.html">Get Quote <span aria-hidden="true">→</span></a>
     </div>
   </header>
 
-  <main>
-    <section class="about62-hero">
-      <div class="container about62-hero-grid">
-        <div class="about62-copy">
-          <p class="eyebrow">About Us</p>
-          <h1>About O'Lay</h1>
-          <p>O'Lay is a professional OEM and ODM bag manufacturer based in China. For over 20 years, we have partnered with global brands, importers and retailers to deliver reliable custom bags with practical design, quality craftsmanship and export-ready production support.</p>
-          <ul class="about62-points">
-            <li>Custom Solutions</li>
-            <li>Reliable Quality</li>
-            <li>On-Time Delivery</li>
-            <li>Trusted Long-Term Partner</li>
-          </ul>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="contact.html">Get To Know Us <span>→</span></a>
-          </div>
+  <main class="about-page">
+    <section class="hero-wrap" aria-labelledby="about-hero-title">
+      <div class="hero-copy">
+        <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><strong>About Us</strong></div>
+        <h1 id="about-hero-title" class="hero-title">Your Trusted Custom Bag Manufacturing Partner</h1>
+        <div class="title-rule" aria-hidden="true"></div>
+        <p class="hero-text">O'Lay is a professional OEM/ODM bag manufacturer based in China. For over 20 years, we have partnered with global brands and retailers to deliver high-quality custom bags with craftsmanship, integrity and consistent reliability.</p>
+        <div class="trust-points" aria-label="Key advantages">
+          <span><i class="check-icon">✓</i> Custom Solutions</span>
+          <span><i class="check-icon">✓</i> Reliable Quality</span>
+          <span><i class="check-icon">✓</i> On-Time Delivery</span>
+          <span><i class="check-icon">✓</i> Global Trusted Partner</span>
         </div>
-        <div class="about62-hero-image">
-          <img src="assets/about/about-hero-exterior.png" alt="O'Lay factory exterior and team at the entrance" />
-        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/about/about-hero-exterior-new.jpg" alt="O'Lay custom bag factory exterior with export loading area and team members">
       </div>
     </section>
 
-    <section class="about62-stats-wrap">
-      <div class="container">
-        <div class="about62-stats">
-          <article class="about62-stat"><span class="about62-icon">◌</span><div><strong>20+</strong><em>Years Experience</em><span>Focused on custom bags for global brands and retailers.</span></div></article>
-          <article class="about62-stat"><span class="about62-icon">◎</span><div><strong>200+</strong><em>Skilled Workers</em><span>Experienced production team with strong execution.</span></div></article>
-          <article class="about62-stat"><span class="about62-icon">▣</span><div><strong>12,000 m²</strong><em>Factory Area</em><span>Modern manufacturing facility with advanced production lines.</span></div></article>
-          <article class="about62-stat"><span class="about62-icon">◫</span><div><strong>300,000+</strong><em>Monthly Capacity</em><span>Stable large-scale production to support repeat orders.</span></div></article>
-          <article class="about62-stat"><span class="about62-icon">◍</span><div><strong>50+</strong><em>Countries Shipped</em><span>Trusted by clients across North America, Europe and beyond.</span></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about62-section">
-      <div class="container about62-overview">
-        <div class="about62-textcard">
-          <p class="eyebrow">Company Overview</p>
-          <h2>Built On Experience.<br/>Driven By Quality.</h2>
+    <section class="overview-section section-shell" aria-labelledby="overview-title">
+      <div class="overview-grid">
+        <div class="overview-text">
+          <p class="section-eyebrow">About O'Lay</p>
+          <h2 id="overview-title" class="overview-title">Built on Experience.<br>Driven by Quality.</h2>
           <p>Since our establishment, O'Lay has specialized in the design, development and manufacturing of custom bags including cosmetic bags, toiletry bags, shopping bags, cooler bags, sports bags and travel organizers.</p>
-          <p>We combine skilled craftsmanship, advanced equipment and strict quality control to deliver products that meet buyer expectations in both function and presentation.</p>
+          <p>We combine skilled craftsmanship, advanced equipment and strict quality control to deliver products that exceed expectations for global brands.</p>
         </div>
-        <div class="about62-capability-grid">
-          <article class="about62-capability"><span class="about62-icon">⌂</span><div><strong>OEM/ODM Capability</strong><p>From concept to mass production, we provide end-to-end development tailored to your brand.</p></div><img src="assets/about/about-sample-room.jpg" alt="Sample room with custom bags and materials" /></article>
-          <article class="about62-capability"><span class="about62-icon">✓</span><div><strong>Quality Control</strong><p>Strict inspection at each stage to ensure consistent and reliable finished products.</p></div><img src="assets/about/about-quality-packing.jpg" alt="Bag inspection and packing process" /></article>
-          <article class="about62-capability"><span class="about62-icon">□</span><div><strong>Sample Development</strong><p>Fast sampling in 7–10 days for most styles to support quick project evaluation.</p></div><img src="assets/about/about-sample-room.jpg" alt="Custom bag sample development materials" /></article>
-          <article class="about62-capability"><span class="about62-icon">↗</span><div><strong>Global Export Experience</strong><p>Experienced with international trade, packing standards and on-time worldwide shipping.</p></div><img src="assets/about/about-hero-exterior.png" alt="Factory export and loading area" /></article>
+
+        <div class="capability-grid" aria-label="Manufacturing capabilities">
+          <article class="capability-card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M15 19v-6a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v6"/><path d="M7 19h34v21H7z"/><path d="M7 27h34"/><path d="M20 27v4h8v-4"/></svg></span>
+            <div><h3>OEM/ODM Expertise</h3><p>From concept to mass production, we provide end-to-end OEM/ODM solutions tailored to your brand.</p></div>
+          </article>
+          <article class="capability-card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M10 39c2.5-8 9-13 14-13s11.5 5 14 13"/><path d="M38 18c3 1 5 3.5 6 7"/><path d="M4 25c1-3.5 3-6 6-7"/></svg></span>
+            <div><h3>Buyer-Focused Service</h3><p>Experienced team with strong communication, fast response and professional support.</p></div>
+          </article>
+          <article class="capability-card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 7 14v20l17 9 17-9V14L24 5Z"/><path d="M7 14l17 9 17-9"/><path d="M24 23v20"/></svg></span>
+            <div><h3>Sample Development</h3><p>Fast sampling in 3–7 days for stock fabrics, 7–15 days for custom prototypes.</p></div>
+          </article>
+          <article class="capability-card">
+            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M6 24h36"/><path d="M24 6c5 5 8 11 8 18s-3 13-8 18"/><path d="M24 6c-5 5-8 11-8 18s3 13 8 18"/></svg></span>
+            <div><h3>Global Export Capability</h3><p>Experienced in international trade and shipping. We ensure smooth logistics and on-time delivery.</p></div>
+          </article>
+        </div>
+
+        <div class="production-image">
+          <img src="assets/about/about-production-floor-new.jpg" alt="Production floor with sewing workers manufacturing black custom bags">
         </div>
       </div>
     </section>
 
-    <section class="about62-section">
-      <div class="container about62-strength">
-        <div class="about62-strength-visual">
-          <img src="assets/about/about-production-floor.png" alt="Production floor with Chinese sewing workers making bags" />
+    <section class="gallery-stats-section section-shell" aria-label="Factory photos and company statistics">
+      <div class="gallery-stats-grid">
+        <div class="factory-gallery">
+          <figure><img src="assets/about/about-showroom-new.jpg" alt="Custom bag sample showroom and meeting room"></figure>
+          <figure><img src="assets/about/about-design-review-new.jpg" alt="Team reviewing custom bag drawings and samples"></figure>
+          <figure><img src="assets/about/about-inspection-new.jpg" alt="Worker inspecting custom bag workmanship with white gloves"></figure>
+          <figure><img src="assets/about/about-packing-new.jpg" alt="Worker packing export cartons for custom bag shipment"></figure>
         </div>
-        <div class="about62-strength-copy">
-          <p class="eyebrow">Manufacturing Strength</p>
-          <h2>Skilled Production. Consistent Capacity.</h2>
-          <p>Our factory is equipped with advanced machinery and an experienced production team. From material cutting and stitching to final inspection and packing, every process is handled with care to guarantee efficiency and dependable results.</p>
-          <div class="about62-mini-grid">
-            <article class="about62-mini"><span class="about62-icon">⚙</span><strong>Advanced Equipment</strong><p>Modern machines support stable precision and efficient production.</p></article>
-            <article class="about62-mini"><span class="about62-icon">≋</span><strong>Skilled Craftsmanship</strong><p>Experienced workers focus on detail, finish and product consistency.</p></article>
-            <article class="about62-mini"><span class="about62-icon">☷</span><strong>Lean Production</strong><p>Organized workflow helps maintain lead time control and flexible scheduling.</p></article>
-            <article class="about62-mini"><span class="about62-icon">⛨</span><strong>Reliable Capacity</strong><p>Flexible production support for repeat orders, programs and seasonal demand.</p></article>
+
+        <div class="stat-panel">
+          <div class="stat-item">
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 9 11v11c0 10 6.5 17 15 21 8.5-4 15-11 15-21V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg></span>
+            <div class="stat-number">20+</div><div class="stat-label">Years<br>Experience</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M10 40c2-8 8-13 14-13s12 5 14 13"/><path d="M38 20c3 1 5 3 6 6"/></svg></span>
+            <div class="stat-number">200+</div><div class="stat-label">Skilled<br>Workers</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 42V8h17v34"/><path d="M26 20h13v22"/><path d="M14 15h4M14 23h4M14 31h4M31 27h3M31 34h3"/></svg></span>
+            <div class="stat-number">12,000㎡</div><div class="stat-label">Factory<br>Area</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 7 14v20l17 9 17-9V14L24 5Z"/><path d="M7 14l17 9 17-9"/><path d="M24 23v20"/></svg></span>
+            <div class="stat-number">300,000+ pcs</div><div class="stat-label">Monthly<br>Capacity</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><path d="M6 24h36"/><path d="M24 6c5 5 8 11 8 18s-3 13-8 18"/><path d="M24 6c-5 5-8 11-8 18s3 13 8 18"/></svg></span>
+            <div class="stat-number">50+</div><div class="stat-label">Countries<br>Shipped</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="about62-bottom">
-      <div class="container about62-bottom-grid">
-        <article class="about62-bottom-card"><span class="about62-icon">✎</span><div><strong>Design &amp; R&amp;D</strong><p>Our team turns ideas into market-ready bag solutions focused on function, style and user experience.</p><a href="contact.html">Learn More →</a></div></article>
-        <article class="about62-bottom-card"><span class="about62-icon">▤</span><div><strong>Sourcing &amp; Materials</strong><p>Carefully selected materials and suppliers support consistent quality and compliance needs.</p><a href="materials.html">Learn More →</a></div></article>
-        <article class="about62-bottom-card"><span class="about62-icon">☏</span><div><strong>Customer Support</strong><p>Professional and responsive communication throughout sampling, production and shipment.</p><a href="support.html">Learn More →</a></div></article>
-        <article class="about62-bottom-card"><span class="about62-icon">⇄</span><div><strong>Long-Term Partnership</strong><p>We value stable cooperation built on transparency, reliable quality and mutual growth.</p><a href="contact.html">Learn More →</a></div></article>
+    <section class="process-section section-shell" aria-labelledby="process-title">
+      <div class="process-band">
+        <h2 id="process-title" class="process-title">Our Manufacturing Process</h2>
+        <div class="process-list">
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M10 37h28"/><path d="M14 33 33 14l4 4-19 19-7 2 3-6Z"/></svg></span>
+            <div class="process-copy"><h3>Design & Planning</h3><p>Understand your needs and create tailored solutions.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 8 13v22l16 8 16-8V13L24 5Z"/><path d="M8 13l16 8 16-8"/><path d="M24 21v22"/></svg></span>
+            <div class="process-copy"><h3>Sampling</h3><p>Develop samples and confirm every detail with you.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M9 36h30V18H9z"/><path d="M14 18V11h20v7"/><path d="M16 30h16"/><path d="M34 24h5"/></svg></span>
+            <div class="process-copy"><h3>Production</h3><p>Mass production with skilled craftsmanship.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="22" cy="22" r="12"/><path d="m31 31 9 9"/></svg></span>
+            <div class="process-copy"><h3>Quality Control</h3><p>Strict inspection at every stage to ensure quality.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 8 13v22l16 8 16-8V13L24 5Z"/><path d="M8 13l16 8 16-8"/><path d="M24 21v22"/></svg></span>
+            <div class="process-copy"><h3>Packing</h3><p>Careful packing to protect your goods.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M6 31h25V15H6z"/><path d="M31 22h7l4 6v3H31z"/><circle cx="14" cy="36" r="4"/><circle cx="36" cy="36" r="4"/></svg></span>
+            <div class="process-copy"><h3>Shipping</h3><p>On-time delivery to your door, worldwide.</p></div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="about62-cta">
-      <div class="container">
-        <div class="about62-cta-card">
-          <div>
-            <p class="eyebrow" style="color:rgba(255,255,255,.75);margin-bottom:10px">Work With O'Lay</p>
-            <h3>Ready To Start Your Next Custom Bag Project?</h3>
-            <p>Tell us your product type, material, size, quantity and logo needs. Our team will help you move from sampling to bulk production with practical support.</p>
-          </div>
-          <div class="hero-actions" style="flex:0 0 auto">
-            <a class="btn btn-secondary" href="contact.html">Get A Quote <span>→</span></a>
-          </div>
-        </div>
+    <section class="cta-strip section-shell" aria-label="Contact call to action">
+      <div class="cta-left"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M16 9c3 10 13 20 23 23l-4 7c-2 2-17-3-25-11S-1 5 1 4l7-4 8 9Z" transform="translate(4 4) scale(.85)"/></svg></span></div>
+      <div class="cta-copy">
+        <h2>Let's Build Your Next Best-Selling Bag</h2>
+        <p>Get in touch with our team today and start your custom bag project with confidence.</p>
       </div>
+      <a class="cta-button" href="contact.html">Contact Us <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="footer-inner">
       <div>
-        <img class="footer-logo" src="assets/brand/olay-logo-white.png" alt="O'Lay logo" />
+        <img class="footer-logo" src="assets/brand/olay-logo-white.png" alt="O'Lay logo">
         <p>Custom bag solutions for beauty, travel, retail, sports and promotional buyers.</p>
       </div>
       <div>
         <h3>Products</h3>
-        <a href="products.html">All Products</a>
-        <a href="product-types.html">By Type</a>
-        <a href="materials.html">By Material</a>
+        <div class="footer-links">
+          <a href="products.html">All Products</a>
+          <a href="product-types.html">By Type</a>
+          <a href="materials.html">By Material</a>
+        </div>
       </div>
       <div>
         <h3>Support</h3>
-        <a href="support.html">Support Center</a>
-        <a href="material-guide.html">Material Guide</a>
-        <a href="quality-control.html">Quality Control</a>
+        <div class="footer-links">
+          <a href="support.html">Support Center</a>
+          <a href="materials.html">Material Guide</a>
+          <a href="support.html">Quality Control</a>
+        </div>
       </div>
       <div>
         <h3>Contact</h3>
-        <p><a href="mailto:selina@olaybag.com">selina@olaybag.com</a></p>
-        <p><a href="https://wa.me/8613957952677">+86 139 5795 2677</a></p>
-      </div>
-      <div class="footer-cta-card">
-        <h3 style="margin-top:0">Ready To Start Your Project?</h3>
-        <p>Share your ideas with our team and we will help turn them into production-ready bag solutions.</p>
-        <a class="btn btn-light" href="contact.html">Get A Quote</a>
+        <div class="footer-links">
+          <a href="mailto:selina@olaybag.com">selina@olaybag.com</a>
+          <a href="https://wa.me/8613957952677">+86 139 5795 2677</a>
+          <a href="contact.html">Get A Quote</a>
+        </div>
       </div>
     </div>
-    <div class="container footer-bottom"><span>© 2026 O'Lay. All rights reserved.</span><span>OEM / ODM Custom Bag Manufacturing</span></div>
+    <div class="footer-bottom">© 2026 Olaytech. All rights reserved. OEM / ODM Custom Bag Manufacturing</div>
   </footer>
-  <a class="whatsapp-float" href="https://wa.me/8613957952677">WhatsApp</a>
-  <script src="js/main.js"></script>
+
+  <a class="floating-whatsapp" href="https://wa.me/8613957952677" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.01 3.2A12.7 12.7 0 0 0 5.15 22.47L3.7 28.8l6.46-1.55A12.69 12.69 0 1 0 16.01 3.2Zm0 2.3a10.38 10.38 0 0 1 8.81 15.87l-.35.55.9 3.96-4.02-.96-.56.33A10.39 10.39 0 0 1 7.7 9.23a10.3 10.3 0 0 1 8.31-3.73Zm-4.06 5.72c-.22 0-.58.08-.88.42-.3.34-1.16 1.13-1.16 2.76s1.19 3.2 1.35 3.42c.16.22 2.3 3.68 5.67 5.01 2.8 1.11 3.37.89 3.98.83.61-.06 1.97-.8 2.25-1.58.28-.78.28-1.45.2-1.58-.08-.14-.3-.22-.64-.39-.34-.17-1.97-.97-2.28-1.08-.31-.11-.53-.17-.75.17-.22.34-.86 1.08-1.05 1.3-.2.22-.39.25-.72.08-.34-.17-1.42-.52-2.7-1.67-.99-.88-1.66-1.97-1.86-2.3-.2-.34-.02-.52.15-.69.15-.15.34-.39.5-.58.17-.2.22-.34.34-.56.11-.22.06-.42-.03-.58-.08-.17-.75-1.8-1.03-2.47-.27-.65-.55-.56-.75-.57h-.59Z"/></svg>
+  </a>
 </body>
 </html>
