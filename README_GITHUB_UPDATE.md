@@ -1,33 +1,65 @@
-# O'Lay About Us 6.4 Clean Update
+# O'Lay About Us v6.5 GitHub Update
 
-这次版本重点修复：
+## 本版本目标
 
-- 页面排版重新整理，避免上一版卡片过大、文字过散的问题。
-- OEM/ODM、Sample Development、Quality Inspection、Export Packing 四个模块使用不同图片，不再重复使用同一张照片。
-- 导航菜单结构保持与当前网站一致：Home / About Us / Products / By Type / By Material / By Application / Support / Contact / Get Quote。
-- CSS 文件重新整理，减少对导航和页面全局结构的干扰。
-- 增加 SEO 基础项：title、description、canonical、OG tags、FAQ Schema、Breadcrumb Schema、内部链接、图片 alt。
-- 文案改成更自然的工厂介绍，减少 AI 模板感。
+v6.5 版本按照“真实工厂官网”的方向重新整理：
 
-## 常规更新方法
+- 导航结构保持和主页一致：Home / About Us / Products / By Type / By Material / By Application / Support / Contact / Get Quote
+- 首屏文字减少，避免 PPT 感
+- 图片统一比例和圆角，避免尺寸不一致
+- 能力卡片文字缩短，方便 B2B 买家快速浏览
+- SEO 内容放在下方 FAQ 和相关产品内链模块，不堆在首屏
+- 加入 FAQ Schema、Breadcrumb Schema、Organization Schema
+- 图片提供 WebP + JPG 备份，并设置 width / height / lazy loading
 
-1. 用 `about.html` 替换网站根目录的 `about.html`。
-2. 用 `assets/css/about-us-optimized.css` 替换网站里的同名 CSS。
-3. 上传 `assets/about/` 文件夹里的所有图片。
-4. Commit changes，等待 GitHub Pages 自动部署。
+## 推荐更新方式：只替换 About 页面主体，保留你网站原导航
 
-## 如果你完全不想动导航
+如果你担心导航再次被影响，推荐这样做：
 
-使用安全替换法：
-
-1. 打开你原来的 `about.html`。
-2. 只替换 `<main>...</main>` 这一段，内容使用 `about-main-only-v6.4-clean.html`。
-3. 在 `<head>` 里新增这一行：
+1. 打开你仓库里的 `about.html`
+2. 找到原来的 `<main> ... </main>`
+3. 用 `about-main-only-v6.5.html` 里的完整 `<main id="main" class="about-v65"> ... </main>` 替换
+4. 在 `<head>` 里添加这一行：
 
 ```html
-<link rel="stylesheet" href="assets/css/about-main-only-v6.4-clean.css">
+<link rel="stylesheet" href="assets/css/about-us-v6.5.css">
 ```
 
-4. 上传 `assets/css/about-main-only-v6.4-clean.css` 和 `assets/about/` 图片。
+5. 上传文件夹：
 
-这样可以保留你网站原来的导航和页脚，只更新 About Us 主体内容。
+```text
+assets/css/about-us-v6.5.css
+assets/about/v65/
+```
+
+这样可以最大程度保留你主页原来的 header / navigation / footer。
+
+## 直接整页替换方式
+
+如果你想整页替换：
+
+1. 用本包里的 `about.html` 替换仓库根目录原来的 `about.html`
+2. 上传：
+
+```text
+assets/css/about-us-v6.5.css
+assets/about/v65/
+```
+
+3. Commit changes
+4. 等 GitHub Pages 自动部署
+5. 打开 `https://www.olaytech.com/about.html` 强制刷新查看
+
+## 文件说明
+
+```text
+about.html                         完整页面版本
+about-main-only-v6.5.html           安全替换版，只替换 main 内容
+assets/css/about-us-v6.5.css        v6.5 样式文件
+assets/about/v65/*.webp             优先加载的 WebP 图片
+assets/about/v65/*.jpg              JPG 备用图片
+```
+
+## 注意
+
+本版本里的 full `about.html` 带有一个备用导航。如果你的网站原导航已经完全正确，建议使用 `about-main-only-v6.5.html`，这样导航不会被改动。
