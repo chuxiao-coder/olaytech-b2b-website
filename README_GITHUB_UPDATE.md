@@ -1,29 +1,33 @@
-# Olaytech About Us 页面更新说明
+# O'Lay About Us 6.4 Clean Update
 
-这个压缩包用于替换 GitHub Pages 静态网站的 `about.html` 页面，设计参考了你提供的 About Us 效果图。
+这次版本重点修复：
 
-## 包含文件
+- 页面排版重新整理，避免上一版卡片过大、文字过散的问题。
+- OEM/ODM、Sample Development、Quality Inspection、Export Packing 四个模块使用不同图片，不再重复使用同一张照片。
+- 导航菜单结构保持与当前网站一致：Home / About Us / Products / By Type / By Material / By Application / Support / Contact / Get Quote。
+- CSS 文件重新整理，减少对导航和页面全局结构的干扰。
+- 增加 SEO 基础项：title、description、canonical、OG tags、FAQ Schema、Breadcrumb Schema、内部链接、图片 alt。
+- 文案改成更自然的工厂介绍，减少 AI 模板感。
 
-- `about.html`：新的 About Us 页面
-- `assets/css/about-us-optimized.css`：该页面专用样式
-- `assets/about/about-hero-exterior-new.jpg`：顶部工厂外景图
-- `assets/about/about-production-floor-new.jpg`：生产车间图
-- `assets/about/about-showroom-new.jpg`：样品室图
-- `assets/about/about-design-review-new.jpg`：设计沟通图
-- `assets/about/about-inspection-new.jpg`：质检图
-- `assets/about/about-packing-new.jpg`：包装出货图
+## 常规更新方法
 
-## GitHub 上传方法
+1. 用 `about.html` 替换网站根目录的 `about.html`。
+2. 用 `assets/css/about-us-optimized.css` 替换网站里的同名 CSS。
+3. 上传 `assets/about/` 文件夹里的所有图片。
+4. Commit changes，等待 GitHub Pages 自动部署。
 
-1. 打开你的 GitHub 网站仓库。
-2. 上传并替换根目录里的 `about.html`。
-3. 上传 `assets/css/about-us-optimized.css` 到仓库对应目录。
-4. 上传 `assets/about/` 里的 6 张新图片到仓库对应目录。
-5. 点击 Commit changes。
-6. 等待 GitHub Pages 自动部署，通常 1-3 分钟后刷新 `https://www.olaytech.com/about.html`。
+## 如果你完全不想动导航
 
-## 注意
+使用安全替换法：
 
-- 这个页面默认使用你网站现有的 logo 路径：`assets/brand/olay-logo-black.png` 和 `assets/brand/olay-logo-white.png`。
-- 如果你的仓库文件夹结构不同，需要把 CSS 和图片路径改成你仓库里的实际路径。
-- 如果原网站有全站公共 CSS，也可以保留；本页面的 CSS 是独立命名，避免影响其他页面。
+1. 打开你原来的 `about.html`。
+2. 只替换 `<main>...</main>` 这一段，内容使用 `about-main-only-v6.4-clean.html`。
+3. 在 `<head>` 里新增这一行：
+
+```html
+<link rel="stylesheet" href="assets/css/about-main-only-v6.4-clean.css">
+```
+
+4. 上传 `assets/css/about-main-only-v6.4-clean.css` 和 `assets/about/` 图片。
+
+这样可以保留你网站原来的导航和页脚，只更新 About Us 主体内容。
