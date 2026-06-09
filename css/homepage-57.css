@@ -128,3 +128,194 @@
   .home-v7 .v7-process-grid{grid-template-columns:1fr;}
   .home-v7 .v7-process-grid img{height:220px;}
 }
+
+
+/* V7.3 Unified header navigation for all pages */
+.topbar.v7-topbar{
+  background:#062b49;
+  color:#fff;
+  font-size:12px;
+  letter-spacing:.06em;
+}
+.topbar.v7-topbar .topbar-inner{
+  min-height:34px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:16px;
+  text-align:center;
+  font-weight:800;
+}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid rgba(8,38,64,.10);
+  backdrop-filter:blur(14px);
+}
+.site-header .header-inner{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.site-header .logo{
+  display:flex;
+  align-items:center;
+  flex:0 0 auto;
+}
+.site-header .logo img{
+  width:132px;
+  height:auto;
+  max-height:58px;
+  display:block;
+}
+.site-header .main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  flex:1 1 auto;
+  min-width:0;
+}
+.site-header .main-nav > a,
+.site-header .nav-dropdown > a{
+  display:inline-flex;
+  align-items:center;
+  min-height:78px;
+  color:#112b45;
+  text-decoration:none;
+  font-weight:850;
+  font-size:14px;
+  white-space:nowrap;
+  letter-spacing:.01em;
+  transition:color .18s ease;
+}
+.site-header .main-nav > a:hover,
+.site-header .nav-dropdown:hover > a,
+.site-header .main-nav a.active{
+  color:#0a5f86;
+}
+.site-header .nav-dropdown{
+  position:relative;
+}
+.site-header .dropdown-panel{
+  position:absolute;
+  left:50%;
+  top:calc(100% - 1px);
+  transform:translateX(-50%) translateY(8px);
+  min-width:230px;
+  padding:12px;
+  background:#fff;
+  border:1px solid rgba(8,38,64,.10);
+  border-radius:18px;
+  box-shadow:0 22px 60px rgba(8,38,64,.15);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transition:opacity .18s ease, transform .18s ease, visibility .18s ease;
+}
+.site-header .nav-dropdown:hover .dropdown-panel,
+.site-header .nav-dropdown:focus-within .dropdown-panel{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.site-header .dropdown-panel a{
+  display:block;
+  padding:10px 12px;
+  border-radius:12px;
+  color:#23364a;
+  text-decoration:none;
+  font-weight:750;
+  font-size:14px;
+  line-height:1.25;
+}
+.site-header .dropdown-panel a:hover{
+  background:#f4f8fa;
+  color:#062b49;
+}
+.site-header .header-cta{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:44px;
+  padding:0 18px;
+  border-radius:999px;
+  background:#062b49;
+  color:#fff!important;
+  text-decoration:none;
+  font-weight:900;
+  box-shadow:0 14px 32px rgba(6,43,73,.18);
+}
+.site-header .nav-toggle{
+  display:none;
+}
+@media(max-width:1180px){
+  .site-header .header-inner{min-height:72px;gap:16px;}
+  .site-header .main-nav{gap:13px;}
+  .site-header .main-nav > a,
+  .site-header .nav-dropdown > a{font-size:13px;min-height:72px;}
+  .site-header .header-cta{padding:0 14px;}
+}
+@media(max-width:900px){
+  .site-header .header-inner{justify-content:space-between;}
+  .site-header .nav-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:44px;
+    height:44px;
+    border:1px solid rgba(8,38,64,.15);
+    border-radius:14px;
+    background:#fff;
+    color:#062b49;
+    font-size:22px;
+  }
+  .site-header .main-nav{
+    position:absolute;
+    left:16px;
+    right:16px;
+    top:calc(100% + 10px);
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:14px;
+    background:#fff;
+    border:1px solid rgba(8,38,64,.10);
+    border-radius:20px;
+    box-shadow:0 24px 70px rgba(8,38,64,.18);
+  }
+  .site-header.nav-open .main-nav,
+  .site-header .main-nav.open{
+    display:flex;
+  }
+  .site-header .main-nav > a,
+  .site-header .nav-dropdown > a{
+    min-height:42px;
+    padding:0 10px;
+  }
+  .site-header .nav-dropdown .dropdown-panel{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    min-width:0;
+    box-shadow:none;
+    border-radius:14px;
+    margin:4px 0 10px;
+    display:none;
+  }
+  .site-header .nav-dropdown:hover .dropdown-panel,
+  .site-header .nav-dropdown:focus-within .dropdown-panel{
+    display:block;
+    transform:none;
+  }
+  .site-header .header-cta{display:none;}
+}
