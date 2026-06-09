@@ -1,0 +1,21 @@
+Olaytech Homepage V7 Replace-Only Files
+
+Upload these files to the SAME paths in your GitHub repository.
+Do not replace your whole website folder if you only want to update the homepage.
+
+Required homepage files:
+- index.html
+- css/homepage-57.css
+
+New / updated homepage images are in:
+- assets/home/
+- assets/factory/
+- assets/products/
+
+Recommended upload method:
+1. Open your GitHub repository.
+2. Upload index.html to the root directory and replace the old one.
+3. Open css folder, upload homepage-57.css and replace the old one.
+4. Upload the included images into their matching folders.
+5. Wait 1-3 minutes for GitHub Pages to refresh.
+6. Open your website with Ctrl + F5 to refresh cache.
