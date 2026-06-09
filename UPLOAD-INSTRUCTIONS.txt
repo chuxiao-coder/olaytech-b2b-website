@@ -1,21 +1,18 @@
-Olaytech V8 Benchmark-Inspired Homepage Replace-Only Package
+Olaytech Contact Page V9 Redesign
 
-This package updates the homepage based on mature B2B website patterns:
-- clearer quote path
-- design brief section
-- buyer solution section
-- quote checklist
-- stronger B2B trust and conversion flow
+This package only updates the Contact / Request Quote page interface.
 
-Upload / replace these paths in your GitHub repository:
+Upload / replace:
+- contact.html
+- css/homepage-57.css
+- css/style.css
+- js/main.js
+- assets/brand/olay-logo-black.png
+- assets/brand/olay-logo-white.png
 
-1) index.html
-2) css/homepage-57.css
-3) js/main.js
-4) assets/brand/olay-logo-black.png
-5) assets/brand/olay-logo-white.png
-6) Included files under assets/home/
-7) Included files under assets/factory/
-8) Included files under assets/products/
-
-This package is homepage-related only and will not replace inner HTML pages.
+Main changes:
+- Removed the duplicated old contact sections.
+- Unified Request A Quote and Send Design Brief into one polished page.
+- Kept Web3Forms submission.
+- Added clearer project form, contact info, review process and image/file reminder.
+- Matched the visual style of the homepage.
