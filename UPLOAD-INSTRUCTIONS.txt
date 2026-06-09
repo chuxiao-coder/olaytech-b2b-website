@@ -1,4 +1,4 @@
-Replace these files to add images into the six Support cards.
+Replace these files to upgrade the six Support sections with richer content and images.
 Files included:
 - support.html
 - css/homepage-57.css
