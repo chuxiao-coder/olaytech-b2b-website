@@ -1464,3 +1464,28 @@ body.contact-v9 .contact-v9-support-actions .btn-secondary{
     grid-template-columns:1fr;
   }
 }
+
+
+
+/* V9.1 Homepage Quote Flow Polish
+   Request A Quote and Send Design Brief now share one contact form. */
+body.home-v7 .v8-quote-card{
+  grid-template-columns:1fr 1fr auto!important;
+}
+body.home-v7 .v8-quote-card .btn{
+  white-space:nowrap!important;
+}
+body.home-v7 .v8-quote-card h2{
+  max-width:520px!important;
+}
+body.home-v7 .v8-quote-card p{
+  max-width:620px!important;
+}
+body.home-v7 .v7-hero .btn-secondary{
+  background:rgba(255,255,255,.82)!important;
+}
+@media(max-width:1180px){
+  body.home-v7 .v8-quote-card{
+    grid-template-columns:1fr!important;
+  }
+}
