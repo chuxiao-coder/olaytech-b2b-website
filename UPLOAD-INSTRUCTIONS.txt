@@ -1,11 +1,31 @@
-Olaytech Logo Sharpness & Size Fix
+Olaytech Homepage V7.6 Replace-Only Package
 
-Replace these files in the same paths on GitHub:
+This package only contains homepage-related replacement files.
 
-1) css/homepage-57.css
-2) assets/brand/olay-logo-black.png
-3) assets/brand/olay-logo-white.png  (optional but recommended)
+Upload / replace these paths in your GitHub website repository:
 
-Why:
-- The old black logo image was only 137x46px and was forced into 132x58px, so it looked blurry and stretched.
-- This package includes a higher-resolution transparent logo and CSS that displays it without distortion.
+1. index.html
+   Replace the root index.html
+
+2. css/homepage-57.css
+   Replace css/homepage-57.css
+
+3. js/main.js
+   Replace js/main.js
+
+4. assets/brand/
+   Replace the two logo files:
+   - assets/brand/olay-logo-black.png
+   - assets/brand/olay-logo-white.png
+
+5. assets/home/
+   Upload / replace all included homepage hero and category images.
+
+6. assets/factory/
+   Upload / replace all included factory and process images used on the homepage.
+
+7. assets/products/
+   Upload / replace the included product category images used on the homepage.
+
+This package is only for homepage update and navigation/logo style support.
+It will not replace your About Us, Contact, By Type, By Material, By Application, Support pages unless you manually upload other files.
