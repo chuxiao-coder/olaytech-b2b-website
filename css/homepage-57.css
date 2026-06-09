@@ -24,3 +24,71 @@
 .home-v7 .v7-final-cta{padding:78px 0;background:#fff}.home-v7 .v7-final-card{position:relative;overflow:hidden;background:linear-gradient(135deg,#062b49 0%,#0b3a5c 62%,#071a35 100%);border-radius:30px;padding:58px;box-shadow:0 30px 80px rgba(8,38,64,.18);color:#fff}.home-v7 .v7-final-card:after{content:"";position:absolute;right:-120px;top:-130px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.08)}.home-v7 .v7-final-card .eyebrow,.home-v7 .v7-final-card h2,.home-v7 .v7-final-card p{color:#fff}.home-v7 .v7-final-card p{max-width:660px;color:rgba(255,255,255,.78)}.home-v7 .v7-final-card .hero-actions{margin-top:28px}.home-v7 .v7-final-card .btn-primary{background:#fff;color:#062b49!important;border-color:#fff}.home-v7 .v7-final-card .btn-secondary{background:transparent;color:#fff!important;border-color:rgba(255,255,255,.4)}
 @media(max-width:1180px){.home-v7 .v7-hero{min-height:600px}.home-v7 .v7-hero-shade{background:linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.92) 48%,rgba(255,255,255,.20) 100%)}.home-v7 .v7-category-grid,.home-v7 .v7-process-grid{grid-template-columns:repeat(2,1fr)}.home-v7 .v7-split,.home-v7 .v7-factory-grid,.home-v7 .v7-materials-card,.home-v7 .v7-faq-grid{grid-template-columns:1fr}.home-v7 .v7-guide-grid,.home-v7 .v7-trustbar-grid{grid-template-columns:repeat(2,1fr)}.home-v7 .v7-trustbar article:nth-child(2){border-right:0}.home-v7 .v7-trustbar article:nth-child(n+3){border-top:1px solid var(--v7-line)}}
 @media(max-width:760px){.home-v7 .v7-topbar .topbar-inner{font-size:11px;letter-spacing:.04em}.home-v7 .v7-hero{display:block;min-height:auto;background:#f2ece2}.home-v7 .v7-hero-media{position:relative;height:280px}.home-v7 .v7-hero-media img{object-position:65% center}.home-v7 .v7-hero-shade{display:none}.home-v7 .v7-hero-inner{padding:38px 0 44px}.home-v7 .v7-hero h1{font-size:42px}.home-v7 .v7-hero p{font-size:15px}.home-v7 .hero-actions{display:grid;grid-template-columns:1fr}.home-v7 .v7-trustbar-grid,.home-v7 .v7-category-grid,.home-v7 .v7-option-grid,.home-v7 .v7-process-grid,.home-v7 .v7-guide-grid{grid-template-columns:1fr}.home-v7 .v7-trustbar article{border-right:0;border-top:1px solid var(--v7-line)}.home-v7 .v7-trustbar article:first-child{border-top:0}.home-v7 .v7-section,.home-v7 .v7-final-cta{padding:48px 0}.home-v7 .v7-section-head{text-align:left}.home-v7 .v7-materials-card,.home-v7 .v7-final-card{padding:30px 22px;border-radius:22px}.home-v7 .v7-factory-image img{height:280px}.home-v7 .v7-factory-stats{grid-template-columns:1fr}.home-v7 .v7-chip-list a,.home-v7 .v7-chip-list span{min-height:38px;padding:0 14px;font-size:13px}}
+
+/* V7.1 Smooth Hero Integration - premium homepage image fit */
+.home-v7 .v7-hero{
+  min-height:640px;
+  background:#f4efe7;
+}
+.home-v7 .v7-hero-media img{
+  object-position:62% 42%;
+  transform:scale(1.01);
+}
+.home-v7 .v7-hero-shade{
+  background:linear-gradient(90deg,
+    rgba(255,255,255,.94) 0%,
+    rgba(255,255,255,.88) 25%,
+    rgba(255,255,255,.48) 45%,
+    rgba(255,255,255,.14) 62%,
+    rgba(255,255,255,0) 100%);
+}
+.home-v7 .v7-hero-inner{
+  padding:74px 0;
+}
+.home-v7 .v7-hero-copy{
+  max-width:540px;
+}
+.home-v7 .v7-hero h1{
+  font-size:clamp(46px,4.8vw,72px);
+  line-height:1;
+  letter-spacing:-.045em;
+  max-width:540px;
+  margin-bottom:22px;
+}
+.home-v7 .v7-hero p{
+  font-size:17px;
+  line-height:1.64;
+  max-width:520px;
+  margin-bottom:30px;
+}
+.home-v7 .v7-hero .eyebrow{
+  margin-bottom:14px;
+}
+.home-v7 .v7-hero .hero-actions{
+  gap:16px;
+}
+.home-v7 .v7-hero .btn{
+  min-height:54px;
+  padding:0 28px;
+}
+@media(max-width:1180px){
+  .home-v7 .v7-hero{min-height:590px;}
+  .home-v7 .v7-hero-media img{object-position:66% 42%;}
+  .home-v7 .v7-hero-shade{
+    background:linear-gradient(90deg,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,255,255,.88) 42%,
+      rgba(255,255,255,.22) 76%,
+      rgba(255,255,255,0) 100%);
+  }
+}
+@media(max-width:760px){
+  .home-v7 .v7-hero-media{height:285px;}
+  .home-v7 .v7-hero-media img{
+    object-position:62% 42%;
+    transform:scale(1.02);
+  }
+  .home-v7 .v7-hero-inner{padding:34px 0 42px;}
+  .home-v7 .v7-hero h1{font-size:40px;line-height:1.02;}
+  .home-v7 .v7-hero p{font-size:15px;line-height:1.62;}
+}

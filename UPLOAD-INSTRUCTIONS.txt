@@ -1,21 +1,21 @@
-Olaytech Homepage V7 Replace-Only Files
+Olaytech Homepage V7.1 Smooth Hero Update
 
-Upload these files to the SAME paths in your GitHub repository.
-Do not replace your whole website folder if you only want to update the homepage.
+Only replace/upload these homepage-related files:
 
-Required homepage files:
-- index.html
-- css/homepage-57.css
+1) index.html
+   Upload to your website root directory and replace the existing index.html.
 
-New / updated homepage images are in:
-- assets/home/
-- assets/factory/
-- assets/products/
+2) css/homepage-57.css
+   Upload to the css folder and replace the existing homepage-57.css.
 
-Recommended upload method:
-1. Open your GitHub repository.
-2. Upload index.html to the root directory and replace the old one.
-3. Open css folder, upload homepage-57.css and replace the old one.
-4. Upload the included images into their matching folders.
-5. Wait 1-3 minutes for GitHub Pages to refresh.
-6. Open your website with Ctrl + F5 to refresh cache.
+3) assets/home/olaytech-homepage-hero-premium-smooth.jpg
+4) assets/home/olaytech-homepage-hero-premium-smooth.webp
+   Upload both images to assets/home/.
+
+The other folders/images included are kept for compatibility with the V7 homepage sections. If you already uploaded V7 files, you only need the 4 files listed above.
+
+Recommended upload order:
+- Upload the new hero images first.
+- Replace homepage-57.css.
+- Replace index.html.
+- Refresh your browser with Ctrl + F5 after GitHub Pages updates.
