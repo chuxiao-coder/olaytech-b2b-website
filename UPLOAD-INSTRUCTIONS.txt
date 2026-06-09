@@ -1,22 +1,19 @@
-Olaytech Homepage V9.1 Unified Quote Flow
+Olaytech Homepage V9.3 Buyer Solutions Relayout
 
-This package updates the homepage after combining Request A Quote and Send Design Brief.
+This package re-beautifies the 6 Buyer Solutions cards.
 
 Main changes:
-- Homepage hero buttons:
-  Request A Quote -> contact.html#design-brief
-  View Bag Categories -> product-types.html
-- Fast Project Review section now says:
-  One Form for Quote and Design Brief
-- Send Design Brief button becomes:
-  Send Brief / Request Quote -> contact.html#design-brief
-- Header Get Quote points to the same form.
-- Contact page redesign is included to keep the flow consistent.
+- Switched from simple top-image cards to a more polished horizontal image + text card layout.
+- Desktop: 2 cards per row, better image proportion and breathing room.
+- Mobile: cards stack naturally with image on top.
+- Added small category tags and improved text spacing.
 
-Upload / replace:
+Replace / upload:
 - index.html
-- contact.html
 - css/homepage-57.css
-- css/style.css
-- js/main.js
-- included assets folders
+- assets/home/solution-beauty-skincare.png
+- assets/home/solution-travel-hospitality.png
+- assets/home/solution-food-cooler.png
+- assets/home/solution-retail-promotion.png
+- assets/home/solution-sports-outdoor.png
+- assets/home/solution-corporate-gifts.png
