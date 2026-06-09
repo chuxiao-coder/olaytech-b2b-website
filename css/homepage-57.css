@@ -1924,3 +1924,49 @@ body.home-v7 .v7-final-cta{
     padding:26px 20px!important;
   }
 }
+
+
+
+/* V10.1 Slim Homepage FAQ */
+body.home-v7 .v10-faq-slim{
+  padding:64px 0!important;
+}
+
+body.home-v7 .v10-faq-slim .v7-faq-grid{
+  align-items:center!important;
+}
+
+body.home-v7 .v10-faq-slim .v7-faq-list{
+  gap:10px!important;
+}
+
+body.home-v7 .v10-faq-slim .v7-faq-list details{
+  box-shadow:0 10px 26px rgba(8,38,64,.045)!important;
+}
+
+body.home-v7 .v10-faq-link{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  margin-top:22px!important;
+  min-height:42px!important;
+  padding:0 18px!important;
+  border-radius:999px!important;
+  background:#fff!important;
+  border:1px solid rgba(8,38,64,.12)!important;
+  color:#062b49!important;
+  text-decoration:none!important;
+  font-weight:950!important;
+  box-shadow:0 12px 28px rgba(8,38,64,.05)!important;
+}
+
+body.home-v7 .v10-faq-link:hover{
+  background:#062b49!important;
+  color:#fff!important;
+}
+
+@media(max-width:760px){
+  body.home-v7 .v10-faq-slim{
+    padding:48px 0!important;
+  }
+}

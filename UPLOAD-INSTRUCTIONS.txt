@@ -1,21 +1,13 @@
-Olaytech Homepage V10 Simplified Version
+Olaytech Homepage V10.1 Slim FAQ Update
 
-This package simplifies the homepage so it is not too long or crowded.
+This package only updates the homepage FAQ section.
 
-Main changes:
-- Removed the separate Fast Project Review block from the homepage.
-- Removed the separate Quote Checklist block from the homepage.
-- Merged Why Buyers Choose Us + Factory Strength + Manufacturing Process into one cleaner section:
-  Why Work With Olaytech
-- Kept the important sections:
-  Hero / Trust Bar / Product Categories / Buyer Solutions / Customization / Why Work With Olaytech / Materials / Buyer Guide / FAQ / Final CTA
-- Kept quote and design brief flow pointing to contact.html#design-brief.
+Changes:
+- Homepage FAQ reduced to 4 key B2B buyer questions.
+- Added "View More FAQs" link to faq.html.
+- Updated FAQ structured data to match the visible homepage FAQ.
+- Added small CSS polish for a cleaner, lighter FAQ block.
 
 Upload / replace:
-- index.html
-- css/homepage-57.css
-- included assets folders
-
-If your website already has all images uploaded, the main files you need are:
 - index.html
 - css/homepage-57.css
