@@ -1,17 +1,5 @@
-Olaytech Support Page V11 Redesign
-
-This package redesigns the Support page to match the homepage and Contact page.
-
-Upload / replace:
+Replace these files to add images into the six Support cards.
+Files included:
 - support.html
 - css/homepage-57.css
-- css/style.css
-- js/main.js
-- assets/brand/olay-logo-black.png
-- assets/brand/olay-logo-white.png
-
-Main changes:
-- Rebuilt Support page layout.
-- Removed the raw vertical text feeling.
-- Added polished hero section, quote preparation card, support menu cards, ordering path, and FAQ / quote links.
-- Unified visual style with homepage and Contact page.
+- assets/support-guides/*

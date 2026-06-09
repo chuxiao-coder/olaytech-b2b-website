@@ -2341,3 +2341,59 @@ body.support-v11 .support-v11-link-box span{
     grid-template-columns:1fr;
   }
 }
+
+
+/* V12 Support menu image cards */
+body.support-v11 .support-v12-image-card{
+  padding:0!important;
+  overflow:hidden!important;
+  min-height:100%!important;
+}
+body.support-v11 .support-v12-card-media{
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+  border-bottom:1px solid rgba(8,38,64,.08);
+  background:#f4efe7;
+}
+body.support-v11 .support-v12-card-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+body.support-v11 .support-v12-card-body{
+  padding:24px 24px 26px;
+}
+body.support-v11 .support-v12-card-body span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  border-radius:15px;
+  background:#062b49;
+  color:#fff;
+  font-size:13px;
+  font-weight:950;
+  margin-bottom:18px;
+}
+body.support-v11 .support-v12-card-body strong{
+  display:block;
+  color:#071a35;
+  font-size:22px;
+  line-height:1.16;
+  letter-spacing:-.025em;
+  margin-bottom:12px;
+}
+body.support-v11 .support-v12-card-body p{
+  margin:0;
+  color:#5b6878;
+  font-size:14px;
+  line-height:1.65;
+}
+@media(max-width:760px){
+  body.support-v11 .support-v12-card-body{
+    padding:20px 18px 22px;
+  }
+}
