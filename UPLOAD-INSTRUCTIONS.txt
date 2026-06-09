@@ -1,31 +1,21 @@
-Olaytech Homepage V7.6 Replace-Only Package
+Olaytech V8 Benchmark-Inspired Homepage Replace-Only Package
 
-This package only contains homepage-related replacement files.
+This package updates the homepage based on mature B2B website patterns:
+- clearer quote path
+- design brief section
+- buyer solution section
+- quote checklist
+- stronger B2B trust and conversion flow
 
-Upload / replace these paths in your GitHub website repository:
+Upload / replace these paths in your GitHub repository:
 
-1. index.html
-   Replace the root index.html
+1) index.html
+2) css/homepage-57.css
+3) js/main.js
+4) assets/brand/olay-logo-black.png
+5) assets/brand/olay-logo-white.png
+6) Included files under assets/home/
+7) Included files under assets/factory/
+8) Included files under assets/products/
 
-2. css/homepage-57.css
-   Replace css/homepage-57.css
-
-3. js/main.js
-   Replace js/main.js
-
-4. assets/brand/
-   Replace the two logo files:
-   - assets/brand/olay-logo-black.png
-   - assets/brand/olay-logo-white.png
-
-5. assets/home/
-   Upload / replace all included homepage hero and category images.
-
-6. assets/factory/
-   Upload / replace all included factory and process images used on the homepage.
-
-7. assets/products/
-   Upload / replace the included product category images used on the homepage.
-
-This package is only for homepage update and navigation/logo style support.
-It will not replace your About Us, Contact, By Type, By Material, By Application, Support pages unless you manually upload other files.
+This package is homepage-related only and will not replace inner HTML pages.

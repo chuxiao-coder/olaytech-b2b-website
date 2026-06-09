@@ -695,3 +695,227 @@ body.home-v7 .v7-faq-list details p{
     grid-template-columns:repeat(2,minmax(0,1fr))!important;
   }
 }
+
+
+
+/* V8 Benchmark-Inspired B2B Homepage Upgrade
+   Inspired by mature B2B sites: clearer quote path, buyer solutions, project checklist, stronger trust blocks. */
+
+body.home-v7 .v8-section{
+  padding:72px 0;
+}
+
+body.home-v7 .v8-quote-brief{
+  padding:28px 0 0;
+  background:#fff;
+}
+
+body.home-v7 .v8-quote-card{
+  display:grid;
+  grid-template-columns:1.1fr 1.05fr auto;
+  align-items:center;
+  gap:28px;
+  border:1px solid rgba(8,38,64,.10);
+  border-radius:28px;
+  padding:30px;
+  background:linear-gradient(135deg,#ffffff 0%,#f6fafb 100%);
+  box-shadow:0 22px 58px rgba(8,38,64,.08);
+}
+
+body.home-v7 .v8-quote-card h2{
+  margin:0 0 10px;
+  color:#071a35;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(28px,2.4vw,38px);
+  letter-spacing:-.035em;
+}
+
+body.home-v7 .v8-quote-card p{
+  margin:0;
+  color:#5b6878;
+  line-height:1.65;
+}
+
+body.home-v7 .v8-brief-steps{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+body.home-v7 .v8-brief-steps span{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  border-radius:999px;
+  padding:0 14px;
+  background:#fff;
+  border:1px solid rgba(8,38,64,.10);
+  color:#0d2b43;
+  font-size:13px;
+  font-weight:900;
+  box-shadow:0 10px 24px rgba(8,38,64,.045);
+}
+
+body.home-v7 .v8-solutions{
+  background:linear-gradient(180deg,#ffffff 0%,#f7fafb 100%);
+  border-top:1px solid rgba(8,38,64,.08);
+  border-bottom:1px solid rgba(8,38,64,.08);
+}
+
+body.home-v7 .v8-solution-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+
+body.home-v7 .v8-solution-grid a{
+  display:block;
+  min-height:178px;
+  padding:28px;
+  border-radius:24px;
+  background:#fff;
+  border:1px solid rgba(8,38,64,.10);
+  text-decoration:none;
+  box-shadow:0 18px 42px rgba(8,38,64,.055);
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+body.home-v7 .v8-solution-grid a:hover{
+  transform:translateY(-4px);
+  border-color:rgba(6,43,73,.22);
+  box-shadow:0 26px 66px rgba(8,38,64,.10);
+}
+
+body.home-v7 .v8-solution-grid strong{
+  display:block;
+  color:#071a35;
+  font-size:21px;
+  line-height:1.18;
+  margin-bottom:12px;
+}
+
+body.home-v7 .v8-solution-grid span{
+  display:block;
+  color:#5b6878;
+  font-size:14px;
+  line-height:1.62;
+}
+
+body.home-v7 .v8-checklist{
+  background:#fff;
+}
+
+body.home-v7 .v8-checklist-card{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:42px;
+  align-items:start;
+  padding:44px;
+  border-radius:30px;
+  background:linear-gradient(135deg,#062b49 0%,#0b3a5c 70%,#071a35 100%);
+  color:#fff;
+  box-shadow:0 28px 80px rgba(8,38,64,.16);
+  overflow:hidden;
+  position:relative;
+}
+
+body.home-v7 .v8-checklist-card:after{
+  content:"";
+  position:absolute;
+  right:-110px;
+  top:-120px;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+
+body.home-v7 .v8-checklist-card > *{
+  position:relative;
+  z-index:1;
+}
+
+body.home-v7 .v8-checklist-card .eyebrow,
+body.home-v7 .v8-checklist-card h2,
+body.home-v7 .v8-checklist-card p{
+  color:#fff!important;
+}
+
+body.home-v7 .v8-checklist-card h2{
+  margin:0 0 14px;
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(34px,3.5vw,50px);
+  line-height:1.08;
+  letter-spacing:-.04em;
+}
+
+body.home-v7 .v8-checklist-card p{
+  color:rgba(255,255,255,.78)!important;
+  line-height:1.7;
+}
+
+body.home-v7 .v8-checklist-card ul{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:grid;
+  gap:14px;
+}
+
+body.home-v7 .v8-checklist-card li{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:18px;
+  padding:17px 18px;
+  color:rgba(255,255,255,.80);
+  line-height:1.55;
+}
+
+body.home-v7 .v8-checklist-card li strong{
+  display:block;
+  color:#fff;
+  margin-bottom:4px;
+}
+
+/* Make the quote route more visible without making the page noisy */
+body.home-v7 .v7-trustbar{
+  border-bottom:0!important;
+}
+
+body.home-v7 .v7-final-card .btn-primary{
+  min-width:150px;
+}
+
+@media(max-width:1180px){
+  body.home-v7 .v8-quote-card{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+  body.home-v7 .v8-solution-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  body.home-v7 .v8-checklist-card{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:760px){
+  body.home-v7 .v8-section{
+    padding:50px 0;
+  }
+  body.home-v7 .v8-quote-brief{
+    padding:20px 0 0;
+  }
+  body.home-v7 .v8-quote-card,
+  body.home-v7 .v8-checklist-card{
+    padding:26px 20px;
+    border-radius:22px;
+  }
+  body.home-v7 .v8-solution-grid{
+    grid-template-columns:1fr;
+  }
+  body.home-v7 .v8-solution-grid a{
+    min-height:auto;
+    padding:24px 22px;
+  }
+}
