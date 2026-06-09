@@ -1,25 +1,11 @@
-Olaytech Navigation Size Lock Files
+Olaytech Logo Sharpness & Size Fix
 
-Upload these files to the same paths in your GitHub website repository:
+Replace these files in the same paths on GitHub:
 
 1) css/homepage-57.css
-   Replace the existing css/homepage-57.css
+2) assets/brand/olay-logo-black.png
+3) assets/brand/olay-logo-white.png  (optional but recommended)
 
-2) js/main.js
-   Replace the existing js/main.js
-
-Important:
-- Every page must include this line in the <head>:
-  <link rel="stylesheet" href="css/homepage-57.css" />
-
-- Every page should include this before </body>:
-  <script src="js/main.js"></script>
-
-This package is for fixing navigation size consistency:
-- fixed topbar height
-- fixed header height
-- fixed logo size
-- fixed menu font size and spacing
-- fixed Get Quote button size
-- stable scrollbar gutter to reduce page jump
-- mobile menu toggle
+Why:
+- The old black logo image was only 137x46px and was forced into 132x58px, so it looked blurry and stretched.
+- This package includes a higher-resolution transparent logo and CSS that displays it without distortion.
