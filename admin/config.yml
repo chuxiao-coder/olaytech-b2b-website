@@ -6,8 +6,7 @@
 #   branch: main
 
 backend:
-  name: github
-  repo: chuxiao-coder/olaytech-b2b-website
+  name: git-gateway
   branch: main
 
 local_backend: true
