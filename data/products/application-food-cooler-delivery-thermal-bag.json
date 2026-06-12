@@ -1,0 +1,29 @@
+{
+  "title": "Delivery Thermal Bag",
+  "slug": "application-food-cooler-delivery-thermal-bag",
+  "status": "published",
+  "sourcePage": "application-food-cooler-delivery-thermal-bag.html",
+  "pageUrl": "application-food-cooler-delivery-thermal-bag.html",
+  "itemNo": "APPFOOD-004",
+  "category": "Food & Cooler Bags",
+  "productType": "Delivery cooler",
+  "application": "Food delivery",
+  "material": "Oxford / PEVA / Foam",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/app-food-04.jpg",
+  "gallery": [
+    "assets/products/app-food-04.jpg",
+    "assets/products/app-food-05.jpg",
+    "assets/products/app-food-06.jpg",
+    "assets/products/app-food-01.jpg"
+  ],
+  "description": "Heavy duty insulated delivery bag for food service and restaurant programs. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Delivery Thermal Bag | Custom Food & Cooler Bags Olaytech",
+  "seoDescription": "Delivery Thermal Bag for custom OEM and ODM bag projects. View product image slots, specifications, materials, logo options and request a factory quote.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

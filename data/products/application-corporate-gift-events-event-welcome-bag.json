@@ -1,0 +1,29 @@
+{
+  "title": "Event Welcome Bag",
+  "slug": "application-corporate-gift-events-event-welcome-bag",
+  "status": "published",
+  "sourcePage": "application-corporate-gift-events-event-welcome-bag.html",
+  "pageUrl": "application-corporate-gift-events-event-welcome-bag.html",
+  "itemNo": "APPGIFT-001",
+  "category": "Corporate Gifts & Events",
+  "productType": "Welcome bag",
+  "application": "Corporate events",
+  "material": "Canvas / Non woven",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/app-gift-01.jpg",
+  "gallery": [
+    "assets/products/app-gift-01.jpg",
+    "assets/products/app-gift-02.jpg",
+    "assets/products/app-gift-03.jpg",
+    "assets/products/app-gift-04.jpg"
+  ],
+  "description": "Branded welcome tote for conferences, travel programs and corporate events. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Event Welcome Bag | Custom Corporate Gifts & Events Olaytech",
+  "seoDescription": "Event Welcome Bag for custom OEM and ODM bag projects. View product image slots, specifications, materials, logo options and request a factory quote.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

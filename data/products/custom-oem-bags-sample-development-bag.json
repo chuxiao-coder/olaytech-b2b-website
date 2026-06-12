@@ -1,0 +1,29 @@
+{
+  "title": "Sample Development Bag",
+  "slug": "custom-oem-bags-sample-development-bag",
+  "status": "published",
+  "sourcePage": "custom-oem-bags-sample-development-bag.html",
+  "pageUrl": "custom-oem-bags-sample-development-bag.html",
+  "itemNo": "CUSTOMOEMBAGS-004",
+  "category": "Custom OEM Bags",
+  "productType": "Sample bag",
+  "application": "Development",
+  "material": "Custom",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/custom-oem-bags-04.jpg",
+  "gallery": [
+    "assets/products/custom-oem-bags-04.jpg",
+    "assets/products/custom-oem-bags-01.jpg",
+    "assets/products/custom-oem-bags-02.jpg",
+    "assets/products/custom-oem-bags-03.jpg"
+  ],
+  "description": "Prototype and sampling support before bulk production. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Sample Development Bag | Custom Custom OEM Bags Manufacturer Olaytech",
+  "seoDescription": "Sample Development Bag for custom OEM and ODM custom oem bags projects. View product image slots, specifications, materials, logo options and request a factory quote.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

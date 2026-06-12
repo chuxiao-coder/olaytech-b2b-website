@@ -1,0 +1,80 @@
+# Olaytech Decap CMS configuration
+# Before publishing online, replace YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME with your real GitHub repository.
+# If you deploy with Netlify Identity, you can change backend to:
+# backend:
+#   name: git-gateway
+#   branch: main
+
+backend:
+  name: github
+  repo: chuxiao-coder/olaytech-b2b-website
+  branch: main
+
+local_backend: true
+publish_mode: editorial_workflow
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+site_url: "https://www.olaytech.com"
+display_url: "https://www.olaytech.com"
+logo_url: "/assets/brand/olay-logo-black.png"
+
+collections:
+  - name: "products"
+    label: "Products 产品管理"
+    label_singular: "Product 产品"
+    folder: "data/products"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{fields.slug}}"
+    summary: "{{title}} · {{productType}} · {{material}}"
+    sortable_fields: ["title", "updatedAt", "productType", "material", "status"]
+    fields:
+      - { label: "Product Title 产品名称", name: "title", widget: "string" }
+      - { label: "Slug 文件名/URL标识", name: "slug", widget: "string", hint: "Lowercase English only, use hyphen. Example: clear-eva-makeup-pouch" }
+      - { label: "Status 状态", name: "status", widget: "select", options: ["draft", "published"], default: "published" }
+      - { label: "Old Static Page 原静态页面", name: "sourcePage", widget: "string", required: false }
+      - { label: "Public Page URL 公开页面", name: "pageUrl", widget: "string", required: false, hint: "Existing HTML page or product-managed.html?slug=xxx" }
+      - { label: "Item No. 货号", name: "itemNo", widget: "string", required: false }
+      - { label: "Category 分类", name: "category", widget: "string", required: false }
+      - { label: "Product Type 产品类型", name: "productType", widget: "string", required: false }
+      - { label: "Application 应用场景", name: "application", widget: "string", required: false }
+      - { label: "Material 材质", name: "material", widget: "string", required: false }
+      - { label: "Color 颜色", name: "color", widget: "string", required: false }
+      - { label: "Size 尺寸", name: "size", widget: "string", required: false }
+      - { label: "Logo Method LOGO工艺", name: "logo", widget: "string", required: false }
+      - { label: "MOQ 起订量", name: "moq", widget: "string", required: false }
+      - { label: "Main Image 主图", name: "mainImage", widget: "image", required: false }
+      - label: "Gallery Images 详情图"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field: { label: "Image 图片", name: "image", widget: "image" }
+      - { label: "Product Description 产品描述", name: "description", widget: "text", required: false }
+      - { label: "SEO Title SEO标题", name: "seoTitle", widget: "string", required: false }
+      - { label: "SEO Description SEO描述", name: "seoDescription", widget: "text", required: false }
+      - label: "Keywords 关键词"
+        name: "keywords"
+        widget: "list"
+        required: false
+        field: { label: "Keyword", name: "keyword", widget: "string" }
+      - { label: "Updated At 更新时间", name: "updatedAt", widget: "datetime", required: false, format: "YYYY-MM-DD" }
+      - { label: "Internal Notes 内部备注", name: "notes", widget: "text", required: false }
+
+  - name: "site_settings"
+    label: "Site Settings 网站设置"
+    files:
+      - label: "Basic Site Settings 基础设置"
+        name: "settings"
+        file: "data/site-settings.json"
+        format: "json"
+        fields:
+          - { label: "Site Name 网站名", name: "siteName", widget: "string" }
+          - { label: "Domain 域名", name: "domain", widget: "string" }
+          - { label: "Email 邮箱", name: "email", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string" }
+          - { label: "GA4 Measurement ID", name: "ga4Id", widget: "string", required: false, hint: "Example: G-XXXXXXXXXX" }
+          - { label: "Search Console Verified", name: "searchConsoleVerified", widget: "boolean", required: false }
+          - { label: "Notes 备注", name: "notes", widget: "text", required: false }

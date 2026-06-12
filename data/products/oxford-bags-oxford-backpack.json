@@ -1,0 +1,30 @@
+{
+  "title": "Oxford Backpack",
+  "slug": "oxford-bags-oxford-backpack",
+  "status": "published",
+  "sourcePage": "oxford-bags-oxford-backpack.html",
+  "pageUrl": "oxford-bags-oxford-backpack.html",
+  "itemNo": "OXFORDBAGS-005",
+  "category": "Oxford Fabric Bags",
+  "productType": "Backpack",
+  "application": "School / travel",
+  "material": "Oxford fabric",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/oxford-bags-05.jpg",
+  "gallery": [
+    "assets/products/oxford-bags-05.jpg",
+    "assets/products/oxford-bags-01.jpg",
+    "assets/products/oxford-bags-02.jpg",
+    "assets/products/oxford-bags-03.jpg",
+    "assets/products/oxford-bags-04.jpg"
+  ],
+  "description": "Custom backpack with practical pockets and logo options. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Oxford Backpack | Custom Oxford Fabric Bags OEM Manufacturer",
+  "seoDescription": "Custom backpack with practical pockets and logo options. Custom oxford fabric bags with OEM ODM logo, size, material and packing options.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

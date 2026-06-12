@@ -1,0 +1,29 @@
+{
+  "title": "Cooler Backpack",
+  "slug": "cooler-bags-cooler-backpack",
+  "status": "published",
+  "sourcePage": "cooler-bags-cooler-backpack.html",
+  "pageUrl": "cooler-bags-cooler-backpack.html",
+  "itemNo": "COOLERBAGS-006",
+  "category": "Cooler Bags",
+  "productType": "Cooler backpack",
+  "application": "Outdoor",
+  "material": "Oxford / PEVA",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/cooler-bags-06.jpg",
+  "gallery": [
+    "assets/products/cooler-bags-06.jpg",
+    "assets/products/cooler-bags-01.jpg",
+    "assets/products/cooler-bags-02.jpg",
+    "assets/products/cooler-bags-03.jpg"
+  ],
+  "description": "Hands-free insulated backpack for outdoor and sports buyers. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Cooler Backpack | Custom Cooler Bags Manufacturer Olaytech",
+  "seoDescription": "Cooler Backpack for custom OEM and ODM cooler bags projects. View product image slots, specifications, materials, logo options and request a factory quote.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

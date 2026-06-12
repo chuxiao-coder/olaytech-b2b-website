@@ -1,0 +1,9 @@
+{
+  "siteName": "Olaytech",
+  "domain": "https://www.olaytech.com",
+  "email": "selina@olaybag.com",
+  "whatsapp": "8613957952677",
+  "ga4Id": "",
+  "searchConsoleVerified": false,
+  "notes": "Set ga4Id in js/analytics-config.js or add the GA4 ID here for future build automation."
+}

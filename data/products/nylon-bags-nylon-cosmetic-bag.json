@@ -1,0 +1,29 @@
+{
+  "title": "Nylon Cosmetic Bag",
+  "slug": "nylon-bags-nylon-cosmetic-bag",
+  "status": "published",
+  "sourcePage": "nylon-bags-nylon-cosmetic-bag.html",
+  "pageUrl": "nylon-bags-nylon-cosmetic-bag.html",
+  "itemNo": "NYLONBAGS-002",
+  "category": "Nylon Bags",
+  "productType": "Cosmetic bag",
+  "application": "Beauty",
+  "material": "Nylon",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/nylon-bags-02.jpg",
+  "gallery": [
+    "assets/products/nylon-bags-02.jpg",
+    "assets/products/nylon-bags-01.jpg",
+    "assets/products/nylon-bags-03.jpg",
+    "assets/products/nylon-bags-04.jpg"
+  ],
+  "description": "Soft nylon makeup pouch for beauty and travel brands. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Nylon Cosmetic Bag | Custom Nylon Bags OEM Manufacturer",
+  "seoDescription": "Soft nylon makeup pouch for beauty and travel brands. Custom nylon bags with OEM ODM logo, size, material and packing options.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

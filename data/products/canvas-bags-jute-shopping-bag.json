@@ -1,0 +1,29 @@
+{
+  "title": "Jute Shopping Bag",
+  "slug": "canvas-bags-jute-shopping-bag",
+  "status": "published",
+  "sourcePage": "canvas-bags-jute-shopping-bag.html",
+  "pageUrl": "canvas-bags-jute-shopping-bag.html",
+  "itemNo": "CANVASBAGS-004",
+  "category": "Canvas Bags",
+  "productType": "Shopping tote",
+  "application": "Retail",
+  "material": "Jute / cotton",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/canvas-bags-04.jpg",
+  "gallery": [
+    "assets/products/canvas-bags-04.jpg",
+    "assets/products/canvas-bags-01.jpg",
+    "assets/products/canvas-bags-02.jpg",
+    "assets/products/canvas-bags-03.jpg"
+  ],
+  "description": "Eco-style jute shopping tote with custom logo options. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Jute Shopping Bag | Custom Canvas Bags OEM Manufacturer",
+  "seoDescription": "Eco-style jute shopping tote with custom logo options. Custom canvas bags with OEM ODM logo, size, material and packing options.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

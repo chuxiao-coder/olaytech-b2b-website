@@ -1,0 +1,29 @@
+{
+  "title": "Promotional Gift Pouch",
+  "slug": "application-corporate-gift-events-promotional-gift-pouch",
+  "status": "published",
+  "sourcePage": "application-corporate-gift-events-promotional-gift-pouch.html",
+  "pageUrl": "application-corporate-gift-events-promotional-gift-pouch.html",
+  "itemNo": "APPGIFT-002",
+  "category": "Corporate Gifts & Events",
+  "productType": "Gift pouch",
+  "application": "Promotional gifts",
+  "material": "Velvet / Canvas / PU",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/app-gift-02.jpg",
+  "gallery": [
+    "assets/products/app-gift-02.jpg",
+    "assets/products/app-gift-03.jpg",
+    "assets/products/app-gift-04.jpg",
+    "assets/products/app-gift-05.jpg"
+  ],
+  "description": "Small custom pouch for gifts, accessories, samples and promotional campaigns. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Promotional Gift Pouch | Custom Corporate Gifts & Events Olaytech",
+  "seoDescription": "Promotional Gift Pouch for custom OEM and ODM bag projects. View product image slots, specifications, materials, logo options and request a factory quote.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}

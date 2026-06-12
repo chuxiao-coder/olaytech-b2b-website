@@ -1,0 +1,29 @@
+{
+  "title": "Oxford Cooler Bag",
+  "slug": "oxford-bags-oxford-cooler-bag",
+  "status": "published",
+  "sourcePage": "oxford-bags-oxford-cooler-bag.html",
+  "pageUrl": "oxford-bags-oxford-cooler-bag.html",
+  "itemNo": "OXFORDBAGS-001",
+  "category": "Oxford Fabric Bags",
+  "productType": "Cooler bag",
+  "application": "Food storage",
+  "material": "Oxford / PEVA",
+  "color": "Custom color / Pantone available",
+  "size": "Custom size based on buyer requirements",
+  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
+  "moq": "Based on material, logo and structure",
+  "mainImage": "assets/products/oxford-bags-01.jpg",
+  "gallery": [
+    "assets/products/oxford-bags-01.jpg",
+    "assets/products/oxford-bags-02.jpg",
+    "assets/products/oxford-bags-03.jpg",
+    "assets/products/oxford-bags-04.jpg"
+  ],
+  "description": "Durable insulated cooler bag for lunch, picnic and food delivery programs. We support custom material, size, color, logo method and export packing for B2B orders.",
+  "seoTitle": "Oxford Cooler Bag | Custom Oxford Fabric Bags OEM Manufacturer",
+  "seoDescription": "Durable insulated cooler bag for lunch, picnic and food delivery programs. Custom oxford fabric bags with OEM ODM logo, size, material and packing options.",
+  "keywords": [],
+  "updatedAt": "2026-06-12",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+}
