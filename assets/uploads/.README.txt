@@ -1,1 +1,0 @@
-Upload product images here through the CMS. Suggested: use webp/jpg under 300KB when possible.

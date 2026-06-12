@@ -1,1 +1,0 @@
-Upload product images here. Use filenames shown on the website cards, such as cosmetic-bags-01.jpg or canvas-bags-01.jpg. Images around 1200x900px or 1200x1200px are recommended.
