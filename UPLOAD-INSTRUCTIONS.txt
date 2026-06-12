@@ -1,5 +1,20 @@
-Replace these files to upgrade the six Support sections with richer content and images.
-Files included:
-- support.html
+Olaytech Inner Guide Pages V18 - Inner Pages Only
+
+This package ONLY updates the six inner guide pages.
+It does NOT include support.html.
+It does NOT include blog.html.
+
+Replace:
+- how-to-choose-custom-bag-manufacturer.html
+- best-materials-for-custom-toiletry-bags.html
+- logo-methods-for-custom-bags.html
+- how-to-customize-cooler-bags.html
+- canvas-vs-nylon-vs-oxford-bags.html
+- oem-bag-manufacturing-process.html
 - css/homepage-57.css
 - assets/support-guides/*
+
+Notes:
+- The CSS added is scoped to body.article-v18, so it is for these inner pages only.
+- Support page layout is not changed.
+- Material Guide has been corrected to cover all main custom bag categories, not only toiletry/cosmetic bags.
