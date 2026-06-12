@@ -1,9 +1,6 @@
 # Olaytech Decap CMS configuration
-# Before publishing online, replace YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME with your real GitHub repository.
-# If you deploy with Netlify Identity, you can change backend to:
-# backend:
-#   name: git-gateway
-#   branch: main
+# Netlify Identity + Git Gateway backend is enabled.
+# Use Netlify Identity to invite admin users, and Git Gateway to save CMS changes to GitHub.
 
 backend:
   name: git-gateway
@@ -13,8 +10,8 @@ local_backend: true
 publish_mode: editorial_workflow
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-site_url: "https://www.olaytech.com"
-display_url: "https://www.olaytech.com"
+site_url: "https://gregarious-sprinkles-db2dfe.netlify.app"
+display_url: "https://gregarious-sprinkles-db2dfe.netlify.app"
 logo_url: "/assets/brand/olay-logo-black.png"
 
 collections:

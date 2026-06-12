@@ -304,5 +304,23 @@
 <!-- Olaytech analytics placeholder: set GA4 ID in js/analytics-config.js -->
 <script src="js/analytics-config.js"></script>
 <script src="js/analytics-events.js"></script>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", function(user) {
+      var hash = window.location.hash || "";
+      var hasIdentityToken = hash.indexOf("invite_token") !== -1 || hash.indexOf("confirmation_token") !== -1 || hash.indexOf("recovery_token") !== -1 || hash.indexOf("access_token") !== -1;
+      if (!user && hasIdentityToken) {
+        window.netlifyIdentity.open();
+      }
+    });
+    window.netlifyIdentity.on("login", function() {
+      if ((window.location.hash || "").indexOf("invite_token") !== -1) {
+        window.location.href = "/admin/";
+      }
+    });
+  }
+</script>
 </body>
 </html>
