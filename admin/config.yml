@@ -25,11 +25,43 @@ collections:
     format: "json"
     identifier_field: "title"
     slug: "{{fields.slug}}"
-    summary: "{{title}} · {{productType}} · {{material}}"
+    summary: "{{title}} · {{typeGroup}} · {{materialGroup}} · {{applicationGroup}}"
     sortable_fields: ["title", "updatedAt", "productType", "material", "status"]
     fields:
       - { label: "Product Title 产品名称", name: "title", widget: "string" }
       - { label: "Slug 文件名/URL标识", name: "slug", widget: "string", hint: "Lowercase English only, use hyphen. Example: clear-eva-makeup-pouch" }
+      - { label: "Card Title 产品卡片标题", name: "cardTitle", widget: "string", required: false, hint: "Optional. If blank, the product title will be used on catalog cards." }
+      - { label: "Card Subtitle 产品卡片小标题", name: "cardSubtitle", widget: "text", required: false, hint: "Shown under the title on By Type / By Material / By Application product cards. Example: Soft neoprene pouch · Custom logo · OEM bulk order" }
+      - label: "Main Type 主类型自动分类"
+        name: "typeGroup"
+        widget: "select"
+        required: false
+        options: ["Cosmetic Bags", "Toiletry Bags", "Shopping Bags", "Cooler Bags", "Sports Bags", "Drawstring Bags", "Travel Organizers", "Card Binder Cases", "Care Binder", "Custom OEM Bags", "Other Custom Bags"]
+      - label: "Type Tags 更多类型标签"
+        name: "typeTags"
+        widget: "list"
+        required: false
+        field: { label: "Type", name: "type", widget: "select", options: ["Cosmetic Bags", "Toiletry Bags", "Shopping Bags", "Cooler Bags", "Sports Bags", "Drawstring Bags", "Travel Organizers", "Card Binder Cases", "Care Binder", "Custom OEM Bags", "Other Custom Bags"] }
+      - label: "Main Material 主材质自动分类"
+        name: "materialGroup"
+        widget: "select"
+        required: false
+        options: ["Cotton / Canvas", "Nylon", "Oxford", "PVC / EVA / TPU", "Neoprene", "RPET", "PU Leather", "Felt", "Non Woven", "Polyester", "Velvet / Satin", "Tyvek", "Mesh", "Other Materials"]
+      - label: "Material Tags 更多材质标签"
+        name: "materialTags"
+        widget: "list"
+        required: false
+        field: { label: "Material", name: "material", widget: "select", options: ["Cotton / Canvas", "Nylon", "Oxford", "PVC / EVA / TPU", "Neoprene", "RPET", "PU Leather", "Felt", "Non Woven", "Polyester", "Velvet / Satin", "Tyvek", "Mesh", "Other Materials"] }
+      - label: "Main Application 主应用场景自动分类"
+        name: "applicationGroup"
+        widget: "select"
+        required: false
+        options: ["Beauty & Cosmetic", "Travel & Toiletry", "Retail & Promotion", "Food & Cooler", "Outdoor & Sports", "Card & Document Storage", "Corporate Gifts", "Office & School", "Event Giveaway", "Other Applications"]
+      - label: "Application Tags 更多应用场景标签"
+        name: "applicationTags"
+        widget: "list"
+        required: false
+        field: { label: "Application", name: "application", widget: "select", options: ["Beauty & Cosmetic", "Travel & Toiletry", "Retail & Promotion", "Food & Cooler", "Outdoor & Sports", "Card & Document Storage", "Corporate Gifts", "Office & School", "Event Giveaway", "Other Applications"] }
       - { label: "Status 状态", name: "status", widget: "select", options: ["draft", "published"], default: "published" }
       - { label: "Old Static Page 原静态页面", name: "sourcePage", widget: "string", required: false }
       - { label: "Public Page URL 公开页面", name: "pageUrl", widget: "string", required: false, hint: "Existing HTML page or product-managed.html?slug=xxx" }

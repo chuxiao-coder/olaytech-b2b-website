@@ -12,8 +12,10 @@ SITEMAP_FILE = ROOT / "sitemap-products-generated.xml"
 DOMAIN = "https://www.olaytech.com"
 
 summary_fields = [
-    "title", "slug", "status", "sourcePage", "pageUrl", "itemNo", "category",
-    "productType", "application", "material", "mainImage", "seoDescription"
+    "title", "cardTitle", "cardSubtitle", "slug", "status", "sourcePage", "pageUrl",
+    "itemNo", "category", "productType", "typeGroup", "typeTags", "application",
+    "applicationGroup", "applicationTags", "material", "materialGroup", "materialTags",
+    "mainImage", "logo", "updatedAt", "seoDescription"
 ]
 products = []
 for path in sorted(PRODUCT_DIR.glob("*.json")):
