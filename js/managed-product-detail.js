@@ -92,7 +92,7 @@
       +        categoryLink(matText, 'materials.html?material='+encodeURIComponent(matText || 'Other Materials')+'#products')
       +        categoryLink(appText, 'applications.html?application='+encodeURIComponent(appText || 'Other Applications')+'#products')
       + '    </div>'
-      + '    <div class="managed-actions managed-actions-top"><a class="btn primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Get A Quote</a><a class="btn dark-btn" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp</a><a class="btn ghost" href="'+attr(backUrl(p))+'">Back To Category</a></div>'
+      + '    <div class="managed-actions managed-actions-top"><a class="btn primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Get A Quote</a><a class="btn dark-btn" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp</a><a class="btn ghost" href="#product-detail-photos">View Detail Photos</a><a class="btn ghost" href="'+attr(backUrl(p))+'">Back To Category</a></div>'
       + '    <div class="managed-overview-card"><h2>Product Overview</h2><p>'+esc(overview)+'</p></div>'
       + '    <table class="managed-spec managed-spec-v2">'+ specRows + '</table>'
       + '  </section>'
@@ -100,7 +100,12 @@
       + '<div class="container managed-detail-extra">'
       + '  <section class="managed-description-card"><h2>Customization Support</h2><p>This product can be adjusted for your brand project. You can change the size, fabric, color, lining, zipper, puller, logo position and retail packing according to your order requirements.</p><ul><li>Logo methods: printing, embroidery, woven label, rubber patch or metal plate</li><li>Material options can be selected according to price level and target market</li><li>Suitable for wholesale, promotional, beauty, travel and private label projects</li></ul></section>'
       + '  <section class="managed-description-card managed-inquiry-card"><h2>Request A B2B Quotation</h2><p>Send us your target quantity, logo artwork, size, material preference and reference photos. Our team will help check structure, sampling details, packing method and production quotation.</p><div class="managed-inquiry-actions"><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Send Inquiry</a><a class="secondary" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp Quote</a></div></section>'
-      + '</div>';
+      + '</div>'
+      + '<section class="container managed-large-gallery-section" id="product-detail-photos">'
+      + '  <div class="managed-large-gallery-head"><p class="managed-kicker">Product Detail Photos</p><h2>View Large Product Images</h2><p>Upload more gallery images in the admin CMS and they will appear here as large detail photos for buyers to review.</p></div>'
+      + '  <div class="managed-large-gallery-grid">'+gallery.map(function(g,i){return '<button class="managed-large-photo" type="button" data-img="'+attr(g)+'" aria-label="Open large product image '+(i+1)+'"><span>Image '+String(i+1).padStart(2,'0')+'</span><img src="'+attr(g)+'" alt="'+attr(title)+' large detail image '+(i+1)+'"></button>';}).join('')+'</div>'
+      + '</section>'
+      + '<div class="managed-lightbox" id="managedLightbox" aria-hidden="true"><button class="managed-lightbox-close" type="button" aria-label="Close large image">×</button><img src="" alt="Large product preview"></div>';
 
     mount.querySelectorAll('.managed-gallery-thumbs button').forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -110,6 +115,33 @@
         this.classList.add('active');
       });
     });
+
+    var lightbox = document.getElementById('managedLightbox');
+    var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+    function openLarge(src){
+      if(!lightbox || !lightboxImg || !src) return;
+      lightboxImg.src = src;
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.classList.add('managed-lightbox-open');
+    }
+    function closeLarge(){
+      if(!lightbox) return;
+      lightbox.setAttribute('aria-hidden','true');
+      document.body.classList.remove('managed-lightbox-open');
+    }
+    var mainImage = document.getElementById('managedMainImg');
+    if(mainImage){
+      mainImage.addEventListener('click', function(){ openLarge(this.getAttribute('src')); });
+    }
+    mount.querySelectorAll('.managed-large-photo').forEach(function(btn){
+      btn.addEventListener('click', function(){ openLarge(this.getAttribute('data-img')); });
+    });
+    if(lightbox){
+      lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLarge(); });
+      var closeBtn = lightbox.querySelector('.managed-lightbox-close');
+      if(closeBtn) closeBtn.addEventListener('click', closeLarge);
+      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLarge(); });
+    }
   }
 
   if(!slug){

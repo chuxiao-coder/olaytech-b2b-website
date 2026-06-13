@@ -1,17 +1,17 @@
-Olaytech product detail balance fix
+Olaytech product detail large image gallery patch
 
-Only file included:
+Files included:
+- js/managed-product-detail.js
 - css/cms-products.css
 
-What it fixes:
-- Makes the left product image panel smaller and more balanced.
-- Aligns the left image block and right introduction block as one connected product detail section.
-- Reduces the oversized gap between image and content.
-- Keeps left and right blocks scrolling together.
+What it adds:
+- A large Product Detail Photos section below the product detail area.
+- Gallery images uploaded in the CMS will automatically appear as large buyer-facing photos.
+- Buyers can click the main image or a large detail image to open a full-screen preview.
 
 How to upload:
 1. Unzip this package.
-2. Copy css/cms-products.css into the GitHub repository and replace the old file.
+2. Copy css/cms-products.css and js/managed-product-detail.js into the GitHub repository and replace the old files.
 3. Commit and push.
 4. Wait for Netlify deploy.
-5. Open the product detail page and press Ctrl + F5.
+5. Open a product detail page and press Ctrl + F5.
