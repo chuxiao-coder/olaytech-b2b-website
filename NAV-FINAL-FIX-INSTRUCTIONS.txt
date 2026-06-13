@@ -1,0 +1,24 @@
+Olaytech Navigation Final Fix - 2026-06-13
+
+Fixed issue:
+- Navigation size changed when opening different pages.
+- Header/logo/menu positions jumped because multiple old navigation patches were stacked together.
+- js/main.js was rebuilding the header after page load, causing visible layout shift.
+
+Changed files:
+1. css/unified-nav.css
+   - Rebuilt as one clean final navigation stylesheet.
+   - Locked topbar height, header height, logo size, nav item width/height, CTA size, dropdown size, and mobile menu behavior.
+   - Removed repeated/conflicting old navigation patches.
+
+2. js/main.js
+   - No longer rewrites an existing header after the page loads.
+   - Only adds missing classes, keeps mobile menu, link sync, and active state.
+   - This prevents the navigation from jumping after opening a page.
+
+3. All HTML pages
+   - Updated CSS/JS version query to nav-final-20260613 so browser cache loads the new fix.
+
+Recommended upload:
+- Upload the full fixed package if you want the safest result.
+- If uploading only changed files, upload all HTML pages plus css/unified-nav.css and js/main.js so the cache version is updated.

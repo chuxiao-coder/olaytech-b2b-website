@@ -44,7 +44,7 @@
   };
 
   function navHtml(active){
-    function cls(name){ return ''; }
+    function cls(name){ return name === active ? ' class="active"' : ''; }
     return ''+
       '<a'+cls('home')+' href="index.html">Home</a>'+ 
       '<div class="nav-dropdown"><a'+cls('type')+' href="product-types.html">By Type</a><div class="dropdown-panel">'+
@@ -126,11 +126,12 @@
     var topbar = document.querySelector('.topbar, .v7-topbar, .initi-topbar, .olay-topbar');
     if(!topbar){
       topbar = document.createElement('div');
-      topbar.className = 'topbar v7-topbar olay-topbar';
+      topbar.innerHTML = '<div class="container topbar-inner olay-topbar-inner"><span>OEM &amp; ODM Custom Bags · Factory Direct · Global Shipping Support</span></div>';
       document.body.insertBefore(topbar, document.body.firstChild);
     }
-    topbar.className = 'topbar v7-topbar olay-topbar';
-    topbar.innerHTML = '<div class="container topbar-inner"><span>OEM &amp; ODM Custom Bags · Factory Direct · Global Shipping Support</span></div>';
+    topbar.classList.add('topbar','v7-topbar','olay-nav-topbar');
+    var inner = topbar.querySelector('.topbar-inner');
+    if(inner) inner.classList.add('olay-topbar-inner');
   }
 
   function normalizeHeader(){
@@ -138,21 +139,30 @@
     if(!header){
       header = document.createElement('header');
       header.id = 'site-header';
+      header.className = 'site-header olay-site-header';
+      header.innerHTML = ''+
+        '<div class="container header-inner olay-header-inner">'+
+          '<a class="logo logo-image olay-logo-link" href="index.html" aria-label="Olaytech home">'+
+            '<img src="'+BRAND_LOGO+'" width="132" height="58" alt="O\'Lay custom bag manufacturer logo">'+
+          '</a>'+ 
+          '<button class="nav-toggle" aria-label="Open navigation" type="button">☰</button>'+ 
+          '<nav class="main-nav olay-main-nav" aria-label="Main navigation">'+navHtml(activeSection())+'</nav>'+ 
+          '<a class="header-cta olay-header-cta" href="contact.html#design-brief">Get Quote <span>›</span></a>'+ 
+        '</div>';
       var afterTopbar = document.querySelector('.topbar, .v7-topbar, .olay-topbar');
       if(afterTopbar && afterTopbar.nextSibling) document.body.insertBefore(header, afterTopbar.nextSibling);
       else document.body.insertBefore(header, document.body.firstChild);
     }
     header.id = 'site-header';
-    header.className = 'site-header olay-site-header';
-    header.innerHTML = ''+
-      '<div class="container header-inner olay-header-inner">'+
-        '<a class="logo logo-image olay-logo-link" href="index.html" aria-label="Olaytech home">'+
-          '<img src="'+BRAND_LOGO+'" width="132" height="58" alt="O\'Lay custom bag manufacturer logo">'+
-        '</a>'+ 
-        '<button class="nav-toggle" aria-label="Open navigation" type="button">☰</button>'+ 
-        '<nav class="main-nav olay-main-nav" aria-label="Main navigation">'+navHtml(activeSection())+'</nav>'+ 
-        '<a class="header-cta olay-header-cta" href="contact.html#design-brief">Get Quote <span>›</span></a>'+ 
-      '</div>';
+    header.classList.add('site-header','olay-site-header');
+    var inner = header.querySelector('.header-inner');
+    if(inner) inner.classList.add('olay-header-inner');
+    var logo = header.querySelector('.logo, .logo-image');
+    if(logo) logo.classList.add('logo','logo-image','olay-logo-link');
+    var nav = header.querySelector('.main-nav');
+    if(nav) nav.classList.add('olay-main-nav');
+    var cta = header.querySelector('.header-cta');
+    if(cta) cta.classList.add('olay-header-cta');
   }
 
   function fileNameFromHref(href){
@@ -161,6 +171,28 @@
     if(raw.indexOf('#') === 0 || raw.indexOf('mailto:') === 0 || raw.indexOf('tel:') === 0 || raw.indexOf('javascript:') === 0 || raw.indexOf('http') === 0 && raw.indexOf(window.location.hostname) === -1) return '';
     try { return (new URL(raw, window.location.href)).pathname.split('/').pop() || ''; }
     catch(e) { return raw.split('#')[0].split('?')[0].split('/').pop(); }
+  }
+
+  function setActiveState(){
+    var section = activeSection();
+    var nav = document.querySelector('.main-nav');
+    if(!nav) return;
+    nav.querySelectorAll('a.active,[aria-current="page"]').forEach(function(a){
+      a.classList.remove('active');
+      a.removeAttribute('aria-current');
+    });
+    var target;
+    if(section === 'home') target = nav.querySelector(':scope > a[href="index.html"]');
+    if(section === 'type') target = nav.querySelector('.nav-dropdown > a[href="product-types.html"]');
+    if(section === 'material') target = nav.querySelector('.nav-dropdown > a[href="materials.html"]');
+    if(section === 'application') target = nav.querySelector('.nav-dropdown > a[href="applications.html"]');
+    if(section === 'support') target = nav.querySelector('.nav-dropdown > a[href="support.html"]');
+    if(section === 'about') target = nav.querySelector(':scope > a[href="about.html"]');
+    if(section === 'contact') target = nav.querySelector(':scope > a[href="contact.html"]');
+    if(target){
+      target.classList.add('active');
+      target.setAttribute('aria-current','page');
+    }
   }
 
   function syncOldLinks(){
@@ -208,6 +240,7 @@
     ensureCss();
     normalizeTopbar();
     normalizeHeader();
+    setActiveState();
     syncOldLinks();
     mobileToggle();
     jumpToProducts();
