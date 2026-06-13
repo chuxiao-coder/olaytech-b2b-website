@@ -19,13 +19,37 @@
   function splitTags(v){
     if(!v) return [];
     if(Array.isArray(v)) return v.map(clean).filter(Boolean);
-    return String(v).split(/[,;|/]+/).map(clean).filter(Boolean);
+    return String(v).split(/[,;|]+/).map(clean).filter(Boolean);
   }
-  function first(v){return splitTags(v)[0] || clean(v);}
-  function row(k,v){
+  function short(v, max){
     v = clean(v);
-    return v ? '<tr><th>'+esc(k)+'</th><td>'+esc(v)+'</td></tr>' : '';
+    if(v.length <= max) return v;
+    return v.slice(0, max - 1).trim() + '…';
   }
+  function titleOf(p){return clean(p.cardTitle || p.title || 'Custom Bag Product');}
+  function subtitleOf(p){
+    return clean(p.cardSubtitle || p.shortSubtitle || [p.productType, p.material, p.application].filter(Boolean).join(' · ') || 'Custom OEM / ODM bag for brand projects.');
+  }
+  function overviewOf(p){
+    return clean(p.longDescription || p.description || p.seoDescription || 'Custom OEM bag product for B2B buyer projects. Uploaders can edit the product title, short introduction, specifications, materials, logo options and images in the admin CMS.');
+  }
+  function typeLabel(p){
+    var t = clean(p.typeGroup || p.type || '');
+    var pt = clean(p.productType || '');
+    var cat = clean(p.category || '');
+    if(t) return t;
+    if(/cosmetic|beauty/i.test(cat + ' ' + pt)) return 'Cosmetic Bags';
+    if(/toiletry|wash/i.test(cat + ' ' + pt)) return 'Toiletry Bags';
+    if(/shopping|tote/i.test(cat + ' ' + pt)) return 'Shopping Bags';
+    if(/cooler|lunch|food/i.test(cat + ' ' + pt)) return 'Cooler Bags';
+    if(/sports|gym/i.test(cat + ' ' + pt)) return 'Sports Bags';
+    if(/drawstring/i.test(cat + ' ' + pt)) return 'Drawstring Bags';
+    if(/travel|organizer/i.test(cat + ' ' + pt)) return 'Travel Organizers';
+    if(/card|binder|document/i.test(cat + ' ' + pt)) return 'Card Binder Cases';
+    return pt || cat || 'Custom OEM Bags';
+  }
+  function appLabel(p){return clean(p.applicationGroup || p.application || 'Custom Project');}
+  function materialLabel(p){return clean(p.materialGroup || p.material || 'Custom Material');}
   function setMeta(p){
     var title = clean(p.seoTitle || p.title);
     var desc = clean(p.seoDescription || p.description);
@@ -35,113 +59,125 @@
       if(m) m.setAttribute('content', desc);
     }
   }
-  function detailText(p){
-    return clean(p.longDescription || p.description || p.seoDescription || 'Custom OEM bag product for B2B buyer projects. Uploaders can edit the product title, short introduction, specifications, materials, logo options and images in the admin CMS.');
+  function pill(label, href, icon){
+    if(!label) return '';
+    return '<a class="fused-pill" href="'+attr(href || '#')+'"><span>'+esc(icon || '•')+'</span>'+esc(label)+'</a>';
   }
-  function productTitle(p){return clean(p.cardTitle || p.title || 'Custom Bag Product');}
-  function productSubtitle(p){
-    return clean(p.cardSubtitle || [p.productType, p.material, p.application].filter(Boolean).join(' · ') || 'Custom OEM / ODM bag for brand projects.');
+  function specCard(title, value, icon){
+    value = clean(value) || 'Custom available';
+    return '<article class="fused-overview-card"><div class="fused-overview-icon">'+icon+'</div><div><h3>'+esc(title)+'</h3><p>'+esc(value)+'</p></div></article>';
   }
-  function backUrl(p){
-    var type = clean(p.typeGroup || p.productType || p.category);
-    if(type) return 'product-types.html?type=' + encodeURIComponent(type.indexOf('Bags')>-1 ? type : (type === 'Cosmetic pouch' ? 'Cosmetic Bags' : type)) + '#products';
-    return 'products-managed.html';
+  function benefit(title, text, icon){
+    return '<article class="fused-benefit"><span>'+icon+'</span><div><strong>'+esc(title)+'</strong><p>'+esc(text)+'</p></div></article>';
   }
-  function categoryLink(label, url){
-    return label ? '<a class="managed-pill-link" href="'+attr(url)+'">'+esc(label)+'</a>' : '';
+  function backUrl(p){return 'product-types.html?type=' + encodeURIComponent(typeLabel(p)) + '#products';}
+  function whatsappUrl(title){
+    return 'https://wa.me/8613957952677?text=' + encodeURIComponent('Hello Olaytech, I am interested in ' + title + '. Please send quotation details.');
   }
+
   function render(p){
     setMeta(p);
-    var title = productTitle(p);
-    var subtitle = productSubtitle(p);
+    var title = titleOf(p);
+    var subtitle = subtitleOf(p);
+    var overview = overviewOf(p);
+    var type = typeLabel(p);
+    var material = materialLabel(p);
+    var app = appLabel(p);
     var gallery = (Array.isArray(p.gallery) && p.gallery.length ? p.gallery : [p.mainImage]).map(image).filter(Boolean);
     var main = image(p.mainImage || gallery[0]);
-    var materialTags = splitTags(p.material).slice(0,4);
-    var appTags = splitTags(p.application || p.applicationGroup).slice(0,3);
-    var typeText = clean(p.typeGroup || p.productType || p.category);
-    var matText = clean(p.materialGroup || p.material);
-    var appText = clean(p.applicationGroup || p.application);
-    var ctaText = 'Hello Olaytech, I am interested in ' + title + '. Please send quotation details.';
+    gallery = [main].concat(gallery.filter(function(g){return g !== main;})).slice(0,8);
 
-    var overview = detailText(p);
-    var specRows = ''
-      + row('Item No.', p.itemNo)
-      + row('Product Type', p.productType || p.typeGroup || p.category)
-      + row('Material', p.material || p.materialGroup)
-      + row('Application', p.application || p.applicationGroup)
-      + row('Color', p.color)
-      + row('Size', p.size)
-      + row('Logo Option', p.logo)
-      + row('MOQ', p.moq);
+    var detailPhotos = gallery.length > 1 ? gallery : [main];
+    var categoryHref = 'product-types.html?type=' + encodeURIComponent(type) + '#products';
+    var materialHref = 'materials.html?material=' + encodeURIComponent(material) + '#products';
+    var appHref = 'applications.html?application=' + encodeURIComponent(app) + '#products';
 
     mount.innerHTML = ''
-      + '<div class="managed-detail-hero">'
-      + '  <div class="container managed-breadcrumb"><a href="index.html">Home</a><span>/</span><a href="product-types.html">Products</a><span>/</span><strong>'+esc(title)+'</strong></div>'
-      + '</div>'
-      + '<div class="container managed-detail-v2">'
-      + '  <section class="managed-gallery-card" aria-label="Product images">'
-      + '    <div class="managed-gallery-main"><img id="managedMainImg" src="'+attr(main)+'" alt="'+attr(title)+'"></div>'
-      + '    <div class="managed-gallery-thumbs">'+gallery.map(function(g,i){return '<button class="'+(i===0?'active':'')+'" type="button" data-img="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' image '+(i+1)+'"></button>';}).join('')+'</div>'
-      + '  </section>'
-      + '  <section class="managed-product-info">'
-      + '    <p class="managed-kicker">OEM / ODM Custom Bag</p>'
+      + '<div class="container fused-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="product-types.html">By Type</a><span>›</span><a href="'+attr(categoryHref)+'">'+esc(type)+'</a><span>›</span><strong>'+esc(title)+'</strong></div>'
+      + '<section class="container fused-product-shell">'
+      + '  <div class="fused-product-media">'
+      + '    <button class="fused-zoom" type="button" data-lightbox="'+attr(main)+'" aria-label="View large product image">⌕</button>'
+      + '    <div class="fused-main-image"><img id="managedMainImg" src="'+attr(main)+'" alt="'+attr(title)+'"></div>'
+      + '    <div class="fused-thumbs-wrap"><button class="fused-thumb-arrow" type="button" aria-label="Previous thumbnails">‹</button><div class="fused-thumbs">'
+      + gallery.map(function(g,i){return '<button class="'+(i===0?'active':'')+'" type="button" data-img="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' image '+(i+1)+'"></button>';}).join('')
+      + '    </div><button class="fused-thumb-arrow" type="button" aria-label="Next thumbnails">›</button></div>'
+      + '  </div>'
+      + '  <div class="fused-product-summary">'
+      + '    <p class="fused-kicker">OEM / ODM Custom Bag</p>'
       + '    <h1>'+esc(title)+'</h1>'
-      + '    <p class="managed-subtitle">'+esc(subtitle)+'</p>'
-      + '    <div class="managed-quick-tags">'
-      +        categoryLink(typeText, 'product-types.html?type='+encodeURIComponent(typeText || 'Custom OEM Bags')+'#products')
-      +        categoryLink(matText, 'materials.html?material='+encodeURIComponent(matText || 'Other Materials')+'#products')
-      +        categoryLink(appText, 'applications.html?application='+encodeURIComponent(appText || 'Other Applications')+'#products')
+      + '    <p class="fused-subtitle">'+esc(subtitle)+'</p>'
+      + '    <div class="fused-pills">'
+      +        pill(clean(p.productType || type), categoryHref, '▣')
+      +        pill(short(material, 36), materialHref, '◇')
+      +        pill(short(app, 34), appHref, '◉')
       + '    </div>'
-      + '    <div class="managed-actions managed-actions-top"><a class="btn primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Get A Quote</a><a class="btn dark-btn" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp</a><a class="btn ghost" href="#product-detail-photos">View Detail Photos</a><a class="btn ghost" href="'+attr(backUrl(p))+'">Back To Category</a></div>'
-      + '    <div class="managed-overview-card"><h2>Product Overview</h2><p>'+esc(overview)+'</p></div>'
-      + '    <table class="managed-spec managed-spec-v2">'+ specRows + '</table>'
-      + '  </section>'
-      + '</div>'
-      + '<div class="container managed-detail-extra">'
-      + '  <section class="managed-description-card"><h2>Customization Support</h2><p>This product can be adjusted for your brand project. You can change the size, fabric, color, lining, zipper, puller, logo position and retail packing according to your order requirements.</p><ul><li>Logo methods: printing, embroidery, woven label, rubber patch or metal plate</li><li>Material options can be selected according to price level and target market</li><li>Suitable for wholesale, promotional, beauty, travel and private label projects</li></ul></section>'
-      + '  <section class="managed-description-card managed-inquiry-card"><h2>Request A B2B Quotation</h2><p>Send us your target quantity, logo artwork, size, material preference and reference photos. Our team will help check structure, sampling details, packing method and production quotation.</p><div class="managed-inquiry-actions"><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Send Inquiry</a><a class="secondary" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp Quote</a></div></section>'
-      + '</div>'
-      + '<section class="container managed-large-gallery-section" id="product-detail-photos">'
-      + '  <div class="managed-large-gallery-head"><p class="managed-kicker">Product Detail Photos</p><h2>View Large Product Images</h2><p>Upload more gallery images in the admin CMS and they will appear here as large detail photos for buyers to review.</p></div>'
-      + '  <div class="managed-large-gallery-grid">'+gallery.map(function(g,i){return '<button class="managed-large-photo" type="button" data-img="'+attr(g)+'" aria-label="Open large product image '+(i+1)+'"><span>Image '+String(i+1).padStart(2,'0')+'</span><img src="'+attr(g)+'" alt="'+attr(title)+' large detail image '+(i+1)+'"></button>';}).join('')+'</div>'
+      + '    <p class="fused-summary-text">'+esc(overview)+'</p>'
+      + '    <div class="fused-cta-row"><a class="fused-btn fused-btn-primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">✉ Get A Quote</a><a class="fused-btn fused-btn-outline" target="_blank" rel="noopener" href="'+attr(whatsappUrl(title))+'">☏ WhatsApp</a></div>'
+      + '    <div class="fused-service-row">'
+      +        benefit('OEM/ODM','Custom Service','▢')
+      +        benefit('Low MOQ','Flexible Order','◎')
+      +        benefit('Global Shipping','On-time Delivery','▱')
+      +        benefit('Quality Assurance','Strict QC','◇')
+      + '    </div>'
+      + '  </div>'
       + '</section>'
-      + '<div class="managed-lightbox" id="managedLightbox" aria-hidden="true"><button class="managed-lightbox-close" type="button" aria-label="Close large image">×</button><img src="" alt="Large product preview"></div>';
+      + '<section class="container fused-overview-section">'
+      + '  <div class="fused-section-head"><h2>Product Overview</h2><p>We combine premium materials and factory craftsmanship to help brands create practical, retail-ready custom bag products.</p></div>'
+      + '  <div class="fused-overview-grid">'
+      +      specCard('Material', material, '▰')
+      +      specCard('Use Case', app, '▣')
+      +      specCard('Logo', p.logo || 'Printing, embroidery, woven label, rubber patch or metal plate', '◇')
+      +      specCard('MOQ', p.moq || 'Based on material, logo and structure', '▧')
+      + '  </div>'
+      + '</section>'
+      + '<section class="container fused-photo-section">'
+      + '  <div class="fused-section-head fused-photo-head"><div><h2>Product Detail Photos</h2><p>Use gallery images in the backend to show material texture, inner structure, zipper details, logo position and use scenarios.</p></div><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">View More Details →</a></div>'
+      + '  <div class="fused-photo-grid">'
+      + detailPhotos.slice(0,4).map(function(g,i){return '<button type="button" class="fused-detail-photo" data-lightbox="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' detail photo '+(i+1)+'"></button>';}).join('')
+      + '  </div>'
+      + '</section>'
+      + '<section class="container fused-support-strip">'
+      +      benefit('Premium Materials','Selected fabrics for target markets and price levels.','✓')
+      +      benefit('Custom Branding','Logo methods and placements can match your brand identity.','✎')
+      +      benefit('Flexible Customization','Size, structure, color, lining and packing can be adjusted.','⌁')
+      +      benefit('Reliable Quality','Export QC helps every pouch meet order requirements.','◆')
+      + '</section>'
+      + '<div class="fused-lightbox" aria-hidden="true"><button type="button" class="fused-lightbox-close" aria-label="Close image">×</button><img src="" alt="Large product image"></div>';
 
-    mount.querySelectorAll('.managed-gallery-thumbs button').forEach(function(btn){
+    mount.querySelectorAll('.fused-thumbs button[data-img]').forEach(function(btn){
       btn.addEventListener('click', function(){
+        var newImg = this.getAttribute('data-img');
         var img = document.getElementById('managedMainImg');
-        if(img) img.src = this.getAttribute('data-img');
-        mount.querySelectorAll('.managed-gallery-thumbs button').forEach(function(b){b.classList.remove('active');});
+        var zoom = mount.querySelector('.fused-zoom');
+        if(img) img.src = newImg;
+        if(zoom) zoom.setAttribute('data-lightbox', newImg);
+        mount.querySelectorAll('.fused-thumbs button').forEach(function(b){b.classList.remove('active');});
         this.classList.add('active');
       });
     });
 
-    var lightbox = document.getElementById('managedLightbox');
-    var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
-    function openLarge(src){
-      if(!lightbox || !lightboxImg || !src) return;
-      lightboxImg.src = src;
+    var lightbox = mount.querySelector('.fused-lightbox');
+    var lightImg = lightbox && lightbox.querySelector('img');
+    function openLightbox(src){
+      if(!lightbox || !lightImg || !src) return;
+      lightImg.src = src;
       lightbox.setAttribute('aria-hidden','false');
-      document.body.classList.add('managed-lightbox-open');
+      document.body.classList.add('fused-lightbox-open');
     }
-    function closeLarge(){
+    function closeLightbox(){
       if(!lightbox) return;
       lightbox.setAttribute('aria-hidden','true');
-      document.body.classList.remove('managed-lightbox-open');
+      document.body.classList.remove('fused-lightbox-open');
     }
-    var mainImage = document.getElementById('managedMainImg');
-    if(mainImage){
-      mainImage.addEventListener('click', function(){ openLarge(this.getAttribute('src')); });
-    }
-    mount.querySelectorAll('.managed-large-photo').forEach(function(btn){
-      btn.addEventListener('click', function(){ openLarge(this.getAttribute('data-img')); });
+    mount.querySelectorAll('[data-lightbox]').forEach(function(btn){
+      btn.addEventListener('click', function(){openLightbox(this.getAttribute('data-lightbox'));});
     });
     if(lightbox){
-      lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLarge(); });
-      var closeBtn = lightbox.querySelector('.managed-lightbox-close');
-      if(closeBtn) closeBtn.addEventListener('click', closeLarge);
-      document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLarge(); });
+      lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLightbox(); });
+      var closeBtn = lightbox.querySelector('.fused-lightbox-close');
+      if(closeBtn) closeBtn.addEventListener('click', closeLightbox);
     }
+    document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLightbox(); });
   }
 
   if(!slug){

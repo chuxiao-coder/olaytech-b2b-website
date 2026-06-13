@@ -1,17 +1,19 @@
-Olaytech product detail large image gallery patch
+Olaytech Product Detail Fused Design Patch
 
-Files included:
-- js/managed-product-detail.js
-- css/cms-products.css
+Upload these files to the root of your GitHub repository and overwrite the old files with the same paths:
 
-What it adds:
-- A large Product Detail Photos section below the product detail area.
-- Gallery images uploaded in the CMS will automatically appear as large buyer-facing photos.
-- Buyers can click the main image or a large detail image to open a full-screen preview.
+product-managed.html
+css/unified-nav.css
+css/product-detail-fused.css
+js/managed-product-detail.js
 
-How to upload:
-1. Unzip this package.
-2. Copy css/cms-products.css and js/managed-product-detail.js into the GitHub repository and replace the old files.
-3. Commit and push.
-4. Wait for Netlify deploy.
-5. Open a product detail page and press Ctrl + F5.
+After upload:
+1. Commit changes in GitHub or GitHub Desktop.
+2. Push to main branch.
+3. Wait for Netlify deploy to finish.
+4. Open a product detail page and press Ctrl + F5.
+
+GitHub commit message suggestion:
+Redesign product detail page with integrated gallery layout
+
+This patch only redesigns the managed product detail page. It does not change homepage, About Us, Support, Contact, backend config, product data, or existing product images.
