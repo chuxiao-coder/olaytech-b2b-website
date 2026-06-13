@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 
-/* Olaytech dynamic catalog link sync
-   Redirect old static category pages to the new CMS-driven dynamic catalog pages. */
-document.addEventListener('DOMContentLoaded', function(){
+/* Olaytech direct dynamic catalog link sync
+   Purpose: every old category link now jumps directly to the CMS-driven dynamic pages. */
+(function(){
   var linkMap = {
     'cosmetic-bags.html': 'product-types.html?type=Cosmetic%20Bags',
     'toiletry-bags.html': 'product-types.html?type=Toiletry%20Bags',
@@ -45,21 +45,32 @@ document.addEventListener('DOMContentLoaded', function(){
     'application-corporate-gifts.html': 'applications.html?application=Corporate%20Gifts'
   };
 
-  function normalizedPath(href){
+  function fileNameFromHref(href){
     if(!href) return '';
     var raw = href.trim();
-    if(raw.indexOf('#') === 0 || raw.indexOf('mailto:') === 0 || raw.indexOf('tel:') === 0 || raw.indexOf('https://wa.me/') === 0) return '';
+    if(raw.indexOf('#') === 0 || raw.indexOf('mailto:') === 0 || raw.indexOf('tel:') === 0 || raw.indexOf('javascript:') === 0) return '';
     try {
       var u = new URL(raw, window.location.href);
-      var file = u.pathname.split('/').pop();
-      return file || '';
+      return u.pathname.split('/').pop() || '';
     } catch(e) {
       return raw.split('#')[0].split('?')[0].split('/').pop();
     }
   }
 
-  document.querySelectorAll('a[href]').forEach(function(a){
-    var file = normalizedPath(a.getAttribute('href'));
-    if(linkMap[file]) a.setAttribute('href', linkMap[file]);
+  function toAbsoluteTarget(target){
+    var basePath = window.location.pathname.replace(/[^\/]*$/, '');
+    return basePath + target;
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href]').forEach(function(a){
+      var file = fileNameFromHref(a.getAttribute('href'));
+      if(linkMap[file]) a.setAttribute('href', linkMap[file]);
+    });
   });
-});
+
+  var currentFile = window.location.pathname.split('/').pop();
+  if(linkMap[currentFile] && window.location.search === ''){
+    window.location.replace(toAbsoluteTarget(linkMap[currentFile]));
+  }
+})();
