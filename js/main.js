@@ -1,12 +1,12 @@
 /* ==========================================================
-   Olaytech Unified Navigation + Link Sync
-   Purpose: every page uses the same header size, dropdowns and links.
+   Olaytech Premium Unified Navigation + Safe Link Sync
+   Scope: rewrites only the visible site header/topbar links.
+   Does not modify CMS data, upload fields, forms or product content.
    ========================================================== */
 (function(){
   'use strict';
 
   var BRAND_LOGO = 'assets/brand/olay-logo-black.png';
-  var WHATSAPP = 'https://wa.me/8613957952677?text=Hello%20Olaytech%2C%20I%20would%20like%20to%20ask%20for%20a%20custom%20bag%20quotation.';
 
   var linkMap = {
     'cosmetic-bags.html': 'product-types.html?type=Cosmetic%20Bags#products',
@@ -43,8 +43,28 @@
     'application-corporate-gift-events.html': 'applications.html?application=Corporate%20Gifts#products'
   };
 
-  function navHtml(active){
-    function cls(name){ return active === name ? ' class="active"' : ''; }
+  function currentFile(){
+    return window.location.pathname.split('/').pop() || 'index.html';
+  }
+
+  function activeSection(){
+    var f = currentFile();
+    if(f === 'index.html' || f === '') return 'home';
+    if(f === 'product-types.html' || f === 'products-managed.html' || f === 'product-managed.html') return 'type';
+    if(f === 'materials.html') return 'material';
+    if(f === 'applications.html') return 'application';
+    if(/^application-/.test(f)) return 'application';
+    if(/^(canvas|cotton|nylon|oxford|pvc|neoprene|rpet|pu|felt|non-woven)/.test(f)) return 'material';
+    if(/^(cosmetic|toiletry|shopping|cooler|sports|drawstring|travel|card|custom-oem)/.test(f)) return 'type';
+    if(['support.html','faq.html','blog.html','oem-bag-manufacturing-process.html','logo-methods-for-custom-bags.html','material-guide.html','quality-control.html','download-catalog.html'].indexOf(f) !== -1) return 'support';
+    if(f === 'about.html') return 'about';
+    if(f === 'contact.html') return 'contact';
+    return '';
+  }
+
+  function cls(name){ return activeSection() === name ? ' class="active"' : ''; }
+
+  function navHtml(){
     return ''+
       '<a'+cls('home')+' href="index.html">Home</a>'+ 
       '<div class="nav-dropdown"><a'+cls('type')+' href="product-types.html">By Type</a><div class="dropdown-panel">'+
@@ -95,20 +115,6 @@
       '<a'+cls('contact')+' href="contact.html">Contact</a>';
   }
 
-  function currentFile(){ return window.location.pathname.split('/').pop() || 'index.html'; }
-
-  function activeSection(){
-    var f = currentFile();
-    if(f === 'index.html') return 'home';
-    if(f === 'product-types.html' || f === 'products-managed.html' || f === 'product-managed.html') return 'type';
-    if(f === 'materials.html') return 'material';
-    if(f === 'applications.html') return 'application';
-    if(['support.html','faq.html','blog.html','oem-bag-manufacturing-process.html','logo-methods-for-custom-bags.html','material-guide.html','quality-control.html','download-catalog.html'].indexOf(f) !== -1) return 'support';
-    if(f === 'about.html') return 'about';
-    if(f === 'contact.html') return 'contact';
-    return '';
-  }
-
   function ensureCss(){
     if(document.getElementById('olay-unified-nav-css')) return;
     var existing = Array.prototype.some.call(document.querySelectorAll('link[rel="stylesheet"]'), function(link){
@@ -130,7 +136,7 @@
       document.body.insertBefore(topbar, document.body.firstChild);
     }
     topbar.className = 'topbar v7-topbar olay-topbar';
-    topbar.innerHTML = '<div class="container topbar-inner"><span>OEM &amp; ODM Custom Bags · Factory Direct · Global Shipping Support</span></div>';
+    topbar.innerHTML = '<div class="container topbar-inner olay-topbar-inner"><span>OEM &amp; ODM Custom Bags · Factory Direct · Global Shipping Support</span></div>';
   }
 
   function normalizeHeader(){
@@ -138,8 +144,8 @@
     if(!header){
       header = document.createElement('header');
       header.id = 'site-header';
-      var afterTopbar = document.querySelector('.topbar, .v7-topbar, .olay-topbar');
-      if(afterTopbar && afterTopbar.nextSibling) document.body.insertBefore(header, afterTopbar.nextSibling);
+      var topbar = document.querySelector('.topbar, .v7-topbar, .olay-topbar');
+      if(topbar && topbar.nextSibling) document.body.insertBefore(header, topbar.nextSibling);
       else document.body.insertBefore(header, document.body.firstChild);
     }
     header.id = 'site-header';
@@ -149,8 +155,8 @@
         '<a class="logo logo-image olay-logo-link" href="index.html" aria-label="Olaytech home">'+
           '<img src="'+BRAND_LOGO+'" width="132" height="58" alt="O\'Lay custom bag manufacturer logo">'+
         '</a>'+ 
-        '<button class="nav-toggle" aria-label="Open navigation" type="button">☰</button>'+ 
-        '<nav class="main-nav olay-main-nav" aria-label="Main navigation">'+navHtml(activeSection())+'</nav>'+ 
+        '<button class="nav-toggle" aria-label="Open navigation" type="button" aria-expanded="false">☰</button>'+ 
+        '<nav class="main-nav olay-main-nav" aria-label="Main navigation">'+navHtml()+'</nav>'+ 
         '<a class="header-cta olay-header-cta" href="contact.html#design-brief">Get Quote <span>›</span></a>'+ 
       '</div>';
   }
@@ -158,7 +164,8 @@
   function fileNameFromHref(href){
     if(!href) return '';
     var raw = href.trim();
-    if(raw.indexOf('#') === 0 || raw.indexOf('mailto:') === 0 || raw.indexOf('tel:') === 0 || raw.indexOf('javascript:') === 0 || raw.indexOf('http') === 0 && raw.indexOf(window.location.hostname) === -1) return '';
+    if(raw.indexOf('#') === 0 || raw.indexOf('mailto:') === 0 || raw.indexOf('tel:') === 0 || raw.indexOf('javascript:') === 0) return '';
+    if(raw.indexOf('http') === 0 && raw.indexOf(window.location.hostname) === -1) return '';
     try { return (new URL(raw, window.location.href)).pathname.split('/').pop() || ''; }
     catch(e) { return raw.split('#')[0].split('?')[0].split('/').pop(); }
   }
@@ -174,15 +181,17 @@
     var header = document.getElementById('site-header');
     var toggle = document.querySelector('.nav-toggle');
     var nav = document.querySelector('.main-nav');
-    if(!toggle || !nav) return;
+    if(!header || !toggle || !nav) return;
     toggle.addEventListener('click', function(){
-      nav.classList.toggle('open');
-      header.classList.toggle('nav-open');
+      var open = nav.classList.toggle('open');
+      header.classList.toggle('nav-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
     document.addEventListener('click', function(e){
       if(!header.contains(e.target)){
         nav.classList.remove('open');
         header.classList.remove('nav-open');
+        toggle.setAttribute('aria-expanded','false');
       }
     });
   }
@@ -192,7 +201,7 @@
     setTimeout(function(){
       var el = document.getElementById('products') || document.getElementById('autoProductGrid') || document.querySelector('.auto-main');
       if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-    }, 500);
+    }, 450);
   }
 
   function redirectOldPage(){
