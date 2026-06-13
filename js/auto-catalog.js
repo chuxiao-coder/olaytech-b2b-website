@@ -190,7 +190,14 @@
     if(img.indexOf('/')===0) return img;
     return img;
   }
-  function url(p){return clean(p.pageUrl) || ('product-managed.html?slug=' + encodeURIComponent(p.slug || ''));}
+  function productDetailUrl(p){
+    var slug = clean(p.slug);
+    if(!slug){
+      slug = slugify(productTitle(p));
+    }
+    return 'product-managed.html?slug=' + encodeURIComponent(slug);
+  }
+  function url(p){return productDetailUrl(p);}
   function meta(p){
     var items = [];
     if(mode !== 'type') items.push(inferTypes(p)[0]);
