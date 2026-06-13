@@ -63,12 +63,23 @@
     var appText = clean(p.applicationGroup || p.application);
     var ctaText = 'Hello Olaytech, I am interested in ' + title + '. Please send quotation details.';
 
+    var overview = detailText(p);
+    var specRows = ''
+      + row('Item No.', p.itemNo)
+      + row('Product Type', p.productType || p.typeGroup || p.category)
+      + row('Material', p.material || p.materialGroup)
+      + row('Application', p.application || p.applicationGroup)
+      + row('Color', p.color)
+      + row('Size', p.size)
+      + row('Logo Option', p.logo)
+      + row('MOQ', p.moq);
+
     mount.innerHTML = ''
       + '<div class="managed-detail-hero">'
       + '  <div class="container managed-breadcrumb"><a href="index.html">Home</a><span>/</span><a href="product-types.html">Products</a><span>/</span><strong>'+esc(title)+'</strong></div>'
       + '</div>'
       + '<div class="container managed-detail-v2">'
-      + '  <section class="managed-gallery-card">'
+      + '  <section class="managed-gallery-card" aria-label="Product images">'
       + '    <div class="managed-gallery-main"><img id="managedMainImg" src="'+attr(main)+'" alt="'+attr(title)+'"></div>'
       + '    <div class="managed-gallery-thumbs">'+gallery.map(function(g,i){return '<button class="'+(i===0?'active':'')+'" type="button" data-img="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' image '+(i+1)+'"></button>';}).join('')+'</div>'
       + '  </section>'
@@ -81,22 +92,14 @@
       +        categoryLink(matText, 'materials.html?material='+encodeURIComponent(matText || 'Other Materials')+'#products')
       +        categoryLink(appText, 'applications.html?application='+encodeURIComponent(appText || 'Other Applications')+'#products')
       + '    </div>'
-      + '    <div class="managed-actions managed-actions-top"><a class="btn primary" href="contact.html?product='+encodeURIComponent(title)+'">Get A Quote</a><a class="btn dark-btn" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp</a><a class="btn ghost" href="'+attr(backUrl(p))+'">Back To Category</a></div>'
-      + '    <table class="managed-spec managed-spec-v2">'
-      +        row('Item No.', p.itemNo)
-      +        row('Product Type', p.productType || p.typeGroup || p.category)
-      +        row('Material', p.material || p.materialGroup)
-      +        row('Application', p.application || p.applicationGroup)
-      +        row('Color', p.color)
-      +        row('Size', p.size)
-      +        row('Logo Option', p.logo)
-      +        row('MOQ', p.moq)
-      + '    </table>'
+      + '    <div class="managed-actions managed-actions-top"><a class="btn primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Get A Quote</a><a class="btn dark-btn" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp</a><a class="btn ghost" href="'+attr(backUrl(p))+'">Back To Category</a></div>'
+      + '    <div class="managed-overview-card"><h2>Product Overview</h2><p>'+esc(overview)+'</p></div>'
+      + '    <table class="managed-spec managed-spec-v2">'+ specRows + '</table>'
       + '  </section>'
       + '</div>'
       + '<div class="container managed-detail-extra">'
-      + '  <section class="managed-description-card"><h2>Product Introduction</h2><p>'+esc(detailText(p))+'</p><div class="managed-feature-grid"><div class="managed-feature"><strong>Material</strong><span>'+esc(matText || 'Custom material')+'</span></div><div class="managed-feature"><strong>Use Case</strong><span>'+esc(appText || 'Brand projects')+'</span></div><div class="managed-feature"><strong>Logo</strong><span>'+esc(clean(p.logo) || 'Custom logo support')+'</span></div><div class="managed-feature"><strong>MOQ</strong><span>'+esc(clean(p.moq) || 'Contact for MOQ')+'</span></div></div></section>'
-      + '  <section class="managed-description-card managed-inquiry-card"><h2>Custom This Bag For Your Brand</h2><p>Send your logo, size, material, color and quantity requirements. Our team can help prepare quotation details, sampling suggestions and OEM / ODM production options.</p><ul><li>Logo printing, embroidery, woven label or rubber patch</li><li>Custom material, lining, zipper, puller and packaging</li><li>Factory direct support for wholesale and private label buyers</li></ul><div class="managed-inquiry-actions"><a href="contact.html?product='+encodeURIComponent(title)+'">Send Inquiry</a><a class="secondary" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp Quote</a></div></section>'
+      + '  <section class="managed-description-card"><h2>Customization Support</h2><p>This product can be adjusted for your brand project. You can change the size, fabric, color, lining, zipper, puller, logo position and retail packing according to your order requirements.</p><ul><li>Logo methods: printing, embroidery, woven label, rubber patch or metal plate</li><li>Material options can be selected according to price level and target market</li><li>Suitable for wholesale, promotional, beauty, travel and private label projects</li></ul></section>'
+      + '  <section class="managed-description-card managed-inquiry-card"><h2>Request A B2B Quotation</h2><p>Send us your target quantity, logo artwork, size, material preference and reference photos. Our team will help check structure, sampling details, packing method and production quotation.</p><div class="managed-inquiry-actions"><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Send Inquiry</a><a class="secondary" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp Quote</a></div></section>'
       + '</div>';
 
     mount.querySelectorAll('.managed-gallery-thumbs button').forEach(function(btn){

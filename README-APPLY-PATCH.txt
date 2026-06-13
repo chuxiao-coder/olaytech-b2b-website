@@ -1,21 +1,28 @@
-Olaytech product detail final beauty patch
+Olaytech unified navigation + product detail polish patch
 
 Files included:
 - product-managed.html
 - css/cms-products.css
+- css/unified-nav.css
+- js/main.js
 - js/managed-product-detail.js
+- _redirects
 
 Apply:
 1. Unzip this package.
-2. Copy these files into the same paths in your GitHub repository and replace the old files.
+2. Copy the files into the same paths in your GitHub repository and replace the old files.
 3. Commit and push to GitHub.
 4. Wait for Netlify deploy.
-5. Open a product detail page from the dynamic catalog and press Ctrl + F5.
+5. Open the website and press Ctrl + F5.
 
-This patch fixes:
-- raw blue footer links on the product detail page
-- product detail footer layout and dark B2B footer styling
-- product detail image sizing and gallery layout
-- product intro/spec/inquiry sections with a cleaner B2B style
+What this patch fixes:
+- Product detail page no longer repeats the same material/use/logo/MOQ content in large blocks.
+- Product detail page uses a cleaner B2B layout: image gallery, product overview, specs, customization support, inquiry block.
+- Navigation and footer are unified through js/main.js + css/unified-nav.css on pages that load js/main.js.
+- Old category links are redirected to the new dynamic By Type / By Material / By Application pages.
 
-It does not change homepage, About Us, Support, Contact, admin config, or product data.
+Does not change:
+- Admin login settings
+- Product data JSON files
+- Homepage hero images
+- About Us content

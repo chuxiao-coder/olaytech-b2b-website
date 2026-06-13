@@ -155,3 +155,73 @@
   .managed-detail-body .footer-bottom{display:block!important;}
   .managed-detail-body .whatsapp-float{right:14px!important;bottom:14px!important;min-width:132px!important;height:52px!important;font-size:17px!important;}
 }
+
+/* === Detail page content de-duplication + refined B2B layout === */
+.managed-detail-body .managed-overview-card{
+  margin:18px 0 22px!important;
+  padding:24px 26px!important;
+  border:1px solid #d8eaf4!important;
+  border-radius:24px!important;
+  background:linear-gradient(180deg,#f8fcff,#fff)!important;
+  box-shadow:0 14px 34px rgba(7,54,85,.06)!important;
+}
+.managed-detail-body .managed-overview-card h2{
+  margin:0 0 10px!important;
+  color:#061731!important;
+  font-size:24px!important;
+  line-height:1.2!important;
+  letter-spacing:-.02em!important;
+}
+.managed-detail-body .managed-overview-card p{
+  margin:0!important;
+  color:#53647a!important;
+  font-size:17px!important;
+  line-height:1.75!important;
+}
+.managed-detail-body .managed-detail-extra{
+  max-width:1320px!important;
+  margin:30px auto 0!important;
+  padding:0 22px!important;
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:26px!important;
+}
+.managed-detail-body .managed-description-card{
+  padding:34px 36px!important;
+  border-radius:30px!important;
+  border:1px solid #d8eaf4!important;
+  background:#fff!important;
+  box-shadow:0 22px 58px rgba(7,54,85,.08)!important;
+}
+.managed-detail-body .managed-description-card h2{
+  font-size:30px!important;
+  line-height:1.15!important;
+  letter-spacing:-.03em!important;
+  margin:0 0 14px!important;
+  color:#061731!important;
+}
+.managed-detail-body .managed-description-card p,
+.managed-detail-body .managed-description-card li{
+  color:#53647a!important;
+  font-size:17px!important;
+  line-height:1.72!important;
+}
+.managed-detail-body .managed-description-card ul{margin:14px 0 0!important;padding-left:20px!important;}
+.managed-detail-body .managed-inquiry-card{
+  background:linear-gradient(135deg,#073655,#061731)!important;
+  border:0!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.managed-detail-body .managed-inquiry-card:before{content:"";position:absolute;right:-80px;top:-80px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.08);}
+.managed-detail-body .managed-inquiry-card h2,
+.managed-detail-body .managed-inquiry-card p,
+.managed-detail-body .managed-inquiry-card li{color:#fff!important;position:relative;}
+.managed-detail-body .managed-inquiry-card p{opacity:.86;}
+.managed-detail-body .managed-inquiry-actions{display:flex!important;flex-wrap:wrap!important;gap:12px!important;margin-top:20px!important;position:relative;}
+.managed-detail-body .managed-inquiry-actions a{display:inline-flex!important;align-items:center!important;justify-content:center!important;border-radius:999px!important;padding:13px 20px!important;text-decoration:none!important;font-weight:950!important;background:#fff!important;color:#073655!important;border:1px solid rgba(255,255,255,.24)!important;}
+.managed-detail-body .managed-inquiry-actions a.secondary{background:rgba(255,255,255,.10)!important;color:#fff!important;}
+.managed-detail-body .managed-feature-grid,
+.managed-detail-body .managed-feature{display:none!important;}
+@media(max-width:1120px){.managed-detail-body .managed-detail-extra{grid-template-columns:1fr!important;}}
+@media(max-width:640px){.managed-detail-body .managed-detail-extra{padding-left:16px!important;padding-right:16px!important;}.managed-detail-body .managed-description-card{padding:26px 20px!important;border-radius:24px!important;}.managed-detail-body .managed-overview-card{padding:20px!important;}}
