@@ -1,9 +1,7 @@
-/* ==========================================================
-   Olaytech Navigation Real Fix - 2026-06-13
-   Important: this script no longer rebuilds the header after page load.
-   It only sets active state, supports mobile menu, syncs old links and
-   keeps old category URLs redirected. This removes the visible nav jump.
-   ========================================================== */
+/* ===================================================================
+   Olaytech Navigation Force Fix V3 - no header rebuild, no redirect jump.
+   This script only: active state, mobile menu, old link sync, inline size lock.
+   =================================================================== */
 (function(){
   'use strict';
 
@@ -40,14 +38,12 @@
     'application-corporate-gift-events.html': 'applications.html?application=Corporate%20Gifts#products'
   };
 
-  function currentFile(){
-    return window.location.pathname.split('/').pop() || 'index.html';
-  }
+  function currentFile(){ return window.location.pathname.split('/').pop() || 'index.html'; }
 
   function activeSection(){
     var f = currentFile();
-    if(f === 'index.html') return 'home';
-    if(f === 'product-types.html' || f === 'product-managed.html' || f === 'products-managed.html') return 'type';
+    if(f === 'index.html' || f === '') return 'home';
+    if(f === 'product-types.html' || f === 'products.html' || f === 'products-managed.html' || f === 'product-managed.html') return 'type';
     if(linkMap[f] && linkMap[f].indexOf('product-types.html') === 0) return 'type';
     if(f === 'materials.html') return 'material';
     if(linkMap[f] && linkMap[f].indexOf('materials.html') === 0) return 'material';
@@ -68,25 +64,17 @@
     catch(e) { return raw.split('#')[0].split('?')[0].split('/').pop(); }
   }
 
-  function redirectOldPage(){
-    var f = currentFile();
-    if(linkMap[f] && window.location.search === ''){
-      var basePath = window.location.pathname.replace(/[^\/]*$/, '');
-      window.location.replace(basePath + linkMap[f]);
-    }
-  }
-
   function syncOldLinks(){
     document.querySelectorAll('a[href]').forEach(function(a){
-      var href = a.getAttribute('href');
-      var file = fileNameFromHref(href);
+      if(a.closest('#site-header')) return;
+      var file = fileNameFromHref(a.getAttribute('href'));
       if(file && linkMap[file]) a.setAttribute('href', linkMap[file]);
     });
   }
 
   function markActiveNav(){
     var section = activeSection();
-    var nav = document.querySelector('.main-nav');
+    var nav = document.querySelector('#site-header .main-nav');
     if(!nav) return;
     nav.querySelectorAll('.active,[aria-current="page"]').forEach(function(el){
       el.classList.remove('active');
@@ -94,18 +82,16 @@
     });
     if(!section) return;
     var target = nav.querySelector('[data-nav="'+section+'"]');
-    if(target){
-      if(target.classList.contains('nav-dropdown')) target = target.querySelector(':scope > a') || target.querySelector('a');
-      target.classList.add('active');
-      target.setAttribute('aria-current','page');
-    }
+    if(target && target.classList.contains('nav-dropdown')) target = target.querySelector(':scope > a') || target.querySelector('a');
+    if(target){ target.classList.add('active'); target.setAttribute('aria-current','page'); }
   }
 
   function mobileToggle(){
     var header = document.getElementById('site-header');
-    var toggle = document.querySelector('.nav-toggle');
-    var nav = document.querySelector('.main-nav');
-    if(!header || !toggle || !nav) return;
+    var toggle = document.querySelector('#site-header .nav-toggle');
+    var nav = document.querySelector('#site-header .main-nav');
+    if(!header || !toggle || !nav || toggle.dataset.bound === '1') return;
+    toggle.dataset.bound = '1';
     toggle.addEventListener('click', function(){
       var open = !nav.classList.contains('open');
       nav.classList.toggle('open', open);
@@ -121,6 +107,30 @@
     });
   }
 
+  function lockSizes(){
+    var desktop = window.innerWidth > 980;
+    var topH = desktop ? '32px' : '30px';
+    var headH = desktop ? '76px' : '68px';
+    var topbar = document.querySelector('.topbar.olay-nav-topbar, .topbar');
+    var header = document.getElementById('site-header');
+    if(topbar){ topbar.style.height = topbar.style.minHeight = topbar.style.maxHeight = topH; topbar.style.padding = '0'; topbar.style.margin = '0'; }
+    if(header){ header.style.height = header.style.minHeight = header.style.maxHeight = headH; header.style.padding = '0'; header.style.margin = '0'; }
+    var inner = document.querySelector('#site-header .header-inner');
+    if(inner){ inner.style.height = inner.style.minHeight = inner.style.maxHeight = headH; inner.style.padding = '0'; inner.style.margin = '0 auto'; }
+    var logo = document.querySelector('#site-header .logo');
+    if(logo){ logo.style.height = logo.style.minHeight = logo.style.maxHeight = headH; logo.style.fontSize = '0'; logo.style.color = 'transparent'; logo.style.overflow = 'hidden'; }
+    document.querySelectorAll('#site-header .main-nav > a, #site-header .main-nav .nav-dropdown > a, #site-header .header-cta').forEach(function(el){
+      el.style.height = el.style.minHeight = el.style.maxHeight = '42px';
+      el.style.transform = 'none';
+      el.style.lineHeight = '1';
+    });
+    document.querySelectorAll('#site-header .logo img').forEach(function(img){
+      img.style.fontSize = '0';
+      img.style.color = 'transparent';
+      img.addEventListener('error', function(){ img.style.visibility = 'hidden'; }, {once:true});
+    });
+  }
+
   function jumpToProducts(){
     if(window.location.hash !== '#products') return;
     setTimeout(function(){
@@ -130,13 +140,16 @@
   }
 
   function init(){
-    redirectOldPage();
+    document.body.classList.add('olay-nav-v3');
     syncOldLinks();
     markActiveNav();
     mobileToggle();
+    lockSizes();
     jumpToProducts();
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+  window.addEventListener('pageshow', lockSizes);
+  window.addEventListener('resize', function(){ window.clearTimeout(window.__olayNavLockTimer); window.__olayNavLockTimer = window.setTimeout(lockSizes, 120); });
 })();
