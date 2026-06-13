@@ -1,19 +1,21 @@
-Olaytech Product Detail Fused Design Patch
+Olaytech Product Detail Specification Section Optimization
 
-Upload these files to the root of your GitHub repository and overwrite the old files with the same paths:
+This patch optimizes the empty area beside the product specifications.
+It adds a left-side customization support panel and keeps the specification table on the right, so the section looks balanced and useful for B2B buyers.
 
-product-managed.html
-css/unified-nav.css
-css/product-detail-fused.css
-js/managed-product-detail.js
+Files included:
+- product-managed.html
+- css/unified-nav.css
+- css/product-detail-fused.css
+- js/managed-product-detail.js
 
-After upload:
-1. Commit changes in GitHub or GitHub Desktop.
-2. Push to main branch.
-3. Wait for Netlify deploy to finish.
-4. Open a product detail page and press Ctrl + F5.
+How to apply:
+1. Unzip this package.
+2. Copy the included files into your GitHub repository and overwrite the same files.
+3. Commit the changes.
+4. Push to GitHub.
+5. Wait for Netlify deployment.
+6. Open the product detail page and press Ctrl + F5.
 
-GitHub commit message suggestion:
-Redesign product detail page with integrated gallery layout
-
-This patch only redesigns the managed product detail page. It does not change homepage, About Us, Support, Contact, backend config, product data, or existing product images.
+Suggested GitHub commit message:
+Optimize product detail specification section

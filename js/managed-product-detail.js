@@ -67,6 +67,11 @@
     value = clean(value) || 'Custom available';
     return '<article class="fused-overview-card"><div class="fused-overview-icon">'+icon+'</div><div><h3>'+esc(title)+'</h3><p>'+esc(value)+'</p></div></article>';
   }
+  function specRow(label, value){
+    value = clean(value);
+    if(!value) return '';
+    return '<tr><th>'+esc(label)+'</th><td>'+esc(value)+'</td></tr>';
+  }
   function benefit(title, text, icon){
     return '<article class="fused-benefit"><span>'+icon+'</span><div><strong>'+esc(title)+'</strong><p>'+esc(text)+'</p></div></article>';
   }
@@ -91,6 +96,20 @@
     var categoryHref = 'product-types.html?type=' + encodeURIComponent(type) + '#products';
     var materialHref = 'materials.html?material=' + encodeURIComponent(material) + '#products';
     var appHref = 'applications.html?application=' + encodeURIComponent(app) + '#products';
+    var logoText = clean(p.logo || 'Printing, embroidery, woven label, rubber patch or metal plate');
+    var moqText = clean(p.moq || 'Based on material, logo and structure');
+    var colorText = clean(p.color || 'Custom color / pantone color support');
+    var sizeText = clean(p.size || 'Custom size based on buyer requirement');
+    var itemNo = clean(p.itemNo || p.sku || slug.toUpperCase());
+    var specRows = ''
+      + specRow('Item No.', itemNo)
+      + specRow('Product Type', clean(p.productType || type))
+      + specRow('Material', material)
+      + specRow('Application', app)
+      + specRow('Color', colorText)
+      + specRow('Size', sizeText)
+      + specRow('Logo Option', logoText)
+      + specRow('MOQ', moqText);
 
     mount.innerHTML = ''
       + '<div class="container fused-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="product-types.html">By Type</a><span>›</span><a href="'+attr(categoryHref)+'">'+esc(type)+'</a><span>›</span><strong>'+esc(title)+'</strong></div>'
@@ -126,9 +145,19 @@
       + '  <div class="fused-overview-grid">'
       +      specCard('Material', material, '▰')
       +      specCard('Use Case', app, '▣')
-      +      specCard('Logo', p.logo || 'Printing, embroidery, woven label, rubber patch or metal plate', '◇')
-      +      specCard('MOQ', p.moq || 'Based on material, logo and structure', '▧')
+      +      specCard('Logo', logoText, '◇')
+      +      specCard('MOQ', moqText, '▧')
       + '  </div>'
+      + '</section>'
+      + '<section class="container fused-spec-section">'
+      + '  <div class="fused-spec-intro">'
+      + '    <p class="fused-mini-kicker">Customization Support</p>'
+      + '    <h2>Build This Bag Around Your Brand</h2>'
+      + '    <p>Instead of leaving this area empty, buyers now see the key customization support and the full product specification table in one balanced section.</p>'
+      + '    <ul class="fused-spec-list"><li>Material, lining, zipper, puller and structure can be adjusted.</li><li>Logo position and logo method can be confirmed before sampling.</li><li>Retail packing, sample details and export carton requirements can be discussed with sales.</li></ul>'
+      + '    <div class="fused-spec-cta"><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Send Custom Request</a><a class="secondary" href="'+attr(whatsappUrl(title))+'" target="_blank" rel="noopener">Ask On WhatsApp</a></div>'
+      + '  </div>'
+      + '  <div class="fused-spec-table-card"><h3>Product Specifications</h3><table class="fused-spec-table"><tbody>'+ specRows +'</tbody></table></div>'
       + '</section>'
       + '<section class="container fused-photo-section">'
       + '  <div class="fused-section-head fused-photo-head"><div><h2>Product Detail Photos</h2><p>Use gallery images in the backend to show material texture, inner structure, zipper details, logo position and use scenarios.</p></div><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">View More Details →</a></div>'
