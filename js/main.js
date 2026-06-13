@@ -16,33 +16,33 @@ document.addEventListener('DOMContentLoaded', function(){
    Purpose: every old category link now jumps directly to the CMS-driven dynamic pages. */
 (function(){
   var linkMap = {
-    'cosmetic-bags.html': 'product-types.html?type=Cosmetic%20Bags',
-    'toiletry-bags.html': 'product-types.html?type=Toiletry%20Bags',
-    'shopping-bags.html': 'product-types.html?type=Shopping%20Bags',
-    'cooler-bags.html': 'product-types.html?type=Cooler%20Bags',
-    'sports-bags.html': 'product-types.html?type=Sports%20Bags',
-    'drawstring-bags.html': 'product-types.html?type=Drawstring%20Bags',
-    'travel-organizers.html': 'product-types.html?type=Travel%20Organizers',
-    'card-binder.html': 'product-types.html?type=Card%20Binder%20Cases',
-    'custom-oem-bags.html': 'product-types.html?type=Custom%20OEM%20Bags',
+    'cosmetic-bags.html': 'product-types.html?type=Cosmetic%20Bags#products',
+    'toiletry-bags.html': 'product-types.html?type=Toiletry%20Bags#products',
+    'shopping-bags.html': 'product-types.html?type=Shopping%20Bags#products',
+    'cooler-bags.html': 'product-types.html?type=Cooler%20Bags#products',
+    'sports-bags.html': 'product-types.html?type=Sports%20Bags#products',
+    'drawstring-bags.html': 'product-types.html?type=Drawstring%20Bags#products',
+    'travel-organizers.html': 'product-types.html?type=Travel%20Organizers#products',
+    'card-binder.html': 'product-types.html?type=Card%20Binder%20Cases#products',
+    'custom-oem-bags.html': 'product-types.html?type=Custom%20OEM%20Bags#products',
 
-    'canvas-bags.html': 'materials.html?material=Cotton%20%2F%20Canvas',
-    'nylon-bags.html': 'materials.html?material=Nylon',
-    'oxford-bags.html': 'materials.html?material=Oxford',
-    'pvc-eva-bags.html': 'materials.html?material=PVC%20%2F%20EVA%20%2F%20TPU',
-    'neoprene-bags.html': 'materials.html?material=Neoprene',
-    'rpet-bags.html': 'materials.html?material=RPET',
-    'pu-leather-bags.html': 'materials.html?material=PU%20Leather',
-    'felt-bags.html': 'materials.html?material=Felt',
-    'non-woven-bags.html': 'materials.html?material=Non%20Woven',
+    'canvas-bags.html': 'materials.html?material=Cotton%20%2F%20Canvas#products',
+    'nylon-bags.html': 'materials.html?material=Nylon#products',
+    'oxford-bags.html': 'materials.html?material=Oxford#products',
+    'pvc-eva-bags.html': 'materials.html?material=PVC%20%2F%20EVA%20%2F%20TPU#products',
+    'neoprene-bags.html': 'materials.html?material=Neoprene#products',
+    'rpet-bags.html': 'materials.html?material=RPET#products',
+    'pu-leather-bags.html': 'materials.html?material=PU%20Leather#products',
+    'felt-bags.html': 'materials.html?material=Felt#products',
+    'non-woven-bags.html': 'materials.html?material=Non%20Woven#products',
 
-    'application-beauty-cosmetic.html': 'applications.html?application=Beauty%20%26%20Cosmetic',
-    'application-travel-toiletry.html': 'applications.html?application=Travel%20%26%20Toiletry',
-    'application-retail-promotion.html': 'applications.html?application=Retail%20%26%20Promotion',
-    'application-food-cooler.html': 'applications.html?application=Food%20%26%20Cooler',
-    'application-outdoor-sports.html': 'applications.html?application=Outdoor%20%26%20Sports',
-    'application-card-storage.html': 'applications.html?application=Card%20%26%20Document%20Storage',
-    'application-corporate-gifts.html': 'applications.html?application=Corporate%20Gifts'
+    'application-beauty-cosmetic.html': 'applications.html?application=Beauty%20%26%20Cosmetic#products',
+    'application-travel-toiletry.html': 'applications.html?application=Travel%20%26%20Toiletry#products',
+    'application-retail-promotion.html': 'applications.html?application=Retail%20%26%20Promotion#products',
+    'application-food-cooler.html': 'applications.html?application=Food%20%26%20Cooler#products',
+    'application-outdoor-sports.html': 'applications.html?application=Outdoor%20%26%20Sports#products',
+    'application-card-storage.html': 'applications.html?application=Card%20%26%20Document%20Storage#products',
+    'application-corporate-gifts.html': 'applications.html?application=Corporate%20Gifts#products'
   };
 
   function fileNameFromHref(href){
