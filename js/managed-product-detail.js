@@ -95,8 +95,8 @@
       + '  </section>'
       + '</div>'
       + '<div class="container managed-detail-extra">'
-      + '  <section class="managed-description-card"><h2>Product Introduction</h2><p>'+esc(detailText(p))+'</p></section>'
-      + '  <section class="managed-description-card"><h2>Customization Support</h2><ul><li>Custom logo printing, embroidery, woven label, rubber patch or metal plate.</li><li>Custom material, lining, zipper, puller, handle, color and packaging.</li><li>OEM / ODM production for beauty brands, retail programs, promotional projects and B2B buyers.</li></ul></section>'
+      + '  <section class="managed-description-card"><h2>Product Introduction</h2><p>'+esc(detailText(p))+'</p><div class="managed-feature-grid"><div class="managed-feature"><strong>Material</strong><span>'+esc(matText || 'Custom material')+'</span></div><div class="managed-feature"><strong>Use Case</strong><span>'+esc(appText || 'Brand projects')+'</span></div><div class="managed-feature"><strong>Logo</strong><span>'+esc(clean(p.logo) || 'Custom logo support')+'</span></div><div class="managed-feature"><strong>MOQ</strong><span>'+esc(clean(p.moq) || 'Contact for MOQ')+'</span></div></div></section>'
+      + '  <section class="managed-description-card managed-inquiry-card"><h2>Custom This Bag For Your Brand</h2><p>Send your logo, size, material, color and quantity requirements. Our team can help prepare quotation details, sampling suggestions and OEM / ODM production options.</p><ul><li>Logo printing, embroidery, woven label or rubber patch</li><li>Custom material, lining, zipper, puller and packaging</li><li>Factory direct support for wholesale and private label buyers</li></ul><div class="managed-inquiry-actions"><a href="contact.html?product='+encodeURIComponent(title)+'">Send Inquiry</a><a class="secondary" target="_blank" rel="noopener" href="https://wa.me/8613957952677?text='+encodeURIComponent(ctaText)+'">WhatsApp Quote</a></div></section>'
       + '</div>';
 
     mount.querySelectorAll('.managed-gallery-thumbs button').forEach(function(btn){
