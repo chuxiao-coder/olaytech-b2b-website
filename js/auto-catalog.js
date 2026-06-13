@@ -211,12 +211,19 @@
     if(state.sort === 'new') list.sort(function(a,b){return (clean(b.updatedAt)||'').localeCompare(clean(a.updatedAt)||'');});
     return list;
   }
+  function scrollToCatalog(){
+    var target = document.querySelector('.auto-main') || root;
+    if(target && window.innerWidth > 760){
+      var top = target.getBoundingClientRect().top + window.pageYOffset - 110;
+      window.scrollTo({top: Math.max(0, top), behavior: 'smooth'});
+    }
+  }
   function renderFilters(){
     var cats = allCategories();
     var list = ['All'].concat(cats.filter(function(c){return countFor(c)>0 || state.active===c;}));
     if(els.filterList){
       els.filterList.innerHTML = list.map(function(c){return '<button class="auto-filter-button '+(state.active===c?'active':'')+'" data-category="'+escapeHtml(c)+'"><span>'+escapeHtml(c==='All'?SELECT_LABELS[mode]:c)+'</span><span>'+countFor(c)+'</span></button>';}).join('');
-      els.filterList.querySelectorAll('button').forEach(function(btn){btn.addEventListener('click',function(){state.active=btn.getAttribute('data-category'); state.visible=12; render();});});
+      els.filterList.querySelectorAll('button').forEach(function(btn){btn.addEventListener('click',function(){state.active=btn.getAttribute('data-category'); state.visible=12; render(); scrollToCatalog();});});
     }
     if(els.categorySelect){
       els.categorySelect.innerHTML = list.map(function(c){return '<option value="'+escapeHtml(c)+'" '+(state.active===c?'selected':'')+'>'+escapeHtml(c==='All'?SELECT_LABELS[mode]:c)+' ('+countFor(c)+')</option>';}).join('');
@@ -224,16 +231,22 @@
   }
   function renderCategoryGrid(){
     if(!els.categoryGrid) return;
+    if(state.active !== 'All' || (state.search && state.search.trim())){
+      els.categoryGrid.classList.add('auto-hidden');
+      els.categoryGrid.innerHTML = '';
+      return;
+    }
+    els.categoryGrid.classList.remove('auto-hidden');
     var cats = allCategories().filter(function(c){return countFor(c)>0;}).slice(0,12);
     els.categoryGrid.innerHTML = cats.map(function(c){ var info=categoryInfo(c); return '<button class="auto-category-card" data-category="'+escapeHtml(c)+'"><strong>'+escapeHtml(c)+'</strong><p>'+escapeHtml(info.desc)+'</p><em>'+countFor(c)+' products · View group →</em></button>'; }).join('');
-    els.categoryGrid.querySelectorAll('button').forEach(function(btn){btn.addEventListener('click',function(){state.active=btn.getAttribute('data-category'); state.visible=12; render(); window.scrollTo({top: root.offsetTop-80, behavior:'smooth'});});});
+    els.categoryGrid.querySelectorAll('button').forEach(function(btn){btn.addEventListener('click',function(){state.active=btn.getAttribute('data-category'); state.visible=12; render(); scrollToCatalog();});});
   }
   function renderProducts(){
     var list = filtered();
     var shown = list.slice(0,state.visible);
     if(els.count) els.count.textContent = list.length + ' products found';
-    if(els.activeTitle) els.activeTitle.textContent = state.active === 'All' ? pageTitle : state.active;
-    if(els.activeDesc) els.activeDesc.textContent = state.active === 'All' ? pageDescription : categoryInfo(state.active).desc;
+    if(els.activeTitle) els.activeTitle.textContent = state.active === 'All' ? pageTitle : state.active + ' Products';
+    if(els.activeDesc) els.activeDesc.textContent = state.active === 'All' ? pageDescription : categoryInfo(state.active).desc + ' The product list below updates automatically after this category is selected.';
     if(!els.productGrid) return;
     if(!shown.length){
       els.productGrid.innerHTML = '<div class="auto-empty">No products found in this group yet. Add products in the admin CMS and choose the matching type, material or application tags.</div>';
@@ -265,9 +278,9 @@
       state.products = (Array.isArray(data)?data:[]).filter(function(p){return (p.status||'published') !== 'draft';});
       var params = new URLSearchParams(window.location.search);
       state.active = params.get(mode) || params.get('category') || 'All';
-      if(els.search) els.search.addEventListener('input',function(){state.search=this.value; state.visible=12; renderProducts();});
+      if(els.search) els.search.addEventListener('input',function(){state.search=this.value; state.visible=12; renderCategoryGrid(); renderProducts();});
       if(els.sort) els.sort.addEventListener('change',function(){state.sort=this.value; state.visible=12; renderProducts();});
-      if(els.categorySelect) els.categorySelect.addEventListener('change',function(){state.active=this.value; state.visible=12; render();});
+      if(els.categorySelect) els.categorySelect.addEventListener('change',function(){state.active=this.value; state.visible=12; render(); scrollToCatalog();});
       if(els.loadMore) els.loadMore.addEventListener('click',function(){state.visible += 12; renderProducts();});
       render();
     })
