@@ -241,3 +241,120 @@
   .managed-detail-body .managed-gallery-main{min-height:280px!important;}
   .managed-detail-body .managed-gallery-main img{height:auto!important;max-height:420px!important;}
 }
+
+/* === Product detail balance fix: make image and info blocks feel connected ===
+   2026-06-13
+   This override keeps the left gallery compact, aligns it with the right info card,
+   and removes the oversized visual gap on desktop screens. */
+.managed-detail-body .managed-detail-v2{
+  width:min(1240px, calc(100vw - 56px))!important;
+  max-width:1240px!important;
+  margin:0 auto!important;
+  padding:18px 0 0!important;
+  display:grid!important;
+  grid-template-columns:minmax(420px, 500px) minmax(0, 1fr)!important;
+  gap:24px!important;
+  align-items:start!important;
+  overflow:visible!important;
+}
+.managed-detail-body .managed-gallery-card,
+.managed-detail-body .managed-product-info{
+  align-self:start!important;
+  height:auto!important;
+  min-width:0!important;
+}
+.managed-detail-body .managed-gallery-card{
+  padding:18px!important;
+  border-radius:28px!important;
+  box-shadow:0 18px 48px rgba(7,54,85,.08)!important;
+}
+.managed-detail-body .managed-gallery-main{
+  width:100%!important;
+  min-height:0!important;
+  height:clamp(390px, 38vw, 500px)!important;
+  border-radius:22px!important;
+  flex:none!important;
+  background:linear-gradient(135deg,#f2f8fc,#ffffff)!important;
+}
+.managed-detail-body .managed-gallery-main img{
+  width:100%!important;
+  height:100%!important;
+  max-height:none!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.managed-detail-body .managed-gallery-thumbs{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:8px!important;
+  margin-top:12px!important;
+}
+.managed-detail-body .managed-product-info{
+  padding:34px 38px!important;
+  border-radius:28px!important;
+  box-shadow:0 18px 48px rgba(7,54,85,.08)!important;
+}
+.managed-detail-body .managed-product-info h1{
+  font-size:clamp(38px, 4.1vw, 60px)!important;
+  line-height:1.02!important;
+  letter-spacing:-.045em!important;
+  margin-bottom:18px!important;
+  max-width:760px!important;
+}
+.managed-detail-body .managed-subtitle{
+  font-size:18px!important;
+  line-height:1.58!important;
+  max-width:720px!important;
+}
+.managed-detail-body .managed-quick-tags{
+  margin:16px 0 22px!important;
+}
+.managed-detail-body .managed-actions-top{
+  margin:4px 0 22px!important;
+}
+.managed-detail-body .managed-overview-card{
+  margin:16px 0 18px!important;
+  padding:22px 24px!important;
+  border-radius:22px!important;
+}
+.managed-detail-body .managed-spec-v2{
+  font-size:15px!important;
+}
+.managed-detail-body .managed-detail-extra{
+  width:min(1240px, calc(100vw - 56px))!important;
+  max-width:1240px!important;
+  margin:24px auto 0!important;
+  padding:0!important;
+}
+
+@media(max-width:1180px){
+  .managed-detail-body .managed-detail-v2{
+    grid-template-columns:minmax(360px, 44%) minmax(0, 1fr)!important;
+    width:min(1000px, calc(100vw - 36px))!important;
+    gap:18px!important;
+  }
+  .managed-detail-body .managed-gallery-main{height:clamp(340px, 41vw, 440px)!important;}
+  .managed-detail-body .managed-product-info{padding:30px 28px!important;}
+  .managed-detail-body .managed-product-info h1{font-size:clamp(34px, 5vw, 50px)!important;}
+  .managed-detail-body .managed-detail-extra{width:min(1000px, calc(100vw - 36px))!important;}
+}
+@media(max-width:900px){
+  .managed-detail-body .managed-detail-v2{
+    grid-template-columns:1fr!important;
+    width:min(720px, calc(100vw - 32px))!important;
+    gap:18px!important;
+  }
+  .managed-detail-body .managed-gallery-main{height:clamp(300px, 70vw, 460px)!important;}
+  .managed-detail-body .managed-detail-extra{width:min(720px, calc(100vw - 32px))!important;}
+}
+@media(max-width:640px){
+  .managed-detail-body .managed-detail-v2,
+  .managed-detail-body .managed-detail-extra{
+    width:calc(100vw - 28px)!important;
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  .managed-detail-body .managed-gallery-card{padding:12px!important;border-radius:22px!important;}
+  .managed-detail-body .managed-gallery-main{height:300px!important;border-radius:18px!important;}
+  .managed-detail-body .managed-product-info{padding:26px 18px!important;border-radius:22px!important;}
+  .managed-detail-body .managed-product-info h1{font-size:34px!important;}
+}

@@ -1,15 +1,17 @@
-Olaytech product detail unified scroll fix
+Olaytech product detail balance fix
 
-Files included:
+Only file included:
 - css/cms-products.css
 
-Apply:
-1. Copy css/cms-products.css into the website root and overwrite the existing file.
-2. Commit and push to GitHub.
-3. Wait for Netlify deploy.
-4. Open a product detail page and press Ctrl + F5.
+What it fixes:
+- Makes the left product image panel smaller and more balanced.
+- Aligns the left image block and right introduction block as one connected product detail section.
+- Reduces the oversized gap between image and content.
+- Keeps left and right blocks scrolling together.
 
-Effect:
-- Left product image panel and right product information panel scroll together as one section.
-- Removes sticky behavior from the left image block.
-- Keeps the current product detail design and navigation.
+How to upload:
+1. Unzip this package.
+2. Copy css/cms-products.css into the GitHub repository and replace the old file.
+3. Commit and push.
+4. Wait for Netlify deploy.
+5. Open the product detail page and press Ctrl + F5.
