@@ -1,29 +1,41 @@
 {
-  "title": "Neoprene Bottle Sleeve",
-  "slug": "neoprene-bags-neoprene-bottle-sleeve",
-  "status": "published",
-  "sourcePage": "neoprene-bags-neoprene-bottle-sleeve.html",
   "pageUrl": "neoprene-bags-neoprene-bottle-sleeve.html",
-  "itemNo": "NEOPRENEBAGS-004",
-  "category": "Neoprene Bags",
-  "productType": "Bottle sleeve",
-  "application": "Drinkware",
+  "size": "Customized",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup.",
+  "mainImage": "/assets/uploads/main-01.jpg",
+  "color": "Customized",
+  "typeGroup": "Cosmetic Bags",
   "material": "Neoprene",
-  "color": "Custom color / Pantone available",
-  "size": "Custom size based on buyer requirements",
-  "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
-  "moq": "Based on material, logo and structure",
-  "mainImage": "assets/products/neoprene-bags-04.jpg",
-  "gallery": [
-    "assets/products/neoprene-bags-04.jpg",
-    "assets/products/neoprene-bags-01.jpg",
-    "assets/products/neoprene-bags-02.jpg",
-    "assets/products/neoprene-bags-03.jpg"
+  "cardTitle": "Neoprene Cosmetic Bag",
+  "cardSubtitle": "Soft Neoprene Cosmetic Pouch with Custom Logo Options",
+  "productType": "Custom Neoprene Cosmetic Bag",
+  "applicationTags": [
+    "Travel & Toiletry"
   ],
-  "description": "Protective bottle sleeve for water bottles and drink brands. We support custom material, size, color, logo method and export packing for B2B orders.",
-  "seoTitle": "Neoprene Bottle Sleeve | Custom Neoprene Bags OEM Manufacturer",
-  "seoDescription": "Protective bottle sleeve for water bottles and drink brands. Custom neoprene bags with OEM ODM logo, size, material and packing options.",
-  "keywords": [],
-  "updatedAt": "2026-06-12",
-  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup."
+  "sourcePage": "neoprene-bags-neoprene-bottle-sleeve.html",
+  "keywords": [
+    "custom neoprene cosmetic bag",
+    " neoprene makeup pouch",
+    " waterproof cosmetic pouch",
+    "OEM makeup bag"
+  ],
+  "logo": "Printing (silk screen/heat transfer/hot stamping), embroidery, woven label, PU leather patch, silicone rubber patch, metal plate",
+  "slug": "custom-neoprene-makeup-bag",
+  "updatedAt": "2026-07-07",
+  "moq": "100 pcs",
+  "applicationGroup": "Beauty & Cosmetic",
+  "application": "Travel · Makeup Storage · Toiletry Organization · Beauty Accessories · Promotional Gifts · Retail & Wholesale",
+  "gallery": [
+    "/assets/uploads/1.jpg",
+    "/assets/uploads/main-04.jpg",
+    "/assets/uploads/main-03.jpg"
+  ],
+  "status": "published",
+  "itemNo": "OLLAYCO-1003",
+  "materialGroup": "Neoprene",
+  "title": "Wholesale Neoprene Cosmetic Pouch Zipper Makeup Bag for Women",
+  "seoTitle": "Custom Neoprene Cosmetic Bag | Waterproof Makeup Pouch Manufacturer",
+  "description": "Our custom neoprene cosmetic bag is designed with soft, lightweight and water-resistant neoprene material, providing a stylish and practical solution for makeup, skincare and toiletry storage. Featuring a durable zipper closure and customizable options, this makeup pouch is ideal for travel, beauty brands, retail products and promotional projects. We offer OEM/ODM services including custom sizes, colors, logos and packaging solutions for global customers.\n",
+  "category": "Neoprene Bags",
+  "seoDescription": "Premium neoprene cosmetic bags with waterproof, lightweight and durable designs. We provide custom makeup pouches, OEM/ODM services and wholesale solutions for global customers."
 }
