@@ -1,7 +1,7 @@
 {
-  "pageUrl": "",
+  "pageUrl": "product-managed",
   "size": "Customized",
-  "notes": "",
+  "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup.",
   "mainImage": "/assets/uploads/main-01.jpg",
   "color": "Customized",
   "typeGroup": "Cosmetic Bags",
