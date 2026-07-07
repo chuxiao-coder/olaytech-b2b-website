@@ -1,27 +1,31 @@
 [
   {
-    "title": "Beauty Brand Cosmetic Pouch",
-    "cardTitle": "",
-    "cardSubtitle": "",
-    "slug": "application-beauty-cosmetic-beauty-brand-cosmetic-pouch",
+    "title": "Custom Neoprene Cosmetic Bag Waterproof Makeup Pouch with Zipper",
+    "cardTitle": "Neoprene Cosmetic Bag",
+    "cardSubtitle": "Soft Neoprene Cosmetic Pouch with Custom Logo Options",
+    "slug": "neoprene-cosmetic-bag",
     "status": "published",
-    "sourcePage": "application-beauty-cosmetic-beauty-brand-cosmetic-pouch.html",
-    "pageUrl": "application-beauty-cosmetic-beauty-brand-cosmetic-pouch.html",
-    "itemNo": "APPBEAUTY-001",
+    "sourcePage": "",
+    "pageUrl": "",
+    "itemNo": "OLLAYCO-1002 ",
     "category": "Beauty & Cosmetic Bags",
-    "productType": "Cosmetic pouch",
-    "typeGroup": "",
-    "typeTags": "",
-    "application": "Beauty packaging",
-    "applicationGroup": "",
-    "applicationTags": "",
-    "material": "Polyester / PU / Velvet",
-    "materialGroup": "",
+    "productType": "Neoprene Cosmetic Bag",
+    "typeGroup": "Cosmetic Bags",
+    "typeTags": [
+      "Toiletry Bags"
+    ],
+    "application": "Suitable for travel, home organization, cosmetic storage, toiletries storage, beauty product packaging, promotional gifts, and customized brand merchandise.",
+    "applicationGroup": "Beauty & Cosmetic",
+    "applicationTags": [
+      "Travel & Toiletry"
+    ],
+    "material": "Neoprene",
+    "materialGroup": "Neoprene",
     "materialTags": "",
-    "mainImage": "assets/products/app-beauty-01.jpg",
-    "logo": "Printing, embroidery, woven label, rubber patch or metal plate",
-    "updatedAt": "2026-06-12",
-    "seoDescription": "Beauty Brand Cosmetic Pouch for custom OEM and ODM bag projects. View product image slots, specifications, materials, logo options and request a factory quote."
+    "mainImage": "/assets/uploads/main-01.jpg",
+    "logo": "Printing (silk screen/heat transfer/hot stamping), embroidery, woven label, PU leather patch, silicone rubber patch, metal plate",
+    "updatedAt": "2026-07-07",
+    "seoDescription": "Discover high-quality neoprene cosmetic bags with waterproof, lightweight and durable designs. We provide custom makeup pouches, OEM/ODM services and wholesale solutions for global beauty brands and distributors.\n"
   },
   {
     "title": "Clear Makeup Travel Bag",
