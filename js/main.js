@@ -1,6 +1,6 @@
 /* ===================================================================
    Olaytech Navigation Force Fix V3 - no header rebuild, no redirect jump.
-   This script only: active state, mobile menu, old link sync, inline size lock.
+   This script only: active state, mobile menu, old link sync and catalog jump.
    =================================================================== */
 (function(){
   'use strict';
@@ -107,30 +107,6 @@
     });
   }
 
-  function lockSizes(){
-    var desktop = window.innerWidth > 980;
-    var topH = desktop ? '32px' : '30px';
-    var headH = desktop ? '76px' : '68px';
-    var topbar = document.querySelector('.topbar.olay-nav-topbar, .topbar');
-    var header = document.getElementById('site-header');
-    if(topbar){ topbar.style.height = topbar.style.minHeight = topbar.style.maxHeight = topH; topbar.style.padding = '0'; topbar.style.margin = '0'; }
-    if(header){ header.style.height = header.style.minHeight = header.style.maxHeight = headH; header.style.padding = '0'; header.style.margin = '0'; }
-    var inner = document.querySelector('#site-header .header-inner');
-    if(inner){ inner.style.height = inner.style.minHeight = inner.style.maxHeight = headH; inner.style.padding = '0'; inner.style.margin = '0 auto'; }
-    var logo = document.querySelector('#site-header .logo');
-    if(logo){ logo.style.height = logo.style.minHeight = logo.style.maxHeight = headH; logo.style.fontSize = '0'; logo.style.color = 'transparent'; logo.style.overflow = 'hidden'; }
-    document.querySelectorAll('#site-header .main-nav > a, #site-header .main-nav .nav-dropdown > a, #site-header .header-cta').forEach(function(el){
-      el.style.height = el.style.minHeight = el.style.maxHeight = '42px';
-      el.style.transform = 'none';
-      el.style.lineHeight = '1';
-    });
-    document.querySelectorAll('#site-header .logo img').forEach(function(img){
-      img.style.fontSize = '0';
-      img.style.color = 'transparent';
-      img.addEventListener('error', function(){ img.style.visibility = 'hidden'; }, {once:true});
-    });
-  }
-
   function jumpToProducts(){
     if(window.location.hash !== '#products') return;
     setTimeout(function(){
@@ -144,12 +120,9 @@
     syncOldLinks();
     markActiveNav();
     mobileToggle();
-    lockSizes();
     jumpToProducts();
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
-  window.addEventListener('pageshow', lockSizes);
-  window.addEventListener('resize', function(){ window.clearTimeout(window.__olayNavLockTimer); window.__olayNavLockTimer = window.setTimeout(lockSizes, 120); });
 })();

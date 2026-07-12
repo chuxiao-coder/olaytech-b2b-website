@@ -4,7 +4,7 @@
 
   var mode = root.getAttribute('data-catalog-mode') || 'type';
   var pageTitle = root.getAttribute('data-page-title') || 'Custom Bag Catalog';
-  var pageDescription = root.getAttribute('data-page-description') || 'Browse custom bag products from the CMS catalog.';
+  var pageDescription = root.getAttribute('data-page-description') || 'Browse our custom bag collection.';
 
   var CATEGORY_SETS = {
     type: [
@@ -166,7 +166,7 @@
   }
   function categoryInfo(key){
     var found = (CATEGORY_SETS[mode] || []).filter(function(c){ return c.key === key; })[0];
-    return found || {key:key, desc:'Products automatically grouped from CMS fields and product tags.'};
+    return found || {key:key, desc:'Browse products in this collection.'};
   }
   function countFor(key){
     if(key === 'All') return state.products.length;
@@ -266,10 +266,10 @@
     var shown = list.slice(0,state.visible);
     if(els.count) els.count.textContent = list.length + ' products found';
     if(els.activeTitle) els.activeTitle.textContent = state.active === 'All' ? pageTitle : state.active + ' Products';
-    if(els.activeDesc) els.activeDesc.textContent = state.active === 'All' ? pageDescription : categoryInfo(state.active).desc + ' The product list below updates automatically after this category is selected.';
+    if(els.activeDesc) els.activeDesc.textContent = state.active === 'All' ? pageDescription : categoryInfo(state.active).desc;
     if(!els.productGrid) return;
     if(!shown.length){
-      els.productGrid.innerHTML = '<div class="auto-empty">No products found in this group yet. Add products in the admin CMS and choose the matching type, material or application tags.</div>';
+      els.productGrid.innerHTML = '<div class="auto-empty">No products are available in this category yet. Please contact us for custom options.</div>';
     } else {
       els.productGrid.innerHTML = shown.map(function(p){
         return '<a class="auto-product-card" href="'+escapeAttr(url(p))+'">'
@@ -306,7 +306,7 @@
       initialJumpToSelectedGroup();
     })
     .catch(function(){
-      if(els.productGrid) els.productGrid.innerHTML = '<div class="auto-empty">Product data could not be loaded. Please check data/products-index.json.</div>';
-      if(els.count) els.count.textContent = 'Product data could not be loaded';
+      if(els.productGrid) els.productGrid.innerHTML = '<div class="auto-empty">Products are temporarily unavailable. Please try again later.</div>';
+      if(els.count) els.count.textContent = 'Products unavailable';
     });
 })();

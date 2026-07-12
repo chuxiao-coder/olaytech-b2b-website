@@ -31,7 +31,7 @@
     return clean(p.cardSubtitle || p.shortSubtitle || [p.productType, p.material, p.application].filter(Boolean).join(' · ') || 'Custom OEM / ODM bag for brand projects.');
   }
   function overviewOf(p){
-    return clean(p.longDescription || p.description || p.seoDescription || 'Custom OEM bag product for B2B buyer projects. Uploaders can edit the product title, short introduction, specifications, materials, logo options and images in the admin CMS.');
+    return clean(p.longDescription || p.description || p.seoDescription || 'Custom OEM bag product developed for brand, retail and promotional projects. Contact us for materials, sizes, logo methods and packaging options.');
   }
   function typeLabel(p){
     var t = clean(p.typeGroup || p.type || '');
@@ -218,6 +218,6 @@
     .then(function(r){ if(!r.ok) throw new Error('not found'); return r.json(); })
     .then(render)
     .catch(function(){
-      mount.innerHTML = '<div class="container"><div class="managed-empty"><h2>Product not found</h2><p>Please check whether this product has been published in the admin CMS.</p><a class="btn primary" href="products-managed.html">Back To Products</a></div></div>';
+      mount.innerHTML = '<div class="container"><div class="managed-empty"><h2>Product not found</h2><p>This product page is currently unavailable. Please return to the catalog or contact us for assistance.</p><a class="btn primary" href="product-types.html">Back To Products</a></div></div>';
     });
 })();
