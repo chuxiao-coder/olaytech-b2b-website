@@ -1,0 +1,35 @@
+OLAYTECH REAL-PHOTO PRODUCT CLEANUP
+
+What this update does
+- Keeps 86 products with unique real uploaded photos in assets/uploads.
+- Removes 132 placeholder products.
+- Removes 200 old static product-detail pages.
+- Makes every remaining product open the same unified product-managed detail template.
+- Replaces placeholder cards on category pages with products loaded from the CMS index.
+- Requires a main photo when adding a product in /admin.
+- Keeps the current contact email unchanged.
+
+How to apply
+1. Extract this ZIP.
+2. Copy ALL files and folders inside it into your local GitHub repository root.
+   The repository root is the folder that already contains index.html.
+3. Choose Replace files in the destination when Windows asks.
+4. In the repository root, double-click APPLY-REAL-PHOTO-CLEANUP.bat.
+5. Return to GitHub Desktop. You should see modified files plus deleted files.
+6. Summary: Remove placeholder products and unify product detail pages
+7. Commit to main, then Push origin.
+8. Wait for Netlify to show Published and refresh with Ctrl + F5.
+
+Adding new products later
+- Open https://olaytech.com/admin/
+- Products 产品管理 -> New Product 产品
+- Upload a real Main Image 主图 (required)
+- Fill in Product Title, Slug, Type, Material and Application
+- Set Status to published and publish the entry
+- The CMS saves the product JSON and image to GitHub.
+- GitHub Actions rebuilds the product index and sitemap automatically.
+- The new product appears in the catalogs and opens in the unified detail template.
+
+Important
+- Products without a real uploaded main photo are automatically excluded from the public catalog.
+- This package does not delete assets/uploads and does not change the contact email.

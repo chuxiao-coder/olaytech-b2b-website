@@ -41,3 +41,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .catalog-product-grid,.related-detail-grid,.auto-grid{grid-template-columns:1fr!important;}
   .thank-you-card{padding:38px 22px;border-radius:20px;}
 }
+
+/* Real-photo managed category cards */
+.catalog-product-grid[data-managed-category]{align-items:stretch}
+.catalog-product-grid[data-managed-category] .catalog-product-card{display:flex;flex-direction:column;height:100%}
+.catalog-product-grid[data-managed-category] .catalog-product-card>img{width:100%;aspect-ratio:1/1;object-fit:contain;background:#f6fafc}
+.catalog-product-grid[data-managed-category] .catalog-product-card>div{display:flex;flex-direction:column;flex:1}
+.catalog-product-grid[data-managed-category] .catalog-product-card p{margin:10px 0 0;color:#607286;line-height:1.55;font-size:14px}
+.catalog-empty-real{grid-column:1/-1;padding:36px;border:1px dashed #b8d4df;border-radius:20px;background:#f7fbfc;color:#53697b;text-align:center;font-weight:700}

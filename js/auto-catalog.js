@@ -198,7 +198,7 @@
     }
     return 'product-managed?slug=' + encodeURIComponent(slug);
   }
-  function url(p){ var direct=clean(p.sourcePage||p.pageUrl); if(direct) return direct.replace(/\.html(?=([?#]|$))/i,''); return productDetailUrl(p); }
+  function url(p){ return productDetailUrl(p); }
   function meta(p){
     var items = [];
     if(mode !== 'material') items.push(clean(p.material) || inferMaterials(p)[0]);

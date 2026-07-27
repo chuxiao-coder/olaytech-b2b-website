@@ -10,8 +10,8 @@ local_backend: true
 publish_mode: editorial_workflow
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
-site_url: "https://gregarious-sprinkles-db2dfe.netlify.app"
-display_url: "https://gregarious-sprinkles-db2dfe.netlify.app"
+site_url: "https://olaytech.com"
+display_url: "https://olaytech.com"
 logo_url: "/assets/brand/olay-logo-black.png"
 
 collections:
@@ -74,7 +74,7 @@ collections:
       - { label: "Size 尺寸", name: "size", widget: "string", required: false }
       - { label: "Logo Method LOGO工艺", name: "logo", widget: "string", required: false }
       - { label: "MOQ 起订量", name: "moq", widget: "string", required: false }
-      - { label: "Main Image 主图", name: "mainImage", widget: "image", required: false }
+      - { label: "Main Image 主图", name: "mainImage", widget: "image", required: true, hint: "Required. Upload a real product photo. Products without a main photo will not appear on the website." }
       - label: "Gallery Images 详情图"
         name: "gallery"
         widget: "list"

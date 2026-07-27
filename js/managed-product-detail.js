@@ -54,11 +54,16 @@
   function setMeta(p){
     var title = clean(p.seoTitle || p.title);
     var desc = clean(p.seoDescription || p.description);
-    if(title) document.title = title;
-    if(desc){
-      var m = document.querySelector('meta[name="description"]');
-      if(m) m.setAttribute('content', desc);
-    }
+    var main = image(p.mainImage);
+    var canonical = 'https://olaytech.com/product-managed?slug=' + encodeURIComponent(slug);
+    if(title) document.title = title + (title.toLowerCase().indexOf('olaytech')===-1 ? ' | Olaytech' : '');
+    function set(selector, attrName, value){var el=document.querySelector(selector);if(el&&value)el.setAttribute(attrName,value);}
+    set('meta[name="description"]','content',desc);
+    set('link[rel="canonical"]','href',canonical);
+    set('meta[property="og:title"]','content',title);
+    set('meta[property="og:description"]','content',desc);
+    set('meta[property="og:url"]','content',canonical);
+    set('meta[property="og:image"]','content',main.indexOf('http')===0?main:'https://olaytech.com/'+main.replace(/^\//,''));
   }
   function pill(label, href, icon){
     if(!label) return '';
@@ -117,9 +122,9 @@
       + '<section class="container fused-product-shell">'
       + '  <div class="fused-product-media">'
       + '    <button class="fused-zoom" type="button" data-lightbox="'+attr(main)+'" aria-label="View large product image">⌕</button>'
-      + '    <div class="fused-main-image"><img id="managedMainImg" src="'+attr(main)+'" alt="'+attr(title)+'"></div>'
+      + '    <div class="fused-main-image"><img id="managedMainImg" src="'+attr(main)+'" alt="'+attr(title)+'" decoding="async" fetchpriority="high"></div>'
       + '    <div class="fused-thumbs-wrap"><button class="fused-thumb-arrow" type="button" aria-label="Previous thumbnails">‹</button><div class="fused-thumbs">'
-      + gallery.map(function(g,i){return '<button class="'+(i===0?'active':'')+'" type="button" data-img="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' image '+(i+1)+'"></button>';}).join('')
+      + gallery.map(function(g,i){return '<button class="'+(i===0?'active':'')+'" type="button" data-img="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' image '+(i+1)+'" loading="lazy" decoding="async"></button>';}).join('')
       + '    </div><button class="fused-thumb-arrow" type="button" aria-label="Next thumbnails">›</button></div>'
       + '  </div>'
       + '  <div class="fused-product-summary">'
@@ -163,7 +168,7 @@
       + '<section class="container fused-photo-section">'
       + '  <div class="fused-section-head fused-photo-head"><div><h2>Product Detail Photos</h2><p>Review material texture, inner structure, zipper details, logo position and practical use scenarios.</p></div><a href="contact?product='+encodeURIComponent(title)+'#design-brief">View More Details →</a></div>'
       + '  <div class="fused-photo-grid">'
-      + detailPhotos.slice(0,4).map(function(g,i){return '<button type="button" class="fused-detail-photo" data-lightbox="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' detail photo '+(i+1)+'"></button>';}).join('')
+      + detailPhotos.slice(0,4).map(function(g,i){return '<button type="button" class="fused-detail-photo" data-lightbox="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' detail photo '+(i+1)+'" loading="lazy" decoding="async"></button>';}).join('')
       + '  </div>'
       + '</section>'
       + '<section class="container fused-support-strip">'

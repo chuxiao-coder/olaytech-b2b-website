@@ -2,8 +2,8 @@
   "title": "PU Vanity Makeup Case",
   "slug": "application-beauty-cosmetic-pu-vanity-makeup-case",
   "status": "published",
-  "sourcePage": "application-beauty-cosmetic-pu-vanity-makeup-case.html",
-  "pageUrl": "application-beauty-cosmetic-pu-vanity-makeup-case.html",
+  "sourcePage": "",
+  "pageUrl": "",
   "itemNo": "APPBEAUTY-006",
   "category": "Beauty & Cosmetic Bags",
   "productType": "Vanity case",
@@ -15,10 +15,7 @@
   "moq": "Based on material, logo and structure",
   "mainImage": "assets/uploads/82.webp",
   "gallery": [
-    "assets/products/app-beauty-06.jpg",
-    "assets/products/app-beauty-01.jpg",
-    "assets/products/app-beauty-02.jpg",
-    "assets/products/app-beauty-03.jpg"
+    "assets/uploads/82.webp"
   ],
   "description": "Structured vanity case for cosmetics, brushes and professional makeup storage. We support custom material, size, color, logo method and export packing for B2B orders.",
   "seoTitle": "PU Vanity Makeup Case | Custom Beauty & Cosmetic Bags Olaytech",
@@ -30,5 +27,19 @@
     "assets/uploads/82.webp",
     "assets/uploads/81.webp",
     "assets/uploads/19.jpg"
-  ]
+  ],
+  "typeGroup": "Cosmetic Bags",
+  "typeTags": [
+    "Cosmetic Bags"
+  ],
+  "materialGroup": "PU Leather",
+  "materialTags": [
+    "PU Leather"
+  ],
+  "applicationGroup": "Beauty & Cosmetic",
+  "applicationTags": [
+    "Beauty & Cosmetic"
+  ],
+  "cardTitle": "PU Vanity Makeup Case",
+  "cardSubtitle": "Structured PU leather cosmetic case for travel and professional makeup storage"
 }

@@ -28,6 +28,11 @@ for path in sorted(PRODUCT_DIR.glob("*.json")):
     data["slug"] = path.stem
     if data.get("status", "published") == "draft":
         continue
+    main_image = str(data.get("mainImage", "")).strip().lstrip("/")
+    # Only publish products backed by a real photo uploaded through the CMS.
+    if not main_image.startswith("assets/uploads/") or not (ROOT / main_image).is_file():
+        print(f"Skip product without uploaded real photo: {path.name}")
+        continue
     products.append({field: data.get(field, "") for field in summary_fields})
 
 INDEX_FILE.parent.mkdir(parents=True, exist_ok=True)
