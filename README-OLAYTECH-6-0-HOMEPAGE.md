@@ -11,7 +11,7 @@ Included files:
 - assets/home/olay-homepage-hero-products.webp
 - assets/products/category-*.jpg
 - assets/products/category-*.webp
-- assets/factory/factory-overview.jpg
+- assets/factory/factory-overview.webp
 - assets/factory/factory-overview.webp
 - assets/factory/sewing-workshop.jpg
 - assets/factory/sewing-workshop.webp

@@ -21,7 +21,7 @@ Recommended upload list:
 - js/main.js
 - assets/brand/olay-logo-black.png
 - assets/brand/olay-logo-white.png
-- assets/factory/aolai-factory-overview.jpg
+- assets/factory/aolai-factory-overview.webp
 - sitemap.xml
 - robots.txt
 

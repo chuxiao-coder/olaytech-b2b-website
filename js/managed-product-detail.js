@@ -26,9 +26,10 @@
     if(v.length <= max) return v;
     return v.slice(0, max - 1).trim() + '…';
   }
-  function titleOf(p){return clean(p.cardTitle || p.title || 'Custom Bag Product');}
+  function slugLike(v){v=clean(v);return !!v && v===v.toLowerCase() && v.indexOf('-')!==-1;}
+  function titleOf(p){var card=clean(p.cardTitle);return slugLike(card)?clean(p.title||card):clean(card||p.title||'Custom Bag Product');}
   function subtitleOf(p){
-    return clean(p.cardSubtitle || p.shortSubtitle || [p.productType, p.material, p.application].filter(Boolean).join(' · ') || 'Custom OEM / ODM bag for brand projects.');
+    var card=clean(p.cardSubtitle); return clean((card&&!slugLike(card)?card:'') || p.shortSubtitle || [p.productType, p.material, p.application].filter(Boolean).join(' · ') || 'Custom OEM / ODM bag for brand projects.');
   }
   function overviewOf(p){
     return clean(p.longDescription || p.description || p.seoDescription || 'Custom OEM bag product developed for brand, retail and promotional projects. Contact us for materials, sizes, logo methods and packaging options.');
@@ -49,7 +50,7 @@
     return pt || cat || 'Custom OEM Bags';
   }
   function appLabel(p){return clean(p.applicationGroup || p.application || 'Custom Project');}
-  function materialLabel(p){return clean(p.materialGroup || p.material || 'Custom Material');}
+  function materialLabel(p){return clean(p.material || p.materialGroup || 'Custom Material');}
   function setMeta(p){
     var title = clean(p.seoTitle || p.title);
     var desc = clean(p.seoDescription || p.description);
@@ -75,7 +76,7 @@
   function benefit(title, text, icon){
     return '<article class="fused-benefit"><span>'+icon+'</span><div><strong>'+esc(title)+'</strong><p>'+esc(text)+'</p></div></article>';
   }
-  function backUrl(p){return 'product-types.html?type=' + encodeURIComponent(typeLabel(p)) + '#products';}
+  function backUrl(p){return 'product-types?type=' + encodeURIComponent(typeLabel(p)) + '#products';}
   function whatsappUrl(title){
     return 'https://wa.me/8613957952677?text=' + encodeURIComponent('Hello Olaytech, I am interested in ' + title + '. Please send quotation details.');
   }
@@ -93,9 +94,9 @@
     gallery = [main].concat(gallery.filter(function(g){return g !== main;})).slice(0,8);
 
     var detailPhotos = gallery.length > 1 ? gallery : [main];
-    var categoryHref = 'product-types.html?type=' + encodeURIComponent(type) + '#products';
-    var materialHref = 'materials.html?material=' + encodeURIComponent(material) + '#products';
-    var appHref = 'applications.html?application=' + encodeURIComponent(app) + '#products';
+    var categoryHref = 'product-types?type=' + encodeURIComponent(type) + '#products';
+    var materialHref = 'materials?material=' + encodeURIComponent(material) + '#products';
+    var appHref = 'applications?application=' + encodeURIComponent(app) + '#products';
     var logoText = clean(p.logo || 'Printing, embroidery, woven label, rubber patch or metal plate');
     var moqText = clean(p.moq || 'Based on material, logo and structure');
     var colorText = clean(p.color || 'Custom color / pantone color support');
@@ -112,7 +113,7 @@
       + specRow('MOQ', moqText);
 
     mount.innerHTML = ''
-      + '<div class="container fused-breadcrumb"><a href="index.html">Home</a><span>›</span><a href="product-types.html">By Type</a><span>›</span><a href="'+attr(categoryHref)+'">'+esc(type)+'</a><span>›</span><strong>'+esc(title)+'</strong></div>'
+      + '<div class="container fused-breadcrumb"><a href="/">Home</a><span>›</span><a href="product-types">By Type</a><span>›</span><a href="'+attr(categoryHref)+'">'+esc(type)+'</a><span>›</span><strong>'+esc(title)+'</strong></div>'
       + '<section class="container fused-product-shell">'
       + '  <div class="fused-product-media">'
       + '    <button class="fused-zoom" type="button" data-lightbox="'+attr(main)+'" aria-label="View large product image">⌕</button>'
@@ -131,7 +132,7 @@
       +        pill(short(app, 34), appHref, '◉')
       + '    </div>'
       + '    <p class="fused-summary-text">'+esc(overview)+'</p>'
-      + '    <div class="fused-cta-row"><a class="fused-btn fused-btn-primary" href="contact.html?product='+encodeURIComponent(title)+'#design-brief">✉ Get A Quote</a><a class="fused-btn fused-btn-outline" target="_blank" rel="noopener" href="'+attr(whatsappUrl(title))+'">☏ WhatsApp</a></div>'
+      + '    <div class="fused-cta-row"><a class="fused-btn fused-btn-primary" href="contact?product='+encodeURIComponent(title)+'#design-brief">✉ Get A Quote</a><a class="fused-btn fused-btn-outline" target="_blank" rel="noopener" href="'+attr(whatsappUrl(title))+'">☏ WhatsApp</a></div>'
       + '    <div class="fused-service-row">'
       +        benefit('OEM/ODM','Custom Service','▢')
       +        benefit('Low MOQ','Flexible Order','◎')
@@ -153,14 +154,14 @@
       + '  <div class="fused-spec-intro">'
       + '    <p class="fused-mini-kicker">Customization Support</p>'
       + '    <h2>Build This Bag Around Your Brand</h2>'
-      + '    <p>Instead of leaving this area empty, buyers now see the key customization support and the full product specification table in one balanced section.</p>'
+      + '    <p>Review the available materials, branding methods and order specifications before requesting a sample or quotation.</p>'
       + '    <ul class="fused-spec-list"><li>Material, lining, zipper, puller and structure can be adjusted.</li><li>Logo position and logo method can be confirmed before sampling.</li><li>Retail packing, sample details and export carton requirements can be discussed with sales.</li></ul>'
-      + '    <div class="fused-spec-cta"><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">Send Custom Request</a><a class="secondary" href="'+attr(whatsappUrl(title))+'" target="_blank" rel="noopener">Ask On WhatsApp</a></div>'
+      + '    <div class="fused-spec-cta"><a href="contact?product='+encodeURIComponent(title)+'#design-brief">Send Custom Request</a><a class="secondary" href="'+attr(whatsappUrl(title))+'" target="_blank" rel="noopener">Ask On WhatsApp</a></div>'
       + '  </div>'
       + '  <div class="fused-spec-table-card"><h3>Product Specifications</h3><table class="fused-spec-table"><tbody>'+ specRows +'</tbody></table></div>'
       + '</section>'
       + '<section class="container fused-photo-section">'
-      + '  <div class="fused-section-head fused-photo-head"><div><h2>Product Detail Photos</h2><p>Use gallery images in the backend to show material texture, inner structure, zipper details, logo position and use scenarios.</p></div><a href="contact.html?product='+encodeURIComponent(title)+'#design-brief">View More Details →</a></div>'
+      + '  <div class="fused-section-head fused-photo-head"><div><h2>Product Detail Photos</h2><p>Review material texture, inner structure, zipper details, logo position and practical use scenarios.</p></div><a href="contact?product='+encodeURIComponent(title)+'#design-brief">View More Details →</a></div>'
       + '  <div class="fused-photo-grid">'
       + detailPhotos.slice(0,4).map(function(g,i){return '<button type="button" class="fused-detail-photo" data-lightbox="'+attr(g)+'"><img src="'+attr(g)+'" alt="'+attr(title)+' detail photo '+(i+1)+'"></button>';}).join('')
       + '  </div>'
@@ -218,6 +219,6 @@
     .then(function(r){ if(!r.ok) throw new Error('not found'); return r.json(); })
     .then(render)
     .catch(function(){
-      mount.innerHTML = '<div class="container"><div class="managed-empty"><h2>Product not found</h2><p>This product page is currently unavailable. Please return to the catalog or contact us for assistance.</p><a class="btn primary" href="product-types.html">Back To Products</a></div></div>';
+      mount.innerHTML = '<div class="container"><div class="managed-empty"><h2>Product not found</h2><p>This product page is currently unavailable. Please return to the catalog or contact us for assistance.</p><a class="btn primary" href="product-types">Back To Products</a></div></div>';
     });
 })();

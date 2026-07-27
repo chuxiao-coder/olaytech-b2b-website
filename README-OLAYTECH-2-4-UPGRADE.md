@@ -16,6 +16,6 @@ Replace/upload only these files:
 - js/main.js
 - assets/brand/olay-logo-black.png
 - assets/brand/olay-logo-white.png
-- assets/factory/aolai-factory-overview.jpg
+- assets/factory/aolai-factory-overview.webp
 
 Do not overwrite contact.html because the Web3Forms inquiry form is already configured.

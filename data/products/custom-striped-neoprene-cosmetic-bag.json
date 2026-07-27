@@ -1,6 +1,6 @@
 {
   "size": "Custom Sizes Available",
-  "mainImage": "/assets/uploads/42.jpg",
+  "mainImage": "/assets/uploads/42.webp",
   "color": "Custom Colors Available",
   "typeGroup": "Cosmetic Bags",
   "material": "Neoprene",
@@ -18,9 +18,9 @@
   "application": "Daily Makeup Storage，Travel Toiletry Organizer，Beach Essentials Bag，Holiday Cosmetic Bag，Promotional Gift，Beauty Subscription Packaging，Retail Cosmetic Collection",
   "gallery": [
     "/assets/uploads/42.1.jpg",
-    "/assets/uploads/main.jpg",
-    "/assets/uploads/main-04.jpg",
-    "/assets/uploads/main-03.jpg"
+    "/assets/uploads/main.webp",
+    "/assets/uploads/main-04.webp",
+    "/assets/uploads/main-03.webp"
   ],
   "status": "published",
   "itemNo": " OLLAYCO-1042",

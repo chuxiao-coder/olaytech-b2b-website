@@ -1,0 +1,43 @@
+/* Olaytech buyer experience improvements — 2026-07-27 */
+:root{--olay-focus:#0a7f91;--olay-deep:#071936;--olay-soft-bg:#f4fafc;}
+html{scroll-padding-top:116px;}
+body.nav-open{overflow:hidden;}
+img{height:auto;}
+.auto-noscript{padding:16px 0 36px;color:#52647a;font-size:14px;}
+.form-botcheck{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;}
+.form-trust{display:flex;flex-wrap:wrap;gap:9px 18px;margin-top:14px;color:#4f6475;font-size:13px;font-weight:700;}
+.form-trust span{display:inline-flex;align-items:center;gap:7px;}
+.form-trust span::before{content:"✓";display:inline-grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#e8f7f5;color:#087b72;font-size:12px;}
+.catalog-product-card img,.related-detail-grid img,.auto-product-image img{aspect-ratio:1/1;object-fit:cover;background:#eef4f7;}
+.catalog-product-card small{line-height:1.55;}
+.product-detail-grid .detail-gallery>img{aspect-ratio:1/1;object-fit:cover;background:#eef4f7;}
+.auto-product-meta span{white-space:normal;}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid rgba(10,127,145,.28);outline-offset:3px;}
+.thank-you-page{min-height:100vh;display:grid;place-items:center;background:linear-gradient(180deg,#f3fbfd,#fff);padding:40px 0;}
+.thank-you-card{max-width:760px;text-align:center;background:#fff;border:1px solid #dce8ee;border-radius:26px;padding:56px;box-shadow:0 24px 70px rgba(7,25,54,.11);}
+.thank-you-card h1{font-size:clamp(34px,6vw,58px);line-height:1.05;color:var(--olay-deep);margin:12px 0 18px;}
+.thank-you-card p{font-size:18px;color:#5e7080;}
+.thank-you-card .button-row{justify-content:center;margin-top:28px;}
+@media(max-width:920px){
+  #site-header .header-inner{min-height:70px!important;height:auto!important;}
+  #site-header .nav-toggle{display:inline-flex!important;align-items:center;justify-content:center;width:44px;height:44px;border-radius:12px;border:1px solid #d6e5ec;background:#fff;color:#073556;font-size:22px;cursor:pointer;order:3;margin-left:auto;}
+  #site-header .header-cta{display:none!important;}
+  #site-header .main-nav{position:fixed!important;inset:104px 0 0 auto!important;width:min(88vw,380px)!important;height:calc(100dvh - 104px)!important;padding:18px!important;background:#fff!important;box-shadow:-24px 0 60px rgba(7,25,54,.18)!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;gap:4px!important;overflow:auto!important;transform:translateX(110%)!important;transition:transform .25s ease!important;z-index:120!important;}
+  #site-header .main-nav.open{transform:translateX(0)!important;}
+  #site-header .main-nav>a,#site-header .nav-dropdown>a{width:100%!important;min-height:48px!important;height:auto!important;justify-content:space-between!important;padding:12px 14px!important;border-radius:10px!important;font-size:15px!important;}
+  #site-header .nav-dropdown{width:100%!important;display:block!important;}
+  #site-header .dropdown-panel{position:static!important;display:none!important;opacity:1!important;visibility:visible!important;transform:none!important;box-shadow:none!important;border:0!important;border-left:2px solid #dcebf0!important;border-radius:0!important;margin:0 0 8px 16px!important;padding:4px 0 4px 10px!important;min-width:0!important;background:#f8fbfc!important;}
+  #site-header .nav-dropdown.mobile-open>.dropdown-panel{display:grid!important;}
+  #site-header .dropdown-panel a{min-height:42px!important;padding:10px 12px!important;font-size:14px!important;}
+  .auto-layout{grid-template-columns:1fr!important;}
+  .auto-sidebar{display:none!important;}
+  .auto-toolbar{grid-template-columns:1fr!important;position:static!important;}
+  .auto-toolbar input,.auto-toolbar select{min-height:48px;}
+  .whatsapp-float{right:14px!important;bottom:max(14px,env(safe-area-inset-bottom))!important;}
+}
+@media(max-width:620px){
+  .container,.auto-catalog-page .container{width:min(100% - 28px,1240px)!important;}
+  .form-row{grid-template-columns:1fr!important;}
+  .catalog-product-grid,.related-detail-grid,.auto-grid{grid-template-columns:1fr!important;}
+  .thank-you-card{padding:38px 22px;border-radius:20px;}
+}

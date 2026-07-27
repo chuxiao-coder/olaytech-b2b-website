@@ -2,7 +2,7 @@
   "pageUrl": "application-beauty-cosmetic-clear-makeup-travel-bag.html",
   "size": "Custom Colors Available",
   "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup.",
-  "mainImage": "/assets/uploads/8.jpg",
+  "mainImage": "/assets/uploads/8.webp",
   "color": "Custom Sizes Available",
   "typeGroup": "Cosmetic Bags",
   "material": "Neoprene",
@@ -26,10 +26,10 @@
   "applicationGroup": "Beauty & Cosmetic",
   "application": "Travel, Daily Makeup Storage, Beauty Organization, Toiletry Storage, Promotional Gifts, Retail Sales, Brand Merchandise",
   "gallery": [
-    "/assets/uploads/8.1.jpg",
-    "/assets/uploads/main.jpg",
-    "/assets/uploads/main-04.jpg",
-    "/assets/uploads/main-03.jpg"
+    "/assets/uploads/8.1.webp",
+    "/assets/uploads/main.webp",
+    "/assets/uploads/main-04.webp",
+    "/assets/uploads/main-03.webp"
   ],
   "status": "published",
   "typeTags": [

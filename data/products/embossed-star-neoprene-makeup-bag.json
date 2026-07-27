@@ -1,6 +1,6 @@
 {
   "size": "Custom Sizes Available",
-  "mainImage": "/assets/uploads/34.jpg",
+  "mainImage": "/assets/uploads/34.webp",
   "color": "Custom Colors Available",
   "typeGroup": "Cosmetic Bags",
   "material": " Neoprene",
@@ -26,10 +26,10 @@
   "applicationGroup": "Beauty & Cosmetic",
   "application": "Premium Soft Neoprene",
   "gallery": [
-    "/assets/uploads/34.1.jpg",
-    "/assets/uploads/main.jpg",
-    "/assets/uploads/main-04.jpg",
-    "/assets/uploads/main-03.jpg"
+    "/assets/uploads/34.1.webp",
+    "/assets/uploads/main.webp",
+    "/assets/uploads/main-04.webp",
+    "/assets/uploads/main-03.webp"
   ],
   "status": "published",
   "itemNo": "OLLAYCO-1034",

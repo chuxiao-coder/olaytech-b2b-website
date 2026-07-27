@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PRODUCT_DIR = ROOT / "data" / "products"
 INDEX_FILE = ROOT / "data" / "products-index.json"
 SITEMAP_FILE = ROOT / "sitemap-products-generated.xml"
-DOMAIN = "https://www.olaytech.com"
+DOMAIN = "https://olaytech.com"
 
 summary_fields = [
     "title", "cardTitle", "cardSubtitle", "slug", "status", "sourcePage", "pageUrl",
@@ -24,8 +24,8 @@ for path in sorted(PRODUCT_DIR.glob("*.json")):
     except Exception as exc:
         print(f"Skip invalid JSON {path}: {exc}")
         continue
-    if not data.get("slug"):
-        data["slug"] = path.stem
+    # The filename is the stable public slug and must match the JSON fetch path.
+    data["slug"] = path.stem
     if data.get("status", "published") == "draft":
         continue
     products.append({field: data.get(field, "") for field in summary_fields})
@@ -37,7 +37,7 @@ urls = []
 for p in products:
     slug = p.get("slug")
     if slug:
-        urls.append(f"{DOMAIN}/product-managed.html?slug={slug}")
+        urls.append(f"{DOMAIN}/product-managed?slug={slug}")
 xml = ["<?xml version=\"1.0\" encoding=\"UTF-8\"?>", '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for url in urls:
     xml.append("  <url>")

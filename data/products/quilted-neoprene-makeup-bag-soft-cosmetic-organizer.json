@@ -1,6 +1,6 @@
 {
   "size": "Custom Sizes Available",
-  "mainImage": "/assets/uploads/57.jpg",
+  "mainImage": "/assets/uploads/57.webp",
   "color": "Custom Colors Available",
   "typeGroup": "Cosmetic Bags",
   "material": "Neoprene",
@@ -18,9 +18,9 @@
   "application": "Makeup Storage，Skincare Organization，Daily Beauty Essentials，Travel Packing，Hotel Amenities，Cosmetic Gift Sets，Beauty Brand Collections",
   "gallery": [
     "/assets/uploads/57.1.jpg",
-    "/assets/uploads/main.jpg",
-    "/assets/uploads/main-04.jpg",
-    "/assets/uploads/main-03.jpg"
+    "/assets/uploads/main.webp",
+    "/assets/uploads/main-04.webp",
+    "/assets/uploads/main-03.webp"
   ],
   "status": "published",
   "itemNo": " OLLAYCO-1057",

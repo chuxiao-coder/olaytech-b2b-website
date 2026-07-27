@@ -2,7 +2,7 @@
   "pageUrl": "",
   "size": "Custom size based on buyer requirements",
   "notes": "Imported from existing static HTML page. You can edit this record in /admin after CMS setup.",
-  "mainImage": "/assets/uploads/detail-01.jpg",
+  "mainImage": "/assets/uploads/detail-01.webp",
   "color": "Custom color / Pantone available",
   "typeGroup": "Cosmetic Bags",
   "material": "Neoprene",
@@ -21,9 +21,9 @@
   "application": "Travel, Daily Use, Beauty Storage, Business Trips, Outdoor Activities, Gym & Fitness, Home Organization",
   "gallery": [
     "/assets/uploads/detail-02.jpg",
-    "/assets/uploads/main.jpg",
-    "/assets/uploads/main-04.jpg",
-    "/assets/uploads/main-03.jpg"
+    "/assets/uploads/main.webp",
+    "/assets/uploads/main-04.webp",
+    "/assets/uploads/main-03.webp"
   ],
   "status": "published",
   "typeTags": [
