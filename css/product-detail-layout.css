@@ -1,0 +1,451 @@
+/* Olaytech static product detail layout fix — 2026-07-27
+   Scoped to body.olay-static-product-detail so catalog and homepage layouts are unchanged. */
+
+body.olay-static-product-detail {
+  background: #fff;
+  color: #0a1728;
+}
+
+body.olay-static-product-detail .detail-hero-app {
+  padding: 0;
+  background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(9, 43, 68, .08);
+}
+
+body.olay-static-product-detail .product-detail-hero {
+  padding: 0 0 58px;
+  background: linear-gradient(180deg, #f7fbfd 0%, #ffffff 100%);
+  border-bottom: 1px solid rgba(9, 43, 68, .08);
+}
+
+body.olay-static-product-detail .breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 0;
+  margin: 0;
+  color: #617082;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+body.olay-static-product-detail .breadcrumb a {
+  color: #0b3857;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+body.olay-static-product-detail .breadcrumb span:last-child {
+  color: #617082;
+  font-weight: 650;
+}
+
+body.olay-static-product-detail .detail-hero-app + .section,
+body.olay-static-product-detail .product-detail-section {
+  padding-top: 42px;
+  padding-bottom: 58px;
+}
+
+body.olay-static-product-detail .application-detail-grid,
+body.olay-static-product-detail .detail-grid,
+body.olay-static-product-detail .product-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+  gap: clamp(30px, 4vw, 58px);
+  align-items: start;
+}
+
+body.olay-static-product-detail .app-detail-gallery,
+body.olay-static-product-detail .detail-gallery {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #dce7ee;
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 18px 48px rgba(10, 47, 73, .08);
+}
+
+body.olay-static-product-detail .app-main-product-image,
+body.olay-static-product-detail .main-product-image,
+body.olay-static-product-detail .product-detail-grid .detail-gallery > img {
+  width: 100%;
+  height: clamp(390px, 42vw, 590px);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #f1f6f9;
+  display: grid;
+  place-items: center;
+}
+
+body.olay-static-product-detail .app-main-product-image img,
+body.olay-static-product-detail .main-product-image img,
+body.olay-static-product-detail .product-detail-grid .detail-gallery > img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  padding: 10px;
+  border-radius: 18px;
+}
+
+body.olay-static-product-detail .thumbnail-row,
+body.olay-static-product-detail .detail-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+body.olay-static-product-detail .thumb-btn {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 4px;
+  margin: 0;
+  border: 1px solid #d9e5ec;
+  border-radius: 14px;
+  background: #f7fafc;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+body.olay-static-product-detail .thumb-btn:hover,
+body.olay-static-product-detail .thumb-btn.active {
+  border-color: #0c7890;
+  box-shadow: 0 0 0 2px rgba(12, 120, 144, .12);
+  transform: translateY(-1px);
+}
+
+body.olay-static-product-detail .thumb-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 10px;
+  padding: 0;
+}
+
+body.olay-static-product-detail .detail-thumbs span {
+  min-height: 72px;
+  border-radius: 14px;
+  border: 1px solid #d9e5ec;
+  background: linear-gradient(135deg, #eef5f8, #ffffff);
+}
+
+body.olay-static-product-detail .app-detail-info,
+body.olay-static-product-detail .detail-info,
+body.olay-static-product-detail .detail-content {
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #dce7ee;
+  border-radius: 24px;
+  padding: clamp(24px, 3vw, 38px);
+  box-shadow: 0 18px 48px rgba(10, 47, 73, .08);
+}
+
+body.olay-static-product-detail .app-detail-info .eyebrow,
+body.olay-static-product-detail .detail-info .eyebrow,
+body.olay-static-product-detail .detail-content .eyebrow {
+  margin: 0 0 10px;
+  color: #13778d;
+  font-size: 12px;
+  font-weight: 950;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+body.olay-static-product-detail .app-detail-info h1,
+body.olay-static-product-detail .detail-info h1,
+body.olay-static-product-detail .detail-content h1 {
+  margin: 0 0 16px;
+  color: #08192b;
+  font-size: clamp(36px, 4vw, 56px);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+}
+
+body.olay-static-product-detail .detail-lead,
+body.olay-static-product-detail .detail-content > p {
+  margin: 0 0 24px;
+  color: #59697b;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+body.olay-static-product-detail .spec-table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #dce7ee;
+  border-radius: 16px;
+  overflow: hidden;
+  table-layout: fixed;
+}
+
+body.olay-static-product-detail .spec-table th,
+body.olay-static-product-detail .spec-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #e3ebf0;
+  vertical-align: top;
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+}
+
+body.olay-static-product-detail .spec-table th {
+  width: 32%;
+  color: #0b3857;
+  background: #f5f9fb;
+  font-weight: 900;
+}
+
+body.olay-static-product-detail .spec-table td {
+  color: #5b6979;
+  background: #fff;
+  font-weight: 600;
+}
+
+body.olay-static-product-detail .spec-table tr:last-child th,
+body.olay-static-product-detail .spec-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.olay-static-product-detail .detail-actions,
+body.olay-static-product-detail .button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+body.olay-static-product-detail .detail-actions .btn,
+body.olay-static-product-detail .button-row .btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 13px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+body.olay-static-product-detail .detail-actions .btn.primary {
+  background: #0b7c91;
+  color: #fff;
+}
+
+body.olay-static-product-detail .detail-actions .dark-btn {
+  background: #0a2238;
+  color: #fff;
+}
+
+body.olay-static-product-detail .upload-note,
+body.olay-static-product-detail .detail-note {
+  display: none;
+}
+
+body.olay-static-product-detail .product-info-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+body.olay-static-product-detail .product-info-grid > article {
+  background: #fff;
+  border: 1px solid #dce7ee;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0 14px 34px rgba(10, 47, 73, .06);
+}
+
+body.olay-static-product-detail .check-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 18px 0 0;
+  list-style: none;
+}
+
+body.olay-static-product-detail .check-list li {
+  position: relative;
+  padding-left: 26px;
+  color: #58687a;
+  line-height: 1.55;
+}
+
+body.olay-static-product-detail .check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #0b7c91;
+  font-weight: 950;
+}
+
+body.olay-static-product-detail .related-products {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+body.olay-static-product-detail .related-product {
+  display: grid;
+  grid-template-rows: 118px auto;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #dce7ee;
+  border-radius: 15px;
+  background: #fff;
+  color: #10243a;
+  text-decoration: none;
+  font-weight: 850;
+}
+
+body.olay-static-product-detail .related-product img {
+  width: 100%;
+  height: 118px;
+  object-fit: cover;
+  border-radius: 11px;
+  background: #f1f6f9;
+}
+
+body.olay-static-product-detail .whatsapp-float {
+  right: max(22px, env(safe-area-inset-right));
+  bottom: max(22px, env(safe-area-inset-bottom));
+}
+
+@media (min-width: 1180px) {
+  body.olay-static-product-detail .app-detail-gallery,
+  body.olay-static-product-detail .detail-grid > .detail-gallery,
+  body.olay-static-product-detail .product-detail-grid > .detail-gallery {
+    position: sticky;
+    top: 112px;
+  }
+}
+
+@media (max-width: 1020px) {
+  body.olay-static-product-detail .application-detail-grid,
+  body.olay-static-product-detail .detail-grid,
+  body.olay-static-product-detail .product-detail-grid,
+  body.olay-static-product-detail .product-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.olay-static-product-detail .app-main-product-image,
+  body.olay-static-product-detail .main-product-image,
+  body.olay-static-product-detail .product-detail-grid .detail-gallery > img {
+    height: min(72vw, 580px);
+  }
+}
+
+@media (max-width: 680px) {
+  body.olay-static-product-detail .breadcrumb {
+    padding: 13px 0;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  body.olay-static-product-detail .detail-hero-app + .section,
+  body.olay-static-product-detail .product-detail-section {
+    padding-top: 24px;
+    padding-bottom: 38px;
+  }
+
+  body.olay-static-product-detail .app-detail-gallery,
+  body.olay-static-product-detail .detail-gallery {
+    padding: 10px;
+    border-radius: 18px;
+  }
+
+  body.olay-static-product-detail .app-main-product-image,
+  body.olay-static-product-detail .main-product-image,
+  body.olay-static-product-detail .product-detail-grid .detail-gallery > img {
+    height: min(88vw, 470px);
+    border-radius: 14px;
+  }
+
+  body.olay-static-product-detail .thumbnail-row,
+  body.olay-static-product-detail .detail-thumbs {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  body.olay-static-product-detail .app-detail-info,
+  body.olay-static-product-detail .detail-info,
+  body.olay-static-product-detail .detail-content {
+    padding: 22px 18px;
+    border-radius: 18px;
+  }
+
+  body.olay-static-product-detail .app-detail-info h1,
+  body.olay-static-product-detail .detail-info h1,
+  body.olay-static-product-detail .detail-content h1 {
+    font-size: 34px;
+  }
+
+  body.olay-static-product-detail .spec-table,
+  body.olay-static-product-detail .spec-table tbody,
+  body.olay-static-product-detail .spec-table tr,
+  body.olay-static-product-detail .spec-table th,
+  body.olay-static-product-detail .spec-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.olay-static-product-detail .spec-table tr {
+    border-bottom: 1px solid #e3ebf0;
+  }
+
+  body.olay-static-product-detail .spec-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.olay-static-product-detail .spec-table th,
+  body.olay-static-product-detail .spec-table td {
+    border-bottom: 0;
+  }
+
+  body.olay-static-product-detail .spec-table th {
+    padding-bottom: 4px;
+  }
+
+  body.olay-static-product-detail .spec-table td {
+    padding-top: 4px;
+  }
+
+  body.olay-static-product-detail .detail-actions,
+  body.olay-static-product-detail .button-row {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  body.olay-static-product-detail .related-products {
+    grid-template-columns: 1fr;
+  }
+
+  body.olay-static-product-detail .related-product {
+    grid-template-columns: 92px 1fr;
+    grid-template-rows: none;
+    align-items: center;
+  }
+
+  body.olay-static-product-detail .related-product img {
+    width: 92px;
+    height: 76px;
+  }
+
+  body.olay-static-product-detail .whatsapp-float {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+}
